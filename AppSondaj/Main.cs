@@ -116,7 +116,7 @@ namespace AppSondaj
 
         private void btnMinimize_Click(object sender, EventArgs e)
         {
-            WindowState= FormWindowState.Minimized;
+            WindowState = FormWindowState.Minimized;
         }
     }
 }

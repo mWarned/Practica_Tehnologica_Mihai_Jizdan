@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.grpActions = new System.Windows.Forms.GroupBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.outPoll = new System.Windows.Forms.DataGridView();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.pnlSideBtn = new System.Windows.Forms.Panel();
             this.grpActions.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.outPoll)).BeginInit();
             this.SuspendLayout();
             // 
             // grpActions
@@ -52,14 +52,14 @@
             this.grpActions.TabStop = false;
             this.grpActions.Text = "Actions";
             // 
-            // dataGridView1
+            // outPoll
             // 
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 32);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(707, 593);
-            this.dataGridView1.TabIndex = 7;
+            this.outPoll.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
+            this.outPoll.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.outPoll.Location = new System.Drawing.Point(12, 32);
+            this.outPoll.Name = "outPoll";
+            this.outPoll.Size = new System.Drawing.Size(707, 593);
+            this.outPoll.TabIndex = 7;
             // 
             // btnDelete
             // 
@@ -107,14 +107,14 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
             this.ClientSize = new System.Drawing.Size(985, 648);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.outPoll);
             this.Controls.Add(this.grpActions);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "pollEdit";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "pollEdit";
             this.grpActions.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.outPoll)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -123,7 +123,7 @@
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.GroupBox grpActions;
         private System.Windows.Forms.Button btnDelete;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView outPoll;
         private System.Windows.Forms.Panel pnlSideBtn;
     }
 }

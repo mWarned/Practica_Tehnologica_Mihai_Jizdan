@@ -58,6 +58,8 @@ namespace AppSondaj
             }
         }
 
+        // Events for button clicks
+
         private void btnAdd_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, btnColors.lightBlue);

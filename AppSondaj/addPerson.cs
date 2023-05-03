@@ -16,5 +16,15 @@ namespace AppSondaj
         {
             InitializeComponent();
         }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void btnMinimize_Click(object sender, EventArgs e)
+        {
+            WindowState = FormWindowState.Minimized;
+        }
     }
 }
