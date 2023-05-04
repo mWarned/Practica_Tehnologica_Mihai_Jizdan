@@ -108,6 +108,8 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="queries\createPoll.sql" />
+    <Content Include="queries\insertPoll.sql" />
     <None Include="images\report.png" />
     <None Include="images\edit.png" />
     <None Include="images\delete.png" />

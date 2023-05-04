@@ -65,7 +65,7 @@
             this.navPanel.Dock = System.Windows.Forms.DockStyle.Left;
             this.navPanel.Location = new System.Drawing.Point(0, 0);
             this.navPanel.Name = "navPanel";
-            this.navPanel.Size = new System.Drawing.Size(228, 677);
+            this.navPanel.Size = new System.Drawing.Size(225, 677);
             this.navPanel.TabIndex = 0;
             // 
             // btnReports
@@ -75,7 +75,7 @@
             this.btnReports.Font = new System.Drawing.Font("Nirmala UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReports.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(246)))));
             this.btnReports.Image = global::AppSondaj.Properties.Resources.report;
-            this.btnReports.Location = new System.Drawing.Point(3, 229);
+            this.btnReports.Location = new System.Drawing.Point(0, 229);
             this.btnReports.Name = "btnReports";
             this.btnReports.Size = new System.Drawing.Size(225, 56);
             this.btnReports.TabIndex = 4;
@@ -148,7 +148,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(228, 152);
+            this.panel1.Size = new System.Drawing.Size(225, 152);
             this.panel1.TabIndex = 0;
             // 
             // panel2
@@ -158,7 +158,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(228, 152);
+            this.panel2.Size = new System.Drawing.Size(225, 152);
             this.panel2.TabIndex = 2;
             // 
             // label1
@@ -167,7 +167,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(246)))));
-            this.label1.Location = new System.Drawing.Point(66, 100);
+            this.label1.Location = new System.Drawing.Point(64, 100);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(91, 20);
             this.label1.TabIndex = 1;
@@ -178,7 +178,7 @@
             this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.pictureBox1.Image = global::AppSondaj.Properties.Resources.user;
-            this.pictureBox1.Location = new System.Drawing.Point(82, 28);
+            this.pictureBox1.Location = new System.Drawing.Point(80, 28);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(60, 60);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -191,7 +191,7 @@
             this.lblUsername.AutoSize = true;
             this.lblUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lblUsername.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(246)))));
-            this.lblUsername.Location = new System.Drawing.Point(66, 100);
+            this.lblUsername.Location = new System.Drawing.Point(64, 100);
             this.lblUsername.Name = "lblUsername";
             this.lblUsername.Size = new System.Drawing.Size(91, 20);
             this.lblUsername.TabIndex = 1;
@@ -202,7 +202,7 @@
             this.imgUser.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.imgUser.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.imgUser.Image = global::AppSondaj.Properties.Resources.user;
-            this.imgUser.Location = new System.Drawing.Point(82, 28);
+            this.imgUser.Location = new System.Drawing.Point(80, 28);
             this.imgUser.Name = "imgUser";
             this.imgUser.Size = new System.Drawing.Size(60, 60);
             this.imgUser.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -216,9 +216,9 @@
             this.panel3.Controls.Add(this.btnMinimize);
             this.panel3.Controls.Add(this.btnExit);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel3.Location = new System.Drawing.Point(228, 0);
+            this.panel3.Location = new System.Drawing.Point(225, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(985, 29);
+            this.panel3.Size = new System.Drawing.Size(988, 29);
             this.panel3.TabIndex = 1;
             // 
             // btnMinimize
@@ -256,9 +256,9 @@
             // pnlDesktop
             // 
             this.pnlDesktop.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlDesktop.Location = new System.Drawing.Point(228, 29);
+            this.pnlDesktop.Location = new System.Drawing.Point(225, 29);
             this.pnlDesktop.Name = "pnlDesktop";
-            this.pnlDesktop.Size = new System.Drawing.Size(985, 648);
+            this.pnlDesktop.Size = new System.Drawing.Size(988, 648);
             this.pnlDesktop.TabIndex = 2;
             // 
             // Main

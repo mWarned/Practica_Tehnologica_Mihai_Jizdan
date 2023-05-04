@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.grpActions = new System.Windows.Forms.GroupBox();
-            this.outPoll = new System.Windows.Forms.DataGridView();
+            this.pnlSideBtn = new System.Windows.Forms.Panel();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
-            this.pnlSideBtn = new System.Windows.Forms.Panel();
+            this.outPoll = new System.Windows.Forms.DataGridView();
             this.grpActions.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.outPoll)).BeginInit();
             this.SuspendLayout();
@@ -52,14 +52,13 @@
             this.grpActions.TabStop = false;
             this.grpActions.Text = "Actions";
             // 
-            // outPoll
+            // pnlSideBtn
             // 
-            this.outPoll.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
-            this.outPoll.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.outPoll.Location = new System.Drawing.Point(12, 32);
-            this.outPoll.Name = "outPoll";
-            this.outPoll.Size = new System.Drawing.Size(707, 593);
-            this.outPoll.TabIndex = 7;
+            this.pnlSideBtn.Location = new System.Drawing.Point(225, 31);
+            this.pnlSideBtn.Name = "pnlSideBtn";
+            this.pnlSideBtn.Size = new System.Drawing.Size(7, 66);
+            this.pnlSideBtn.TabIndex = 4;
+            this.pnlSideBtn.Visible = false;
             // 
             // btnDelete
             // 
@@ -68,7 +67,7 @@
             this.btnDelete.Font = new System.Drawing.Font("Nirmala UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDelete.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(246)))));
             this.btnDelete.Image = global::AppSondaj.Properties.Resources.delete;
-            this.btnDelete.Location = new System.Drawing.Point(6, 114);
+            this.btnDelete.Location = new System.Drawing.Point(6, 117);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(226, 66);
             this.btnDelete.TabIndex = 3;
@@ -93,13 +92,14 @@
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
-            // pnlSideBtn
+            // outPoll
             // 
-            this.pnlSideBtn.Location = new System.Drawing.Point(225, 31);
-            this.pnlSideBtn.Name = "pnlSideBtn";
-            this.pnlSideBtn.Size = new System.Drawing.Size(7, 66);
-            this.pnlSideBtn.TabIndex = 4;
-            this.pnlSideBtn.Visible = false;
+            this.outPoll.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
+            this.outPoll.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.outPoll.Location = new System.Drawing.Point(12, 32);
+            this.outPoll.Name = "outPoll";
+            this.outPoll.Size = new System.Drawing.Size(707, 593);
+            this.outPoll.TabIndex = 7;
             // 
             // pollEdit
             // 
