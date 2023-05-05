@@ -60,8 +60,8 @@ create table Limba(
 
 create table Sondaj(
 	sondajID int primary key identity(1, 1),
-	tematicaID int foreign key references Tematica(tematicaID),
-	intrebareID int foreign key references Intrebare(intrebareID),
 	raspunsID int foreign key references Raspuns(raspunsID),
 	limbaID int foreign key references Limba(limbaID)
 )
+
+

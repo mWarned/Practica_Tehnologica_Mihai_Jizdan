@@ -63,6 +63,8 @@ namespace AppSondaj
         private void btnAdd_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, btnColors.lightBlue);
+            addPerson person= new addPerson();
+            person.Show();
         }
 
         private void btnDelete_Click(object sender, EventArgs e)

@@ -17,6 +17,11 @@ namespace AppSondaj
             InitializeComponent();
         }
 
+        public void listJudet()
+        {
+            //userJudet.DataSource = dbActions.listaJudete();
+        }
+
         private void btnExit_Click(object sender, EventArgs e)
         {
             Application.Exit();
