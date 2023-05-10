@@ -30,9 +30,10 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             this.navPanel = new System.Windows.Forms.Panel();
+            this.btnPeople = new System.Windows.Forms.Button();
             this.btnReports = new System.Windows.Forms.Button();
             this.pnlSideBtn = new System.Windows.Forms.Panel();
-            this.btnEdit = new System.Windows.Forms.Button();
+            this.btnPoll = new System.Windows.Forms.Button();
             this.btnLogin = new System.Windows.Forms.Button();
             this.btnSettings = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -56,17 +57,34 @@
             // navPanel
             // 
             this.navPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
+            this.navPanel.Controls.Add(this.btnPeople);
             this.navPanel.Controls.Add(this.btnReports);
             this.navPanel.Controls.Add(this.pnlSideBtn);
-            this.navPanel.Controls.Add(this.btnEdit);
+            this.navPanel.Controls.Add(this.btnPoll);
             this.navPanel.Controls.Add(this.btnLogin);
             this.navPanel.Controls.Add(this.btnSettings);
             this.navPanel.Controls.Add(this.panel1);
             this.navPanel.Dock = System.Windows.Forms.DockStyle.Left;
             this.navPanel.Location = new System.Drawing.Point(0, 0);
             this.navPanel.Name = "navPanel";
-            this.navPanel.Size = new System.Drawing.Size(225, 677);
+            this.navPanel.Size = new System.Drawing.Size(225, 700);
             this.navPanel.TabIndex = 0;
+            // 
+            // btnPeople
+            // 
+            this.btnPeople.FlatAppearance.BorderSize = 0;
+            this.btnPeople.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPeople.Font = new System.Drawing.Font("Nirmala UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPeople.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(246)))));
+            this.btnPeople.Image = global::AppSondaj.Properties.Resources.people;
+            this.btnPeople.Location = new System.Drawing.Point(0, 229);
+            this.btnPeople.Name = "btnPeople";
+            this.btnPeople.Size = new System.Drawing.Size(225, 56);
+            this.btnPeople.TabIndex = 5;
+            this.btnPeople.Text = "People List";
+            this.btnPeople.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btnPeople.UseVisualStyleBackColor = true;
+            this.btnPeople.Click += new System.EventHandler(this.btnPeople_Click);
             // 
             // btnReports
             // 
@@ -75,7 +93,7 @@
             this.btnReports.Font = new System.Drawing.Font("Nirmala UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReports.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(246)))));
             this.btnReports.Image = global::AppSondaj.Properties.Resources.report;
-            this.btnReports.Location = new System.Drawing.Point(0, 229);
+            this.btnReports.Location = new System.Drawing.Point(0, 291);
             this.btnReports.Name = "btnReports";
             this.btnReports.Size = new System.Drawing.Size(225, 56);
             this.btnReports.TabIndex = 4;
@@ -86,27 +104,27 @@
             // 
             // pnlSideBtn
             // 
-            this.pnlSideBtn.Location = new System.Drawing.Point(0, 485);
+            this.pnlSideBtn.Location = new System.Drawing.Point(3, 508);
             this.pnlSideBtn.Name = "pnlSideBtn";
             this.pnlSideBtn.Size = new System.Drawing.Size(7, 56);
             this.pnlSideBtn.TabIndex = 1;
             this.pnlSideBtn.Visible = false;
             // 
-            // btnEdit
+            // btnPoll
             // 
-            this.btnEdit.FlatAppearance.BorderSize = 0;
-            this.btnEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEdit.Font = new System.Drawing.Font("Nirmala UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEdit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(246)))));
-            this.btnEdit.Image = ((System.Drawing.Image)(resources.GetObject("btnEdit.Image")));
-            this.btnEdit.Location = new System.Drawing.Point(0, 167);
-            this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(225, 56);
-            this.btnEdit.TabIndex = 3;
-            this.btnEdit.Text = "Edit Poll";
-            this.btnEdit.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.btnEdit.UseVisualStyleBackColor = true;
-            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
+            this.btnPoll.FlatAppearance.BorderSize = 0;
+            this.btnPoll.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPoll.Font = new System.Drawing.Font("Nirmala UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPoll.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(246)))));
+            this.btnPoll.Image = ((System.Drawing.Image)(resources.GetObject("btnPoll.Image")));
+            this.btnPoll.Location = new System.Drawing.Point(0, 167);
+            this.btnPoll.Name = "btnPoll";
+            this.btnPoll.Size = new System.Drawing.Size(225, 56);
+            this.btnPoll.TabIndex = 3;
+            this.btnPoll.Text = "Edit Poll";
+            this.btnPoll.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btnPoll.UseVisualStyleBackColor = true;
+            this.btnPoll.Click += new System.EventHandler(this.btnPoll_Click);
             // 
             // btnLogin
             // 
@@ -115,7 +133,7 @@
             this.btnLogin.Font = new System.Drawing.Font("Nirmala UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogin.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(246)))));
             this.btnLogin.Image = global::AppSondaj.Properties.Resources.logout;
-            this.btnLogin.Location = new System.Drawing.Point(0, 609);
+            this.btnLogin.Location = new System.Drawing.Point(0, 632);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(225, 56);
             this.btnLogin.TabIndex = 2;
@@ -131,7 +149,7 @@
             this.btnSettings.Font = new System.Drawing.Font("Nirmala UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSettings.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(246)))));
             this.btnSettings.Image = global::AppSondaj.Properties.Resources.setting;
-            this.btnSettings.Location = new System.Drawing.Point(0, 547);
+            this.btnSettings.Location = new System.Drawing.Point(0, 570);
             this.btnSettings.Name = "btnSettings";
             this.btnSettings.Size = new System.Drawing.Size(225, 56);
             this.btnSettings.TabIndex = 1;
@@ -218,7 +236,7 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(225, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(988, 29);
+            this.panel3.Size = new System.Drawing.Size(1275, 29);
             this.panel3.TabIndex = 1;
             // 
             // btnMinimize
@@ -230,7 +248,7 @@
             this.btnMinimize.IconColor = System.Drawing.Color.White;
             this.btnMinimize.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnMinimize.IconSize = 14;
-            this.btnMinimize.Location = new System.Drawing.Point(915, 0);
+            this.btnMinimize.Location = new System.Drawing.Point(1202, 0);
             this.btnMinimize.Name = "btnMinimize";
             this.btnMinimize.Size = new System.Drawing.Size(32, 29);
             this.btnMinimize.TabIndex = 1;
@@ -246,7 +264,7 @@
             this.btnExit.IconColor = System.Drawing.Color.White;
             this.btnExit.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnExit.IconSize = 14;
-            this.btnExit.Location = new System.Drawing.Point(953, 0);
+            this.btnExit.Location = new System.Drawing.Point(1240, 0);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(32, 29);
             this.btnExit.TabIndex = 0;
@@ -258,7 +276,7 @@
             this.pnlDesktop.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlDesktop.Location = new System.Drawing.Point(225, 29);
             this.pnlDesktop.Name = "pnlDesktop";
-            this.pnlDesktop.Size = new System.Drawing.Size(988, 648);
+            this.pnlDesktop.Size = new System.Drawing.Size(1275, 671);
             this.pnlDesktop.TabIndex = 2;
             // 
             // Main
@@ -266,7 +284,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
-            this.ClientSize = new System.Drawing.Size(1213, 677);
+            this.ClientSize = new System.Drawing.Size(1500, 700);
             this.Controls.Add(this.pnlDesktop);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.navPanel);
@@ -295,7 +313,7 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label lblUsername;
         private System.Windows.Forms.PictureBox imgUser;
-        private System.Windows.Forms.Button btnEdit;
+        private System.Windows.Forms.Button btnPoll;
         private System.Windows.Forms.Panel pnlSideBtn;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label1;
@@ -305,6 +323,7 @@
         private FontAwesome.Sharp.IconButton btnExit;
         private System.Windows.Forms.Button btnReports;
         private System.Windows.Forms.Panel pnlDesktop;
+        private System.Windows.Forms.Button btnPeople;
     }
 }
 

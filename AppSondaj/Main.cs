@@ -84,11 +84,18 @@ namespace AppSondaj
 
         // Events for button clicks
 
-        private void btnEdit_Click(object sender, EventArgs e)
+        private void btnPoll_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, btnColors.lightBlue);
             OpenChildForm(new pollEdit());
         }
+
+        private void btnPeople_Click(object sender, EventArgs e)
+        {
+            ActivateButton(sender, btnColors.lightBlue);
+            OpenChildForm(new peopleEdit());
+        }
+
         private void btnReports_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, btnColors.lightBlue);

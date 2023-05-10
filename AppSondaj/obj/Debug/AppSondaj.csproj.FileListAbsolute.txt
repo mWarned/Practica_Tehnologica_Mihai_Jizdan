@@ -39,3 +39,4 @@ C:\Users\PC\source\repos\mWarned\Practica_Tehnologica_Mihai_Jizdan\AppSondaj\obj
 C:\Users\PC\source\repos\mWarned\Practica_Tehnologica_Mihai_Jizdan\AppSondaj\obj\Debug\AppSondaj.csproj.CopyComplete
 C:\Users\PC\source\repos\mWarned\Practica_Tehnologica_Mihai_Jizdan\AppSondaj\obj\Debug\AppSondaj.exe
 C:\Users\PC\source\repos\mWarned\Practica_Tehnologica_Mihai_Jizdan\AppSondaj\obj\Debug\AppSondaj.pdb
+C:\Users\PC\source\repos\mWarned\Practica_Tehnologica_Mihai_Jizdan\AppSondaj\obj\Debug\AppSondaj.peopleEdit.resources

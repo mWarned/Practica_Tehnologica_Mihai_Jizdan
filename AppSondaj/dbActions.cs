@@ -21,7 +21,7 @@ namespace AppSondaj
                 using (IDbConnection connection = new SqlConnection
                 (Helper.dbConn("dbSondaj")))
                 {
-                    dataAD = new SqlDataAdapter("select * from Judet", (SqlConnection)connection);
+                    dataAD = new SqlDataAdapter("select numeJudet from Judet", (SqlConnection)connection);
                     dt = new DataTable();
                     dataAD.Fill(dt);
 

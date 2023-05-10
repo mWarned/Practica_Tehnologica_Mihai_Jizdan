@@ -1,18 +1,23 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace AppSondaj
 {
-    public partial class pollEdit : Form
+    public partial class peopleEdit : Form
     {
         private Button currentBtn;
         SqlDataAdapter dataAD;
         DataTable dt;
 
-        public pollEdit()
+        public peopleEdit()
         {
             InitializeComponent();
         }
@@ -58,35 +63,32 @@ namespace AppSondaj
 
         // Events for button clicks
 
-        private void btnAdd_Click(object sender, EventArgs e)
+        private void btnAddPpl_Click(object sender, EventArgs e)
+        {
+            ActivateButton(sender, btnColors.lightBlue);
+            addPerson person = new addPerson();
+            person.Show();
+        }
+
+        private void btnDeletePpl_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, btnColors.lightBlue);
         }
 
-        private void btnDelete_Click(object sender, EventArgs e)
-        {
-            ActivateButton(sender, btnColors.lightBlue);
-        }
-
-        private void pollEdit_Load(object sender, EventArgs e)
+        private void peopleEdit_Load(object sender, EventArgs e)
         {
             try
             {
                 using (IDbConnection connection = new SqlConnection(Helper.dbConn("dbSondaj")))
                 {
-                    dataAD = new SqlDataAdapter("SELECT Nume, Prenume, Tematica, Intrebare, Raspuns from Sondaj " +
-                        "inner join Raspuns on Sondaj.sondajID = Raspuns.raspunsID " +
-                        "inner join Persoana on Raspuns.presoanaID = Persoana.persoanaID " +
-                        "inner join Intrebare on Raspuns.intrebareID = Intrebare.intrebareID " +
-                        "inner join Tematica on Intrebare.tematicaID = Tematica.tematicaID " +
-                        "inner join Limba on Sondaj.limbaID = Limba.limbaID", (SqlConnection)connection);
+                    dataAD = new SqlDataAdapter("SELECT * FROM Persoana", (SqlConnection)connection);
 
                     dt = new System.Data.DataTable();
                     dataAD.Fill(dt);
-                    outPoll.DataSource = dt;
+                    gridPeople.DataSource = dt;
 
                     // Adapt columns width to the largest string
-                    foreach (DataGridViewColumn column in outPoll.Columns)
+                    foreach (DataGridViewColumn column in gridPeople.Columns)
                     {
                         column.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
                     }
