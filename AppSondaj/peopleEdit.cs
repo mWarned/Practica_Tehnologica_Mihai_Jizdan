@@ -61,21 +61,8 @@ namespace AppSondaj
             }
         }
 
-        // Events for button clicks
-
-        private void btnAddPpl_Click(object sender, EventArgs e)
-        {
-            ActivateButton(sender, btnColors.lightBlue);
-            addPerson person = new addPerson();
-            person.Show();
-        }
-
-        private void btnDeletePpl_Click(object sender, EventArgs e)
-        {
-            ActivateButton(sender, btnColors.lightBlue);
-        }
-
-        private void peopleEdit_Load(object sender, EventArgs e)
+        // Refresh the datagrid output
+        public void refreshPeople()
         {
             try
             {
@@ -94,10 +81,96 @@ namespace AppSondaj
                     }
                 }
             }
-            catch (Exception ex)
+            catch(Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        // Events for button clicks
+
+        private void btnAddPpl_Click(object sender, EventArgs e)
+        {
+            ActivateButton(sender, btnColors.lightBlue);
+            addPerson person = new addPerson();
+            person.Show();
+        }
+
+        private void btnDeletePpl_Click(object sender, EventArgs e)
+        {
+            ActivateButton(sender, btnColors.lightBlue);
+            if (gridPeople.SelectedRows.Count > 0)
+            {
+                // Get the selected record's identifier, assuming it is stored in a column named "ID"
+                int selectedID = Convert.ToInt32(gridPeople.SelectedRows[0].Cells["persoanaID"].Value);
+
+                try
+                {
+                    using (IDbConnection connection = new SqlConnection(Helper.dbConn("dbSondaj")))
+                    {
+                        // Proceding to see if the selected person has any foreign key references
+                        using (SqlCommand command = new SqlCommand("select count(*) from Raspuns where persoanaID = @ID", (SqlConnection)connection))
+                        {
+                            command.Parameters.AddWithValue("@ID", selectedID);
+
+                            connection.Open();
+                            int count = (int)command.ExecuteScalar();
+
+                            if (count > 0)
+                            {
+                                DialogResult result = MessageBox.Show("Selected person has given an answer to the poll, are you willing to delete the poll result as well?", "Delete answer as well?", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                                if (result == DialogResult.Yes)
+                                {
+                                    MessageBox.Show("Delete");
+                                }
+                                else
+                                {
+                                    using (SqlCommand commandDelete = new SqlCommand("delete from Persoana where persoanaID = @ID", (SqlConnection)connection))
+                                    {
+                                        commandDelete.Parameters.AddWithValue("@ID", selectedID);
+
+                                        connection.Open();
+                                        commandDelete.ExecuteNonQuery();
+                                    }
+
+                                    // Refresh the DataGridView after deletion
+                                    refreshPeople();
+
+                                    MessageBox.Show("Person was deleted!");
+                                }
+                            }
+                            else
+                            {
+                                using (SqlCommand commandDelete = new SqlCommand("delete from Persoana where persoanaID = @ID", (SqlConnection)connection))
+                                {
+                                    commandDelete.Parameters.AddWithValue("@ID", selectedID);
+
+                                    connection.Open();
+                                    commandDelete.ExecuteNonQuery();
+                                }
+
+                                // Refresh the DataGridView after deletion
+                                refreshPeople();
+
+                                MessageBox.Show("Person was deleted!");
+                            }
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Select the row containing the person you want to delete!", "Select row!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void peopleEdit_Load(object sender, EventArgs e)
+        {
+            refreshPeople();
         }
     }
 }

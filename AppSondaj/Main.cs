@@ -125,5 +125,11 @@ namespace AppSondaj
         {
             WindowState = FormWindowState.Minimized;
         }
+
+        private void usrImg_Click(object sender, EventArgs e)
+        {
+            pnlDesktop.Controls.Clear();
+            Reset();
+        }
     }
 }

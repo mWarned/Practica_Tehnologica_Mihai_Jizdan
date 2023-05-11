@@ -39,7 +39,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.usrImg = new System.Windows.Forms.PictureBox();
             this.lblUsername = new System.Windows.Forms.Label();
             this.imgUser = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -49,7 +49,7 @@
             this.navPanel.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.usrImg)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgUser)).BeginInit();
             this.panel3.SuspendLayout();
             this.SuspendLayout();
@@ -172,7 +172,7 @@
             // panel2
             // 
             this.panel2.Controls.Add(this.label1);
-            this.panel2.Controls.Add(this.pictureBox1);
+            this.panel2.Controls.Add(this.usrImg);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
@@ -191,17 +191,18 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Username";
             // 
-            // pictureBox1
+            // usrImg
             // 
-            this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pictureBox1.Image = global::AppSondaj.Properties.Resources.user;
-            this.pictureBox1.Location = new System.Drawing.Point(80, 28);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(60, 60);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            this.usrImg.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.usrImg.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.usrImg.Image = global::AppSondaj.Properties.Resources.user;
+            this.usrImg.Location = new System.Drawing.Point(80, 28);
+            this.usrImg.Name = "usrImg";
+            this.usrImg.Size = new System.Drawing.Size(60, 60);
+            this.usrImg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.usrImg.TabIndex = 0;
+            this.usrImg.TabStop = false;
+            this.usrImg.Click += new System.EventHandler(this.usrImg_Click);
             // 
             // lblUsername
             // 
@@ -298,7 +299,7 @@
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.usrImg)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgUser)).EndInit();
             this.panel3.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -317,7 +318,7 @@
         private System.Windows.Forms.Panel pnlSideBtn;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox usrImg;
         private System.Windows.Forms.Panel panel3;
         private FontAwesome.Sharp.IconButton btnMinimize;
         private FontAwesome.Sharp.IconButton btnExit;
