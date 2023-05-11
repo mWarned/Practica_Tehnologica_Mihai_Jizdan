@@ -29,11 +29,13 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.iconButton1 = new FontAwesome.Sharp.IconButton();
+            this.btnClose = new FontAwesome.Sharp.IconButton();
+            this.btnExit = new FontAwesome.Sharp.IconButton();
             this.usrName = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.userSurname = new System.Windows.Forms.TextBox();
-            this.usrSex = new System.Windows.Forms.ComboBox();
+            this.usrSurname = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.usrStudies = new System.Windows.Forms.ComboBox();
@@ -46,15 +48,14 @@
             this.label8 = new System.Windows.Forms.Label();
             this.usrMunicipiu = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.userOras = new System.Windows.Forms.ComboBox();
+            this.usrOras = new System.Windows.Forms.ComboBox();
             this.usrMarried = new System.Windows.Forms.CheckBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
+            this.usrDivorced = new System.Windows.Forms.CheckBox();
+            this.usrParticipated = new System.Windows.Forms.CheckBox();
             this.btnSave = new System.Windows.Forms.Button();
-            this.iconButton1 = new FontAwesome.Sharp.IconButton();
-            this.btnClose = new FontAwesome.Sharp.IconButton();
-            this.btnExit = new FontAwesome.Sharp.IconButton();
             this.btnMinimize = new FontAwesome.Sharp.IconButton();
+            this.usrM = new System.Windows.Forms.RadioButton();
+            this.usrF = new System.Windows.Forms.RadioButton();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -68,6 +69,52 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(649, 30);
             this.panel1.TabIndex = 0;
+            // 
+            // iconButton1
+            // 
+            this.iconButton1.FlatAppearance.BorderSize = 0;
+            this.iconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(246)))));
+            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.WindowMinimize;
+            this.iconButton1.IconColor = System.Drawing.Color.White;
+            this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton1.IconSize = 14;
+            this.iconButton1.Location = new System.Drawing.Point(723, -2);
+            this.iconButton1.Name = "iconButton1";
+            this.iconButton1.Size = new System.Drawing.Size(34, 32);
+            this.iconButton1.TabIndex = 6;
+            this.iconButton1.UseVisualStyleBackColor = true;
+            // 
+            // btnClose
+            // 
+            this.btnClose.FlatAppearance.BorderSize = 0;
+            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClose.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(246)))));
+            this.btnClose.IconChar = FontAwesome.Sharp.IconChar.X;
+            this.btnClose.IconColor = System.Drawing.Color.White;
+            this.btnClose.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnClose.IconSize = 14;
+            this.btnClose.Location = new System.Drawing.Point(601, 0);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(32, 30);
+            this.btnClose.TabIndex = 13;
+            this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            // 
+            // btnExit
+            // 
+            this.btnExit.FlatAppearance.BorderSize = 0;
+            this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(246)))));
+            this.btnExit.IconChar = FontAwesome.Sharp.IconChar.X;
+            this.btnExit.IconColor = System.Drawing.Color.White;
+            this.btnExit.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnExit.IconSize = 14;
+            this.btnExit.Location = new System.Drawing.Point(763, -2);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(36, 32);
+            this.btnExit.TabIndex = 2;
+            this.btnExit.UseVisualStyleBackColor = true;
             // 
             // usrName
             // 
@@ -101,31 +148,15 @@
             this.label2.TabIndex = 4;
             this.label2.Text = "Prenume";
             // 
-            // userSurname
+            // usrSurname
             // 
-            this.userSurname.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
-            this.userSurname.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.userSurname.ForeColor = System.Drawing.SystemColors.Window;
-            this.userSurname.Location = new System.Drawing.Point(337, 74);
-            this.userSurname.Name = "userSurname";
-            this.userSurname.Size = new System.Drawing.Size(264, 29);
-            this.userSurname.TabIndex = 3;
-            // 
-            // usrSex
-            // 
-            this.usrSex.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
-            this.usrSex.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.usrSex.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.usrSex.ForeColor = System.Drawing.Color.White;
-            this.usrSex.FormattingEnabled = true;
-            this.usrSex.Items.AddRange(new object[] {
-            "Masculin",
-            "Feminin"});
-            this.usrSex.Location = new System.Drawing.Point(68, 131);
-            this.usrSex.Name = "usrSex";
-            this.usrSex.Size = new System.Drawing.Size(187, 29);
-            this.usrSex.TabIndex = 5;
-            this.usrSex.UseWaitCursor = true;
+            this.usrSurname.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
+            this.usrSurname.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.usrSurname.ForeColor = System.Drawing.SystemColors.Window;
+            this.usrSurname.Location = new System.Drawing.Point(337, 74);
+            this.usrSurname.Name = "usrSurname";
+            this.usrSurname.Size = new System.Drawing.Size(264, 29);
+            this.usrSurname.TabIndex = 3;
             // 
             // label3
             // 
@@ -134,9 +165,9 @@
             this.label3.ForeColor = System.Drawing.Color.White;
             this.label3.Location = new System.Drawing.Point(25, 134);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(37, 21);
+            this.label3.Size = new System.Drawing.Size(45, 21);
             this.label3.TabIndex = 6;
-            this.label3.Text = "Sex";
+            this.label3.Text = "Sex :";
             // 
             // label4
             // 
@@ -240,6 +271,7 @@
             this.usrJudet.Size = new System.Drawing.Size(190, 29);
             this.usrJudet.TabIndex = 13;
             this.usrJudet.UseWaitCursor = true;
+            this.usrJudet.SelectedIndexChanged += new System.EventHandler(this.usrJudet_SelectedIndexChanged);
             // 
             // label8
             // 
@@ -264,6 +296,7 @@
             this.usrMunicipiu.Size = new System.Drawing.Size(200, 29);
             this.usrMunicipiu.TabIndex = 15;
             this.usrMunicipiu.UseWaitCursor = true;
+            this.usrMunicipiu.SelectedIndexChanged += new System.EventHandler(this.usrMunicipiu_SelectedIndexChanged);
             // 
             // label9
             // 
@@ -276,18 +309,18 @@
             this.label9.TabIndex = 18;
             this.label9.Text = "Oras";
             // 
-            // userOras
+            // usrOras
             // 
-            this.userOras.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
-            this.userOras.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.userOras.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.userOras.ForeColor = System.Drawing.Color.White;
-            this.userOras.FormattingEnabled = true;
-            this.userOras.Location = new System.Drawing.Point(89, 345);
-            this.userOras.Name = "userOras";
-            this.userOras.Size = new System.Drawing.Size(190, 29);
-            this.userOras.TabIndex = 17;
-            this.userOras.UseWaitCursor = true;
+            this.usrOras.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
+            this.usrOras.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.usrOras.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.usrOras.ForeColor = System.Drawing.Color.White;
+            this.usrOras.FormattingEnabled = true;
+            this.usrOras.Location = new System.Drawing.Point(89, 345);
+            this.usrOras.Name = "usrOras";
+            this.usrOras.Size = new System.Drawing.Size(190, 29);
+            this.usrOras.TabIndex = 17;
+            this.usrOras.UseWaitCursor = true;
             // 
             // usrMarried
             // 
@@ -301,29 +334,29 @@
             this.usrMarried.Text = "Casatorit(a)";
             this.usrMarried.UseVisualStyleBackColor = true;
             // 
-            // checkBox1
+            // usrDivorced
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox1.ForeColor = System.Drawing.Color.White;
-            this.checkBox1.Location = new System.Drawing.Point(190, 409);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(113, 25);
-            this.checkBox1.TabIndex = 20;
-            this.checkBox1.Text = "Divortat(a)";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.usrDivorced.AutoSize = true;
+            this.usrDivorced.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.usrDivorced.ForeColor = System.Drawing.Color.White;
+            this.usrDivorced.Location = new System.Drawing.Point(190, 409);
+            this.usrDivorced.Name = "usrDivorced";
+            this.usrDivorced.Size = new System.Drawing.Size(113, 25);
+            this.usrDivorced.TabIndex = 20;
+            this.usrDivorced.Text = "Divortat(a)";
+            this.usrDivorced.UseVisualStyleBackColor = true;
             // 
-            // checkBox2
+            // usrParticipated
             // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox2.ForeColor = System.Drawing.Color.White;
-            this.checkBox2.Location = new System.Drawing.Point(357, 409);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(118, 25);
-            this.checkBox2.TabIndex = 21;
-            this.checkBox2.Text = "A participat";
-            this.checkBox2.UseVisualStyleBackColor = true;
+            this.usrParticipated.AutoSize = true;
+            this.usrParticipated.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.usrParticipated.ForeColor = System.Drawing.Color.White;
+            this.usrParticipated.Location = new System.Drawing.Point(357, 409);
+            this.usrParticipated.Name = "usrParticipated";
+            this.usrParticipated.Size = new System.Drawing.Size(118, 25);
+            this.usrParticipated.TabIndex = 21;
+            this.usrParticipated.Text = "A participat";
+            this.usrParticipated.UseVisualStyleBackColor = true;
             // 
             // btnSave
             // 
@@ -342,52 +375,6 @@
             this.btnSave.UseVisualStyleBackColor = false;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
-            // iconButton1
-            // 
-            this.iconButton1.FlatAppearance.BorderSize = 0;
-            this.iconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(246)))));
-            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.WindowMinimize;
-            this.iconButton1.IconColor = System.Drawing.Color.White;
-            this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton1.IconSize = 14;
-            this.iconButton1.Location = new System.Drawing.Point(723, -2);
-            this.iconButton1.Name = "iconButton1";
-            this.iconButton1.Size = new System.Drawing.Size(34, 32);
-            this.iconButton1.TabIndex = 6;
-            this.iconButton1.UseVisualStyleBackColor = true;
-            // 
-            // btnClose
-            // 
-            this.btnClose.FlatAppearance.BorderSize = 0;
-            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClose.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(246)))));
-            this.btnClose.IconChar = FontAwesome.Sharp.IconChar.X;
-            this.btnClose.IconColor = System.Drawing.Color.White;
-            this.btnClose.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnClose.IconSize = 14;
-            this.btnClose.Location = new System.Drawing.Point(601, 0);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(32, 30);
-            this.btnClose.TabIndex = 13;
-            this.btnClose.UseVisualStyleBackColor = true;
-            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
-            // 
-            // btnExit
-            // 
-            this.btnExit.FlatAppearance.BorderSize = 0;
-            this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(246)))));
-            this.btnExit.IconChar = FontAwesome.Sharp.IconChar.X;
-            this.btnExit.IconColor = System.Drawing.Color.White;
-            this.btnExit.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnExit.IconSize = 14;
-            this.btnExit.Location = new System.Drawing.Point(763, -2);
-            this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(36, 32);
-            this.btnExit.TabIndex = 2;
-            this.btnExit.UseVisualStyleBackColor = true;
-            // 
             // btnMinimize
             // 
             this.btnMinimize.FlatAppearance.BorderSize = 0;
@@ -404,6 +391,32 @@
             this.btnMinimize.UseVisualStyleBackColor = true;
             this.btnMinimize.Click += new System.EventHandler(this.btnMinimize_Click);
             // 
+            // usrM
+            // 
+            this.usrM.AutoSize = true;
+            this.usrM.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.usrM.ForeColor = System.Drawing.Color.White;
+            this.usrM.Location = new System.Drawing.Point(76, 135);
+            this.usrM.Name = "usrM";
+            this.usrM.Size = new System.Drawing.Size(81, 21);
+            this.usrM.TabIndex = 23;
+            this.usrM.TabStop = true;
+            this.usrM.Text = "Masculin";
+            this.usrM.UseVisualStyleBackColor = true;
+            // 
+            // usrF
+            // 
+            this.usrF.AutoSize = true;
+            this.usrF.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.usrF.ForeColor = System.Drawing.Color.White;
+            this.usrF.Location = new System.Drawing.Point(163, 135);
+            this.usrF.Name = "usrF";
+            this.usrF.Size = new System.Drawing.Size(76, 21);
+            this.usrF.TabIndex = 24;
+            this.usrF.TabStop = true;
+            this.usrF.Text = "Feminin";
+            this.usrF.UseVisualStyleBackColor = true;
+            // 
             // addPerson
             // 
             this.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
@@ -411,12 +424,14 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
             this.ClientSize = new System.Drawing.Size(645, 518);
+            this.Controls.Add(this.usrF);
+            this.Controls.Add(this.usrM);
             this.Controls.Add(this.btnSave);
-            this.Controls.Add(this.checkBox2);
-            this.Controls.Add(this.checkBox1);
+            this.Controls.Add(this.usrParticipated);
+            this.Controls.Add(this.usrDivorced);
             this.Controls.Add(this.usrMarried);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.userOras);
+            this.Controls.Add(this.usrOras);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.usrMunicipiu);
             this.Controls.Add(this.label7);
@@ -428,9 +443,8 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.usrStudies);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.usrSex);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.userSurname);
+            this.Controls.Add(this.usrSurname);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.usrName);
             this.Controls.Add(this.panel1);
@@ -452,8 +466,7 @@
         private System.Windows.Forms.TextBox usrName;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox userSurname;
-        private System.Windows.Forms.ComboBox usrSex;
+        private System.Windows.Forms.TextBox usrSurname;
         private FontAwesome.Sharp.IconButton iconButton1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
@@ -468,10 +481,12 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.ComboBox usrMunicipiu;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.ComboBox userOras;
+        private System.Windows.Forms.ComboBox usrOras;
         private System.Windows.Forms.CheckBox usrMarried;
-        private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.CheckBox checkBox2;
+        private System.Windows.Forms.CheckBox usrDivorced;
+        private System.Windows.Forms.CheckBox usrParticipated;
         private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.RadioButton usrM;
+        private System.Windows.Forms.RadioButton usrF;
     }
 }

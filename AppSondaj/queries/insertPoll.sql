@@ -91,11 +91,11 @@ VALUES
 
 INSERT INTO Persoana (Nume, Prenume, sex, studii, email, DataNasterii, judetID, municipiuID, orasID, Casatorit, Divortat, Participant)
 VALUES
-	('Popescu', 'Ion', 'M', 'Facultate', 'ion.popescu@gmail.com', '1980-01-01', 1, 1, 1, 0, 0, 1),
-	('Ionescu', 'Maria', 'F', 'Master', 'maria.ionescu@yahoo.com', '1990-02-15', 2, 2, 2, 1, 0, 1),
-	('Popa', 'George', 'M', 'Doctorat', 'george.popa@gmail.com', '1975-06-20', 3, 3, 3, 1, 0, 1),
-	('Andrei', 'Alexandra', 'F', 'Facultate', 'alexandra.andrei@gmail.com', '2000-09-05', 4, 4, 4, 0, 0, 1),
-	('Gheorghe', 'Marius', 'M', 'Master', 'marius.gheorghe@yahoo.com', '1985-12-31', 5, 5, 5, 1, 1, 1)
+	('Popescu', 'Ion', 'M', 'Facultate', 'ion.popescu@gmail.com', '01.01.1980', 1, 1, 1, 0, 0, 1),
+	('Ionescu', 'Maria', 'F', 'Master', 'maria.ionescu@yahoo.com', '15.02.1990', 2, 2, 2, 1, 0, 1),
+	('Popa', 'George', 'M', 'Doctorat', 'george.popa@gmail.com', '20.06.1975', 3, 3, 3, 1, 0, 1),
+	('Andrei', 'Alexandra', 'F', 'Facultate', 'alexandra.andrei@gmail.com', '05.09.2000', 4, 4, 4, 0, 0, 1),
+	('Gheorghe', 'Marius', 'M', 'Master', 'marius.gheorghe@yahoo.com', '31.12.1985', 5, 5, 5, 1, 1, 1)
 
 INSERT INTO Tematica (Tematica)
 VALUES

@@ -68,13 +68,14 @@ namespace AppSondaj
             ActivateButton(sender, btnColors.lightBlue);
         }
 
+        // Loading the data from the database nad outputting it 
         private void pollEdit_Load(object sender, EventArgs e)
         {
             try
             {
                 using (IDbConnection connection = new SqlConnection(Helper.dbConn("dbSondaj")))
                 {
-                    dataAD = new SqlDataAdapter("SELECT Nume, Prenume, Tematica, Intrebare, Raspuns from Sondaj " +
+                    dataAD = new SqlDataAdapter("select Nume, Prenume, Tematica, Intrebare, Raspuns from Sondaj " +
                         "inner join Raspuns on Sondaj.sondajID = Raspuns.raspunsID " +
                         "inner join Persoana on Raspuns.presoanaID = Persoana.persoanaID " +
                         "inner join Intrebare on Raspuns.intrebareID = Intrebare.intrebareID " +
