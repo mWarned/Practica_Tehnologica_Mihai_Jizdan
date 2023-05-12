@@ -121,10 +121,45 @@ namespace AppSondaj
                                 DialogResult result = MessageBox.Show("Selected person has given an answer to the poll, are you willing to delete the poll result as well?", "Delete answer as well?", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                                 if (result == DialogResult.Yes)
                                 {
-                                    MessageBox.Show("Delete");
-                                }
-                                else
-                                {
+                                    List<int> answID = new List<int>();
+
+                                    using (SqlCommand answSrc = new SqlCommand("select raspunsID from Raspuns where persoanaID = @ID", (SqlConnection)connection))
+                                    {
+                                        answSrc.Parameters.AddWithValue("@ID", selectedID);
+
+                                        connection.Open();
+                                        using (SqlDataReader reader = answSrc.ExecuteReader())
+                                        {
+                                            connection.Open();
+
+                                            while (reader.Read())
+                                            {
+                                                int id = (int)reader["raspunsID"];
+                                                answID.Add(id);
+                                            }
+                                            reader.Close();
+                                        }
+                                    }
+
+                                    foreach (int id in answID)
+                                    {
+                                        using (SqlCommand commandDelete = new SqlCommand("delete from Sondaj where raspunsID = @ID", (SqlConnection)connection))
+                                        {
+                                            commandDelete.Parameters.AddWithValue("@ID", id);
+
+                                            connection.Open();
+                                            commandDelete.ExecuteNonQuery();
+                                        }
+                                    }
+
+                                    using (SqlCommand commandDelete = new SqlCommand("delete from Raspuns where persoanaID = @ID", (SqlConnection)connection))
+                                    {
+                                        commandDelete.Parameters.AddWithValue("@ID", selectedID);
+
+                                        connection.Open();
+                                        commandDelete.ExecuteNonQuery();
+                                    }
+
                                     using (SqlCommand commandDelete = new SqlCommand("delete from Persoana where persoanaID = @ID", (SqlConnection)connection))
                                     {
                                         commandDelete.Parameters.AddWithValue("@ID", selectedID);
