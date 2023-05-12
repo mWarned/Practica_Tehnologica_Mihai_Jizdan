@@ -133,7 +133,7 @@ VALUES
 	('Care este cel mai interesant lucru pe care l-ai învățat recent?', 14),
 	('Ce înseamnă religia pentru tine?', 15);
 
-INSERT INTO Raspuns (Raspuns, intrebareID, presoanaID)
+INSERT INTO Raspuns (Raspuns, intrebareID, persoanaID)
 VALUES
 	('Michael Jackson', 1, 1),
 	('Ed Sheeran', 1, 2),

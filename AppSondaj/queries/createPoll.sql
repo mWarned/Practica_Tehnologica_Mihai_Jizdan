@@ -50,7 +50,7 @@ create table Raspuns(
 	raspunsID int primary key identity(1, 1),
 	Raspuns varchar(200),
 	intrebareID int foreign key references Intrebare(intrebareID),
-	presoanaID int foreign key references Persoana(persoanaID)
+	persoanaID int foreign key references Persoana(persoanaID)
 )
 
 create table Limba(
