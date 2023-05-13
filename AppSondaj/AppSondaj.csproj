@@ -130,6 +130,7 @@
     <Content Include="fonts\fontawesome-webfont.svg" />
     <None Include="images\people.png" />
     <None Include="images\save.png" />
+    <None Include="images\update.png" />
     <Content Include="queries\createPoll.sql" />
     <Content Include="queries\insertPoll.sql" />
     <None Include="images\report.png" />

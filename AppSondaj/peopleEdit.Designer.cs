@@ -32,6 +32,7 @@
             this.gridPeople = new System.Windows.Forms.DataGridView();
             this.grpActions = new System.Windows.Forms.GroupBox();
             this.pnlSideBtn = new System.Windows.Forms.Panel();
+            this.btnUpdate = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.gridPeople)).BeginInit();
@@ -51,6 +52,7 @@
             // grpActions
             // 
             this.grpActions.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.grpActions.Controls.Add(this.btnUpdate);
             this.grpActions.Controls.Add(this.pnlSideBtn);
             this.grpActions.Controls.Add(this.btnDelete);
             this.grpActions.Controls.Add(this.btnAdd);
@@ -71,6 +73,22 @@
             this.pnlSideBtn.TabIndex = 4;
             this.pnlSideBtn.Visible = false;
             // 
+            // btnUpdate
+            // 
+            this.btnUpdate.FlatAppearance.BorderSize = 0;
+            this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUpdate.Font = new System.Drawing.Font("Nirmala UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpdate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(246)))));
+            this.btnUpdate.Image = global::AppSondaj.Properties.Resources.update;
+            this.btnUpdate.Location = new System.Drawing.Point(6, 103);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(226, 66);
+            this.btnUpdate.TabIndex = 5;
+            this.btnUpdate.Text = "Update";
+            this.btnUpdate.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
+            // 
             // btnDelete
             // 
             this.btnDelete.FlatAppearance.BorderSize = 0;
@@ -78,7 +96,7 @@
             this.btnDelete.Font = new System.Drawing.Font("Nirmala UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDelete.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(246)))));
             this.btnDelete.Image = global::AppSondaj.Properties.Resources.delete;
-            this.btnDelete.Location = new System.Drawing.Point(6, 117);
+            this.btnDelete.Location = new System.Drawing.Point(6, 175);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(226, 66);
             this.btnDelete.TabIndex = 3;
@@ -131,5 +149,6 @@
         private System.Windows.Forms.Panel pnlSideBtn;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnAdd;
+        private System.Windows.Forms.Button btnUpdate;
     }
 }

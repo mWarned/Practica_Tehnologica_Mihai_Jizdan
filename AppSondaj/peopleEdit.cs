@@ -20,6 +20,8 @@ namespace AppSondaj
         public peopleEdit()
         {
             InitializeComponent();
+
+            gridPeople.MultiSelect = false;
         }
 
         // A struct to store the colors
@@ -68,11 +70,17 @@ namespace AppSondaj
             {
                 using (IDbConnection connection = new SqlConnection(Helper.dbConn("dbSondaj")))
                 {
-                    dataAD = new SqlDataAdapter("SELECT * FROM Persoana", (SqlConnection)connection);
+                    dataAD = new SqlDataAdapter("select persoanaID, Nume, Prenume, sex, studii, email, DataNasterii, Persoana.judetID, numeJudet, Persoana.municipiuID, numeMunicipiu, Persoana.orasID, numeOras, Casatorit, Divortat, Participant" +
+                        " from Persoana inner join Judet on Persoana.judetID = Judet.judetID inner join Municipiu on Persoana.municipiuID = Municipiu.municipiuID" +
+                        " inner join Oras on Persoana.orasID = Oras.orasID", (SqlConnection)connection);
 
                     dt = new System.Data.DataTable();
                     dataAD.Fill(dt);
                     gridPeople.DataSource = dt;
+                    gridPeople.Columns["persoanaID"].Visible = false;
+                    gridPeople.Columns["judetID"].Visible = false;
+                    gridPeople.Columns["municipiuID"].Visible = false;
+                    gridPeople.Columns["orasID"].Visible = false;
 
                     // Adapt columns width to the largest string
                     foreach (DataGridViewColumn column in gridPeople.Columns)
@@ -101,14 +109,14 @@ namespace AppSondaj
             ActivateButton(sender, btnColors.lightBlue);
             if (gridPeople.SelectedRows.Count > 0)
             {
-                // Get the selected record's identifier, assuming it is stored in a column named "ID"
+                // Get the selected record's identifier
                 int selectedID = Convert.ToInt32(gridPeople.SelectedRows[0].Cells["persoanaID"].Value);
 
                 try
                 {
                     using (IDbConnection connection = new SqlConnection(Helper.dbConn("dbSondaj")))
                     {
-                        // Proceding to see if the selected person has any foreign key references
+                        // Check if the selected person has any foreign key references
                         using (SqlCommand command = new SqlCommand("select count(*) from Raspuns where persoanaID = @ID", (SqlConnection)connection))
                         {
                             command.Parameters.AddWithValue("@ID", selectedID);
@@ -118,53 +126,28 @@ namespace AppSondaj
 
                             if (count > 0)
                             {
-                                DialogResult result = MessageBox.Show("Selected person has given an answer to the poll, are you willing to delete the poll result as well?", "Delete answer as well?", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                                DialogResult result = MessageBox.Show("Selected person has given an answer to the poll, are you willing to delete the poll result as well?",
+                                    "Delete answer as well?", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                                 if (result == DialogResult.Yes)
                                 {
-                                    List<int> answID = new List<int>();
-
-                                    using (SqlCommand answSrc = new SqlCommand("select raspunsID from Raspuns where persoanaID = @ID", (SqlConnection)connection))
+                                    using (SqlCommand cmd = new SqlCommand("delete from Sondaj where raspunsID in (select raspunsID from Raspuns where persoanaID = @ID)",
+                                        (SqlConnection)connection))
                                     {
-                                        answSrc.Parameters.AddWithValue("@ID", selectedID);
+                                        cmd.Parameters.AddWithValue("@ID", selectedID);
+                                        cmd.ExecuteNonQuery();
 
-                                        connection.Open();
-                                        using (SqlDataReader reader = answSrc.ExecuteReader())
-                                        {
-                                            connection.Open();
-
-                                            while (reader.Read())
-                                            {
-                                                int id = (int)reader["raspunsID"];
-                                                answID.Add(id);
-                                            }
-                                            reader.Close();
-                                        }
-                                    }
-
-                                    foreach (int id in answID)
-                                    {
-                                        using (SqlCommand commandDelete = new SqlCommand("delete from Sondaj where raspunsID = @ID", (SqlConnection)connection))
-                                        {
-                                            commandDelete.Parameters.AddWithValue("@ID", id);
-
-                                            connection.Open();
-                                            commandDelete.ExecuteNonQuery();
-                                        }
+                                        connection.Close();
                                     }
 
                                     using (SqlCommand commandDelete = new SqlCommand("delete from Raspuns where persoanaID = @ID", (SqlConnection)connection))
                                     {
                                         commandDelete.Parameters.AddWithValue("@ID", selectedID);
-
-                                        connection.Open();
                                         commandDelete.ExecuteNonQuery();
                                     }
 
                                     using (SqlCommand commandDelete = new SqlCommand("delete from Persoana where persoanaID = @ID", (SqlConnection)connection))
                                     {
                                         commandDelete.Parameters.AddWithValue("@ID", selectedID);
-
-                                        connection.Open();
                                         commandDelete.ExecuteNonQuery();
                                     }
 
@@ -180,7 +163,6 @@ namespace AppSondaj
                                 {
                                     commandDelete.Parameters.AddWithValue("@ID", selectedID);
 
-                                    connection.Open();
                                     commandDelete.ExecuteNonQuery();
                                 }
 
@@ -191,6 +173,42 @@ namespace AppSondaj
                             }
                         }
                     }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Select the row containing the person you want to delete!", "Select row!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            ActivateButton(sender, btnColors.lightBlue);
+            if (gridPeople.SelectedRows.Count > 0)
+            {
+                // Get the selected record's identifier
+                int selectedID = Convert.ToInt32(gridPeople.SelectedRows[0].Cells["persoanaID"].Value);
+
+                try
+                {
+                    string name = Convert.ToString(gridPeople.SelectedRows[0].Cells["Nume"].Value);
+                    string surname = Convert.ToString(gridPeople.SelectedRows[0].Cells["Prenume"].Value);
+                    char sex = Convert.ToChar(gridPeople.SelectedRows[0].Cells["sex"].Value);
+                    string studies = Convert.ToString(gridPeople.SelectedRows[0].Cells["studii"].Value);
+                    string email = Convert.ToString(gridPeople.SelectedRows[0].Cells["email"].Value);
+                    DateTime birthday = Convert.ToDateTime(gridPeople.SelectedRows[0].Cells["Prenume"].Value);
+                    int judetID = Convert.ToInt32(gridPeople.SelectedRows[0].Cells["judetID"].Value);
+                    int municipiuID = Convert.ToInt32(gridPeople.SelectedRows[0].Cells["municipiuID"].Value);
+                    int orasID = Convert.ToInt32(gridPeople.SelectedRows[0].Cells["orasID"].Value);
+                    bool married = Convert.ToBoolean(gridPeople.SelectedRows[0].Cells["orasID"].Value);
+                    bool divorced = Convert.ToBoolean(gridPeople.SelectedRows[0].Cells["orasID"].Value);
+                    bool participates = Convert.ToBoolean(gridPeople.SelectedRows[0].Cells["orasID"].Value);
+
+                    addPerson person = new addPerson();
                 }
                 catch (Exception ex)
                 {

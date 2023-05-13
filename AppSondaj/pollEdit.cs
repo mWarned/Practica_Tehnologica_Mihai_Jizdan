@@ -77,7 +77,7 @@ namespace AppSondaj
                 {
                     dataAD = new SqlDataAdapter("select Nume, Prenume, Tematica, Intrebare, Raspuns from Sondaj " +
                         "inner join Raspuns on Sondaj.sondajID = Raspuns.raspunsID " +
-                        "inner join Persoana on Raspuns.presoanaID = Persoana.persoanaID " +
+                        "inner join Persoana on Raspuns.persoanaID = Persoana.persoanaID " +
                         "inner join Intrebare on Raspuns.intrebareID = Intrebare.intrebareID " +
                         "inner join Tematica on Intrebare.tematicaID = Tematica.tematicaID " +
                         "inner join Limba on Sondaj.limbaID = Limba.limbaID", (SqlConnection)connection);

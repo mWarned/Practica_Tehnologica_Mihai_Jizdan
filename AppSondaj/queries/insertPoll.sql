@@ -117,21 +117,21 @@ VALUES
 
 INSERT INTO Intrebare (Intrebare, tematicaID)
 VALUES
-	('Care este artistul tău preferat?', 1),
-	('Ce opinie ai despre politica actuală?', 2),
-	('Care este sportul tău preferat?', 3),
-	('Ce gadget tehnologic nu ai putea trăi fără?', 4),
+	('Care este artistul tau preferat?', 1),
+	('Ce opinie ai despre politica actuala?', 2),
+	('Care este sportul tau preferat?', 3),
+	('Ce gadget tehnologic nu ai putea trai fara?', 4),
 	('Ce stil vestimentar preferi?', 5),
-	('Care este cea mai frumoasă destinație de călătorie pe care ai vizitat-o?', 6),
-	('Ce fel de mâncare preferi?', 7),
-	('Ce subiect ți-ar plăcea să înveți mai mult despre?', 8),
-	('Care este melodia ta preferată?', 9),	
-	('Care este filmul sau serialul tău preferat?', 10),
-	('Ce ai făcut recent pentru a-ți menține sănătatea?', 11),
-	('Ce crezi despre încălzirea globală și schimbările climatice?', 12),
-	('Ai vreo afacere sau idee de afacere pe care ți-ar plăcea să o începi?', 13),
-	('Care este cel mai interesant lucru pe care l-ai învățat recent?', 14),
-	('Ce înseamnă religia pentru tine?', 15);
+	('Care este cea mai frumoasa destinatie de calatorie pe care ai vizitat-o?', 6),
+	('Ce fel de mancare preferi?', 7),
+	('Ce subiect ti-ar placea sa inveti mai mult despre?', 8),
+	('Care este melodia ta preferata?', 9),	
+	('Care este filmul sau serialul tau preferat?', 10),
+	('Ce ai facut recent pentru a-ti mentine sanatatea?', 11),
+	('Ce crezi despre incalzirea globala si schimbarile climatice?', 12),
+	('Ai vreo afacere sau idee de afacere pe care ti-ar placea sa o incepi?', 13),
+	('Care este cel mai interesant lucru pe care l-ai invatat recent?', 14),
+	('Ce inseamnă religia pentru tine?', 15);
 
 INSERT INTO Raspuns (Raspuns, intrebareID, persoanaID)
 VALUES
@@ -140,16 +140,16 @@ VALUES
 	('Adele', 1, 3),
 	('Queen', 1, 4),
 	('Coldplay', 1, 5),
-	('Nu sunt interesat de politică', 2, 1),
-	('Sunt dezamăgit de politica actuală', 2, 2),
-	('Cred că sunt necesare reforme politice majore', 2, 3),
-	('Consider că politica ar trebui să se concentreze mai mult pe nevoile cetățenilor', 2, 4),
-	('Sunt mulțumit de situația politică actuală', 2, 5),
+	('Nu sunt interesat de politica', 2, 1),
+	('Sunt dezamagit de politica actuala', 2, 2),
+	('Cred ca sunt necesare reforme politice majore', 2, 3),
+	('Consider ca politica ar trebui sa se concentreze mai mult pe nevoile cetatenilor', 2, 4),
+	('Sunt multumit de situatia politica actuala', 2, 5),
 	('Fotbal', 3, 1),
 	('Tenis', 3, 2),
 	('Volei', 3, 3),
 	('Ciclism', 3, 4),
-	('Înot', 3, 5),
+	('Inot', 3, 5),
 	('Telefonul mobil', 4, 1),
 	('Laptopul', 4, 2),
 	('Tableta', 4, 3),
@@ -169,10 +169,10 @@ VALUES
 	('Sushi', 7, 2),
 	('Burger', 7, 3),
 	('Paste', 7, 4),
-	('Friptură', 7, 5),
+	('Friptura', 7, 5),
 	('Istorie', 8, 1),
 	('Psihologie', 8, 2),
-	('Arta culinară', 8, 3),
+	('Arta culinara', 8, 3),
 	('Programare', 8, 4),
 	('Design grafic', 8, 5),
 	('Bohemian Rhapsody - Queen', 9, 1),
@@ -185,16 +185,16 @@ VALUES
 	('Game of Thrones', 10, 3),
 	('The Shawshank Redemption', 10, 4),
 	('The Big Bang Theory', 10, 5),
-	('M-am înscris la un club de fitness', 11, 1),
-	('Mănânc mai sănătos', 11, 2),
-	('Am început să alerg în parc', 11, 3),
+	('M-am inscris la un club de fitness', 11, 1),
+	('Mananc mai sanatos', 11, 2),
+	('Am inceput sa alerg in parc', 11, 3),
 	('Fac yoga', 11, 4),
-	('Am început să merg la sală de fitness', 11, 5),
+	('Am inceput sa merg la sala de fitness', 11, 5),
 	('Este un fenomen real și preocupant', 12, 1),
-	('Este o invenție a mass-mediei', 12, 2),
+	('Este o inventie a mass-mediei', 12, 2),
 	('Nu cred ca o atat de importanta', 12, 3),
 	('Nu am o opinie', 12, 4),
-	('Este extrem de important sa atragem atenția aspura acestei probleme', 12, 5)
+	('Este extrem de important sa atragem atentia aspura acestei probleme', 12, 5)
 
 INSERT INTO Limba (Limba)
 VALUES
@@ -203,7 +203,7 @@ VALUES
 	('Germana'), 
 	('Spaniola'), 
 	('Italiana'), 
-	('Româna'), 
+	('Romana'), 
 	('Rusa')
 
 INSERT INTO Sondaj(raspunsID, limbaID)
