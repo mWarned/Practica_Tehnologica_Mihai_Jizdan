@@ -31,10 +31,11 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(peopleEdit));
             this.gridPeople = new System.Windows.Forms.DataGridView();
             this.grpActions = new System.Windows.Forms.GroupBox();
-            this.pnlSideBtn = new System.Windows.Forms.Panel();
             this.btnUpdate = new System.Windows.Forms.Button();
+            this.pnlSideBtn = new System.Windows.Forms.Panel();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
+            this.btnRefresh = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.gridPeople)).BeginInit();
             this.grpActions.SuspendLayout();
             this.SuspendLayout();
@@ -52,6 +53,7 @@
             // grpActions
             // 
             this.grpActions.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.grpActions.Controls.Add(this.btnRefresh);
             this.grpActions.Controls.Add(this.btnUpdate);
             this.grpActions.Controls.Add(this.pnlSideBtn);
             this.grpActions.Controls.Add(this.btnDelete);
@@ -64,14 +66,6 @@
             this.grpActions.TabIndex = 9;
             this.grpActions.TabStop = false;
             this.grpActions.Text = "Actions";
-            // 
-            // pnlSideBtn
-            // 
-            this.pnlSideBtn.Location = new System.Drawing.Point(225, 31);
-            this.pnlSideBtn.Name = "pnlSideBtn";
-            this.pnlSideBtn.Size = new System.Drawing.Size(7, 66);
-            this.pnlSideBtn.TabIndex = 4;
-            this.pnlSideBtn.Visible = false;
             // 
             // btnUpdate
             // 
@@ -88,6 +82,14 @@
             this.btnUpdate.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.btnUpdate.UseVisualStyleBackColor = true;
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
+            // 
+            // pnlSideBtn
+            // 
+            this.pnlSideBtn.Location = new System.Drawing.Point(225, 31);
+            this.pnlSideBtn.Name = "pnlSideBtn";
+            this.pnlSideBtn.Size = new System.Drawing.Size(7, 66);
+            this.pnlSideBtn.TabIndex = 4;
+            this.pnlSideBtn.Visible = false;
             // 
             // btnDelete
             // 
@@ -121,6 +123,22 @@
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAddPpl_Click);
             // 
+            // btnRefresh
+            // 
+            this.btnRefresh.FlatAppearance.BorderSize = 0;
+            this.btnRefresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRefresh.Font = new System.Drawing.Font("Nirmala UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRefresh.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(246)))));
+            this.btnRefresh.Image = global::AppSondaj.Properties.Resources.update;
+            this.btnRefresh.Location = new System.Drawing.Point(6, 575);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(226, 66);
+            this.btnRefresh.TabIndex = 6;
+            this.btnRefresh.Text = "Refresh";
+            this.btnRefresh.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btnRefresh.UseVisualStyleBackColor = true;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
+            // 
             // peopleEdit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -134,7 +152,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "peopleEdit";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "peopleEdit";
+            this.Text = "Refresh";
             this.Load += new System.EventHandler(this.peopleEdit_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gridPeople)).EndInit();
             this.grpActions.ResumeLayout(false);
@@ -143,12 +161,12 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.DataGridView gridPeople;
         private System.Windows.Forms.GroupBox grpActions;
         private System.Windows.Forms.Panel pnlSideBtn;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnUpdate;
+        public System.Windows.Forms.DataGridView gridPeople;
+        private System.Windows.Forms.Button btnRefresh;
     }
 }

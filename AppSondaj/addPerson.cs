@@ -6,6 +6,7 @@ using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -16,6 +17,7 @@ namespace AppSondaj
         SqlDataAdapter dataAD;
         DataTable dt;
         private SqlCommand cmd;
+        public int personID;
 
         public addPerson()
         {
@@ -163,13 +165,92 @@ namespace AppSondaj
                             married + "', '" + divorced + "', '" + participated + "')", (SqlConnection)connection);
                         cmd.ExecuteNonQuery();
 
-                        MessageBox.Show("Datele au fost salvate");
+                        MessageBox.Show("New person added!");
 
                         this.Close();
                     }
                     else
                     {
-                        MessageBox.Show("Va rog completati toate campurile");
+                        MessageBox.Show("Data incomplete, please fill all fields");
+                    }
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            int judetID = Convert.ToInt32(usrJudet.SelectedValue);
+            int municipiuID = Convert.ToInt32(usrMunicipiu.SelectedValue);
+            int orasID = Convert.ToInt32(usrOras.SelectedValue);
+
+            bool married, divorced, participated;
+
+            try
+            {
+                string sex = "";
+
+                using (IDbConnection connection = new SqlConnection(Helper.dbConn("dbSondaj")))
+                {
+                    connection.Open();
+
+                    if (usrM.Checked)
+                    {
+                        sex = "M";
+                    }
+                    else
+                    {
+                        sex = "F";
+                    }
+
+                    if (usrMarried.Checked)
+                    {
+                        married = true;
+                    }
+                    else
+                    {
+                        married = false;
+                    }
+
+                    if (usrDivorced.Checked)
+                    {
+                        divorced = true;
+                    }
+                    else
+                    {
+                        divorced = false;
+                    }
+
+                    if (usrParticipated.Checked)
+                    {
+                        participated = true;
+                    }
+                    else
+                    {
+                        participated = false;
+                    }
+
+                    if (usrName.Text != "" && usrSurname.Text != "" && usrStudies.Text != ""
+                        && usrEmail.Text != "" && usrBirthday.Text != "" && usrJudet.Text != ""
+                        && usrMunicipiu.Text != "" && usrOras.Text != "")
+                    {
+                        cmd = new SqlCommand("update Persoana set Nume='" + usrName.Text + "', Prenume='" +
+                            usrSurname.Text + "', sex='" + sex + "', studii='" + usrStudies.Text + "', email='" + usrEmail.Text + "', DataNasterii='" +
+                            usrBirthday.Text + "', judetID='" + judetID + "', municipiuID='" + municipiuID + "', orasID='" + orasID + "', Casatorit='" +
+                            married + "', Divortat='" + divorced + "', Participant='" + participated + "' where persoanaID = " + personID, (SqlConnection)connection);
+                        cmd.ExecuteNonQuery();
+
+                        MessageBox.Show("Changes were saved!");
+
+                        this.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Data incomplete, please fill all fields!");
                     }
                 }
 

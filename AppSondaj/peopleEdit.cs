@@ -92,7 +92,7 @@ namespace AppSondaj
             catch(Exception ex)
             {
                 MessageBox.Show(ex.Message);
-            }
+            }   
         }
 
         // Events for button clicks
@@ -193,22 +193,44 @@ namespace AppSondaj
                 // Get the selected record's identifier
                 int selectedID = Convert.ToInt32(gridPeople.SelectedRows[0].Cells["persoanaID"].Value);
 
+                addPerson person = new addPerson();
+
                 try
                 {
-                    string name = Convert.ToString(gridPeople.SelectedRows[0].Cells["Nume"].Value);
-                    string surname = Convert.ToString(gridPeople.SelectedRows[0].Cells["Prenume"].Value);
-                    char sex = Convert.ToChar(gridPeople.SelectedRows[0].Cells["sex"].Value);
-                    string studies = Convert.ToString(gridPeople.SelectedRows[0].Cells["studii"].Value);
-                    string email = Convert.ToString(gridPeople.SelectedRows[0].Cells["email"].Value);
-                    DateTime birthday = Convert.ToDateTime(gridPeople.SelectedRows[0].Cells["Prenume"].Value);
-                    int judetID = Convert.ToInt32(gridPeople.SelectedRows[0].Cells["judetID"].Value);
-                    int municipiuID = Convert.ToInt32(gridPeople.SelectedRows[0].Cells["municipiuID"].Value);
-                    int orasID = Convert.ToInt32(gridPeople.SelectedRows[0].Cells["orasID"].Value);
-                    bool married = Convert.ToBoolean(gridPeople.SelectedRows[0].Cells["orasID"].Value);
-                    bool divorced = Convert.ToBoolean(gridPeople.SelectedRows[0].Cells["orasID"].Value);
-                    bool participates = Convert.ToBoolean(gridPeople.SelectedRows[0].Cells["orasID"].Value);
+                    person.personID = selectedID;
 
-                    addPerson person = new addPerson();
+                    person.usrName.Text = Convert.ToString(gridPeople.SelectedRows[0].Cells["Nume"].Value);
+                    person.usrSurname.Text = Convert.ToString(gridPeople.SelectedRows[0].Cells["Prenume"].Value);
+                    if (Convert.ToChar(gridPeople.SelectedRows[0].Cells["sex"].Value) == 'M')
+                    {
+                        person.usrM.Checked = true;
+                    }
+                    else
+                    {
+                        person.usrF.Checked = true;
+                    }
+                    person.usrStudies.Text = Convert.ToString(gridPeople.SelectedRows[0].Cells["studii"].Value);
+                    person.usrEmail.Text = Convert.ToString(gridPeople.SelectedRows[0].Cells["email"].Value);
+                    person.usrBirthday.Value = Convert.ToDateTime(gridPeople.SelectedRows[0].Cells["DataNasterii"].Value);
+                    person.usrJudet.Text = Convert.ToString(gridPeople.SelectedRows[0].Cells["numeJudet"].Value);
+                    person.usrMunicipiu.Text = Convert.ToString(gridPeople.SelectedRows[0].Cells["numeMunicipiu"].Value);
+                    person.usrOras.Text = Convert.ToString(gridPeople.SelectedRows[0].Cells["numeOras"].Value);
+                    if (Convert.ToBoolean(gridPeople.SelectedRows[0].Cells["Casatorit"].Value) == true)
+                    {
+                        person.usrMarried.Checked = true;
+                    }
+                    if (Convert.ToBoolean(gridPeople.SelectedRows[0].Cells["Divortat"].Value) == true)
+                    {
+                        person.usrDivorced.Checked = true;
+                    }
+                    if (Convert.ToBoolean(gridPeople.SelectedRows[0].Cells["Participant"].Value) == true)
+                    {
+                        person.usrParticipated.Checked = true;
+                    }
+
+                    person.btnSave.Visible = false;
+                    person.btnUpdate.Visible = true;
+                    person.Show();
                 }
                 catch (Exception ex)
                 {
@@ -217,11 +239,16 @@ namespace AppSondaj
             }
             else
             {
-                MessageBox.Show("Select the row containing the person you want to delete!", "Select row!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Select the row containing the person whose data you want to update!", "Select row!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
         private void peopleEdit_Load(object sender, EventArgs e)
+        {
+            refreshPeople();
+        }
+
+        private void btnRefresh_Click(object sender, EventArgs e)
         {
             refreshPeople();
         }

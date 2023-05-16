@@ -57,6 +57,7 @@
             this.btnMinimize = new FontAwesome.Sharp.IconButton();
             this.usrM = new System.Windows.Forms.RadioButton();
             this.usrF = new System.Windows.Forms.RadioButton();
+            this.btnUpdate = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -418,6 +419,24 @@
             this.usrF.Text = "Feminin";
             this.usrF.UseVisualStyleBackColor = true;
             // 
+            // btnUpdate
+            // 
+            this.btnUpdate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
+            this.btnUpdate.FlatAppearance.BorderSize = 0;
+            this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUpdate.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpdate.ForeColor = System.Drawing.Color.White;
+            this.btnUpdate.Image = global::AppSondaj.Properties.Resources.update;
+            this.btnUpdate.Location = new System.Drawing.Point(482, 455);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(151, 51);
+            this.btnUpdate.TabIndex = 25;
+            this.btnUpdate.Text = "Update";
+            this.btnUpdate.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btnUpdate.UseVisualStyleBackColor = false;
+            this.btnUpdate.Visible = false;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
+            // 
             // addPerson
             // 
             this.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
@@ -425,6 +444,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
             this.ClientSize = new System.Drawing.Size(645, 518);
+            this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.usrF);
             this.Controls.Add(this.usrM);
             this.Controls.Add(this.btnSave);
@@ -465,30 +485,31 @@
         private System.Windows.Forms.Panel panel1;
         private FontAwesome.Sharp.IconButton btnMinimize;
         private FontAwesome.Sharp.IconButton btnExit;
-        private System.Windows.Forms.TextBox usrName;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox usrSurname;
         private FontAwesome.Sharp.IconButton iconButton1;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ComboBox usrStudies;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox usrEmail;
-        private System.Windows.Forms.Label label6;
         private FontAwesome.Sharp.IconButton btnClose;
-        private System.Windows.Forms.DateTimePicker usrBirthday;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.ComboBox usrJudet;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.ComboBox usrMunicipiu;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.ComboBox usrOras;
-        private System.Windows.Forms.CheckBox usrMarried;
-        private System.Windows.Forms.CheckBox usrDivorced;
-        private System.Windows.Forms.CheckBox usrParticipated;
-        private System.Windows.Forms.Button btnSave;
-        private System.Windows.Forms.RadioButton usrM;
-        private System.Windows.Forms.RadioButton usrF;
+        public System.Windows.Forms.TextBox usrName;
+        public System.Windows.Forms.Label label1;
+        public System.Windows.Forms.Label label2;
+        public System.Windows.Forms.TextBox usrSurname;
+        public System.Windows.Forms.Label label3;
+        public System.Windows.Forms.Label label4;
+        public System.Windows.Forms.ComboBox usrStudies;
+        public System.Windows.Forms.Label label5;
+        public System.Windows.Forms.TextBox usrEmail;
+        public System.Windows.Forms.Label label6;
+        public System.Windows.Forms.DateTimePicker usrBirthday;
+        public System.Windows.Forms.Label label7;
+        public System.Windows.Forms.ComboBox usrJudet;
+        public System.Windows.Forms.Label label8;
+        public System.Windows.Forms.ComboBox usrMunicipiu;
+        public System.Windows.Forms.Label label9;
+        public System.Windows.Forms.ComboBox usrOras;
+        public System.Windows.Forms.CheckBox usrMarried;
+        public System.Windows.Forms.CheckBox usrDivorced;
+        public System.Windows.Forms.CheckBox usrParticipated;
+        public System.Windows.Forms.RadioButton usrM;
+        public System.Windows.Forms.RadioButton usrF;
+        public System.Windows.Forms.Button btnUpdate;
+        public System.Windows.Forms.Button btnSave;
     }
 }
