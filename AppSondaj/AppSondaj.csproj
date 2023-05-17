@@ -83,6 +83,13 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="themeQuestionEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="themeQuestionEdit.Designer.cs">
+      <DependentUpon>themeQuestionEdit.cs</DependentUpon>
+    </Compile>
+    <None Include="Resources\questions.png" />
     <EmbeddedResource Include="addPerson.resx">
       <DependentUpon>addPerson.cs</DependentUpon>
     </EmbeddedResource>
@@ -110,6 +117,9 @@
     <Content Include="fonts\fontawesome-webfont.woff" />
     <Content Include="fonts\fontawesome-webfont.woff2" />
     <Content Include="fonts\FontAwesome.otf" />
+    <EmbeddedResource Include="themeQuestionEdit.resx">
+      <DependentUpon>themeQuestionEdit.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -131,6 +141,8 @@
     <None Include="images\people.png" />
     <None Include="images\save.png" />
     <None Include="images\update.png" />
+    <None Include="images\refresh.png" />
+    <None Include="images\questions.png" />
     <Content Include="queries\createPoll.sql" />
     <Content Include="queries\insertPoll.sql" />
     <None Include="images\report.png" />

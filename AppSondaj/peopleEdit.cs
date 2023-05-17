@@ -25,7 +25,7 @@ namespace AppSondaj
         }
 
         // A struct to store the colors
-        private struct btnColors
+        private struct colorList
         {
             public static Color back = Color.FromArgb(23, 30, 54);
             public static Color lightBlue = Color.FromArgb(0, 126, 246);
@@ -53,10 +53,10 @@ namespace AppSondaj
         {
             if (currentBtn != null)
             {
-                currentBtn.ForeColor = btnColors.lightBlue;
+                currentBtn.ForeColor = colorList.lightBlue;
 
                 // Panel on the right of the button
-                pnlSideBtn.BackColor = btnColors.back;
+                pnlSideBtn.BackColor = colorList.back;
                 pnlSideBtn.Location = new Point(225, currentBtn.Location.Y);
                 pnlSideBtn.Visible = true;
                 pnlSideBtn.BringToFront();
@@ -99,14 +99,14 @@ namespace AppSondaj
 
         private void btnAddPpl_Click(object sender, EventArgs e)
         {
-            ActivateButton(sender, btnColors.lightBlue);
+            ActivateButton(sender, colorList.lightBlue);
             addPerson person = new addPerson();
             person.Show();
         }
 
         private void btnDeletePpl_Click(object sender, EventArgs e)
         {
-            ActivateButton(sender, btnColors.lightBlue);
+            ActivateButton(sender, colorList.lightBlue);
             if (gridPeople.SelectedRows.Count > 0)
             {
                 // Get the selected record's identifier
@@ -187,7 +187,7 @@ namespace AppSondaj
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            ActivateButton(sender, btnColors.lightBlue);
+            ActivateButton(sender, colorList.lightBlue);
             if (gridPeople.SelectedRows.Count > 0)
             {
                 // Get the selected record's identifier

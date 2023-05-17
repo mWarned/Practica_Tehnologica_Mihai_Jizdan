@@ -21,7 +21,7 @@ namespace AppSondaj
         }
 
         // A struct to store the colors
-        private struct btnColors
+        private struct colorList
         {
             public static Color back = Color.FromArgb(23, 30, 54);
             public static Color lightBlue = Color.FromArgb(0, 126, 246);
@@ -48,10 +48,10 @@ namespace AppSondaj
         {
             if (currentBtn != null)
             {
-                currentBtn.ForeColor = btnColors.lightBlue;
+                currentBtn.ForeColor = colorList.lightBlue;
 
                 // Panel on the left of the button
-                pnlSideBtn.BackColor = btnColors.back;
+                pnlSideBtn.BackColor = colorList.back;
                 pnlSideBtn.Location = new Point(0, currentBtn.Location.Y);
                 pnlSideBtn.Visible = true;
                 pnlSideBtn.BringToFront();
@@ -84,31 +84,37 @@ namespace AppSondaj
 
         // Events for button clicks
 
+        private void btnPeople_Click(object sender, EventArgs e)
+        {
+            ActivateButton(sender, colorList.lightBlue);
+            OpenChildForm(new peopleEdit());
+        }
+
         private void btnPoll_Click(object sender, EventArgs e)
         {
-            ActivateButton(sender, btnColors.lightBlue);
+            ActivateButton(sender, colorList.lightBlue);
             OpenChildForm(new pollEdit());
         }
 
-        private void btnPeople_Click(object sender, EventArgs e)
+        private void btnThemesQuestions_Click(object sender, EventArgs e)
         {
-            ActivateButton(sender, btnColors.lightBlue);
-            OpenChildForm(new peopleEdit());
+            ActivateButton(sender, colorList.lightBlue);
+            OpenChildForm(new themeQuestionEdit());
         }
 
         private void btnReports_Click(object sender, EventArgs e)
         {
-            ActivateButton(sender, btnColors.lightBlue);
+            ActivateButton(sender, colorList.lightBlue);
         }
 
         private void btnSettings_Click(object sender, EventArgs e)
         {
-            ActivateButton(sender, btnColors.lightBlue);
+            ActivateButton(sender, colorList.lightBlue);
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            ActivateButton(sender, btnColors.lightBlue);
+            ActivateButton(sender, colorList.lightBlue);
         }
 
         private void imgUser_Click(object sender, EventArgs e)

@@ -259,6 +259,11 @@ namespace AppSondaj
             {
                 MessageBox.Show(ex.Message);
             }
+
+            if (System.Windows.Forms.Application.OpenForms["peopleEdit"] != null)
+            {
+                (System.Windows.Forms.Application.OpenForms["peopleEdit"] as peopleEdit).refreshPeople();
+            }
         }
     }
 }

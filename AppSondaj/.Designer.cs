@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             this.navPanel = new System.Windows.Forms.Panel();
+            this.btnThemesQuestions = new System.Windows.Forms.Button();
             this.btnPeople = new System.Windows.Forms.Button();
             this.btnReports = new System.Windows.Forms.Button();
             this.pnlSideBtn = new System.Windows.Forms.Panel();
@@ -57,6 +58,7 @@
             // navPanel
             // 
             this.navPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
+            this.navPanel.Controls.Add(this.btnThemesQuestions);
             this.navPanel.Controls.Add(this.btnPeople);
             this.navPanel.Controls.Add(this.btnReports);
             this.navPanel.Controls.Add(this.pnlSideBtn);
@@ -70,6 +72,22 @@
             this.navPanel.Size = new System.Drawing.Size(225, 700);
             this.navPanel.TabIndex = 0;
             // 
+            // btnThemesQuestions
+            // 
+            this.btnThemesQuestions.FlatAppearance.BorderSize = 0;
+            this.btnThemesQuestions.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnThemesQuestions.Font = new System.Drawing.Font("Nirmala UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnThemesQuestions.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(246)))));
+            this.btnThemesQuestions.Image = ((System.Drawing.Image)(resources.GetObject("btnThemesQuestions.Image")));
+            this.btnThemesQuestions.Location = new System.Drawing.Point(0, 293);
+            this.btnThemesQuestions.Name = "btnThemesQuestions";
+            this.btnThemesQuestions.Size = new System.Drawing.Size(225, 56);
+            this.btnThemesQuestions.TabIndex = 6;
+            this.btnThemesQuestions.Text = "Themes/Questions";
+            this.btnThemesQuestions.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btnThemesQuestions.UseVisualStyleBackColor = true;
+            this.btnThemesQuestions.Click += new System.EventHandler(this.btnThemesQuestions_Click);
+            // 
             // btnPeople
             // 
             this.btnPeople.FlatAppearance.BorderSize = 0;
@@ -77,7 +95,7 @@
             this.btnPeople.Font = new System.Drawing.Font("Nirmala UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPeople.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(246)))));
             this.btnPeople.Image = global::AppSondaj.Properties.Resources.people;
-            this.btnPeople.Location = new System.Drawing.Point(0, 229);
+            this.btnPeople.Location = new System.Drawing.Point(0, 169);
             this.btnPeople.Name = "btnPeople";
             this.btnPeople.Size = new System.Drawing.Size(225, 56);
             this.btnPeople.TabIndex = 5;
@@ -93,7 +111,7 @@
             this.btnReports.Font = new System.Drawing.Font("Nirmala UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReports.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(246)))));
             this.btnReports.Image = global::AppSondaj.Properties.Resources.report;
-            this.btnReports.Location = new System.Drawing.Point(0, 291);
+            this.btnReports.Location = new System.Drawing.Point(0, 355);
             this.btnReports.Name = "btnReports";
             this.btnReports.Size = new System.Drawing.Size(225, 56);
             this.btnReports.TabIndex = 4;
@@ -117,11 +135,11 @@
             this.btnPoll.Font = new System.Drawing.Font("Nirmala UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPoll.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(246)))));
             this.btnPoll.Image = ((System.Drawing.Image)(resources.GetObject("btnPoll.Image")));
-            this.btnPoll.Location = new System.Drawing.Point(0, 167);
+            this.btnPoll.Location = new System.Drawing.Point(0, 231);
             this.btnPoll.Name = "btnPoll";
             this.btnPoll.Size = new System.Drawing.Size(225, 56);
             this.btnPoll.TabIndex = 3;
-            this.btnPoll.Text = "Edit Poll";
+            this.btnPoll.Text = "Edit Polls";
             this.btnPoll.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.btnPoll.UseVisualStyleBackColor = true;
             this.btnPoll.Click += new System.EventHandler(this.btnPoll_Click);
@@ -325,6 +343,7 @@
         private System.Windows.Forms.Button btnReports;
         private System.Windows.Forms.Panel pnlDesktop;
         private System.Windows.Forms.Button btnPeople;
+        private System.Windows.Forms.Button btnThemesQuestions;
     }
 }
 

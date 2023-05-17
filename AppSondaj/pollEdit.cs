@@ -18,7 +18,7 @@ namespace AppSondaj
         }
 
         // A struct to store the colors
-        private struct btnColors
+        private struct colorList
         {
             public static Color back = Color.FromArgb(23, 30, 54);
             public static Color lightBlue = Color.FromArgb(0, 126, 246);
@@ -46,10 +46,10 @@ namespace AppSondaj
         {
             if (currentBtn != null)
             {
-                currentBtn.ForeColor = btnColors.lightBlue;
+                currentBtn.ForeColor = colorList.lightBlue;
 
                 // Panel on the right of the button
-                pnlSideBtn.BackColor = btnColors.back;
+                pnlSideBtn.BackColor = colorList.back;
                 pnlSideBtn.Location = new Point(225, currentBtn.Location.Y);
                 pnlSideBtn.Visible = true;
                 pnlSideBtn.BringToFront();
@@ -60,12 +60,12 @@ namespace AppSondaj
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            ActivateButton(sender, btnColors.lightBlue);
+            ActivateButton(sender, colorList.lightBlue);
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            ActivateButton(sender, btnColors.lightBlue);
+            ActivateButton(sender, colorList.lightBlue);
         }
 
         // Loading the data from the database nad outputting it 
