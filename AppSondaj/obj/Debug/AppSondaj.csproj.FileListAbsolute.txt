@@ -30,7 +30,6 @@ C:\Users\PC\source\repos\mWarned\Practica_Tehnologica_Mihai_Jizdan\AppSondaj\bin
 C:\Users\PC\source\repos\mWarned\Practica_Tehnologica_Mihai_Jizdan\AppSondaj\bin\Debug\FontAwesome.Sharp.dll
 C:\Users\PC\source\repos\mWarned\Practica_Tehnologica_Mihai_Jizdan\AppSondaj\obj\Debug\AppSondaj.csproj.AssemblyReference.cache
 C:\Users\PC\source\repos\mWarned\Practica_Tehnologica_Mihai_Jizdan\AppSondaj\obj\Debug\AppSondaj.csproj.SuggestedBindingRedirects.cache
-C:\Users\PC\source\repos\mWarned\Practica_Tehnologica_Mihai_Jizdan\AppSondaj\obj\Debug\AppSondaj.addPerson.resources
 C:\Users\PC\source\repos\mWarned\Practica_Tehnologica_Mihai_Jizdan\AppSondaj\obj\Debug\AppSondaj.Main.resources
 C:\Users\PC\source\repos\mWarned\Practica_Tehnologica_Mihai_Jizdan\AppSondaj\obj\Debug\AppSondaj.pollEdit.resources
 C:\Users\PC\source\repos\mWarned\Practica_Tehnologica_Mihai_Jizdan\AppSondaj\obj\Debug\AppSondaj.Properties.Resources.resources
@@ -42,3 +41,5 @@ C:\Users\PC\source\repos\mWarned\Practica_Tehnologica_Mihai_Jizdan\AppSondaj\obj
 C:\Users\PC\source\repos\mWarned\Practica_Tehnologica_Mihai_Jizdan\AppSondaj\obj\Debug\AppSondaj.peopleEdit.resources
 C:\Users\PC\Source\Repos\Practica_Tehnologica_Mihai_Jizdan\AppSondaj\obj\Debug\AppSondaj.peopleEdit.resources
 C:\Users\PC\Source\Repos\mWarned\Practica_Tehnologica_Mihai_Jizdan\AppSondaj\obj\Debug\AppSondaj.themeQuestionEdit.resources
+C:\Users\PC\Source\Repos\mWarned\Practica_Tehnologica_Mihai_Jizdan\AppSondaj\obj\Debug\AppSondaj.addTheme.resources
+C:\Users\PC\Source\Repos\mWarned\Practica_Tehnologica_Mihai_Jizdan\AppSondaj\obj\Debug\AppSondaj.newPerson.resources

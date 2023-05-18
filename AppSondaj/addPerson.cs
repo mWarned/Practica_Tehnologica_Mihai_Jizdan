@@ -12,14 +12,14 @@ using System.Windows.Forms;
 
 namespace AppSondaj
 {
-    public partial class addPerson : Form
+    public partial class newPerson : Form
     {
         SqlDataAdapter dataAD;
         DataTable dt;
         private SqlCommand cmd;
         public int personID;
 
-        public addPerson()
+        public newPerson()
         {
             InitializeComponent();
 
@@ -246,6 +246,11 @@ namespace AppSondaj
 
                         MessageBox.Show("Changes were saved!");
 
+                        if (System.Windows.Forms.Application.OpenForms["peopleEdit"] != null)
+                        {
+                            (System.Windows.Forms.Application.OpenForms["peopleEdit"] as peopleEdit).refreshPeople();
+                        }
+
                         this.Close();
                     }
                     else
@@ -258,11 +263,6 @@ namespace AppSondaj
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
-            }
-
-            if (System.Windows.Forms.Application.OpenForms["peopleEdit"] != null)
-            {
-                (System.Windows.Forms.Application.OpenForms["peopleEdit"] as peopleEdit).refreshPeople();
             }
         }
     }

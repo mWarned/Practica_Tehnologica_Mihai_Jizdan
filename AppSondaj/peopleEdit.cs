@@ -7,6 +7,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Documents;
 using System.Windows.Forms;
 
 namespace AppSondaj
@@ -76,6 +77,7 @@ namespace AppSondaj
 
                     dt = new System.Data.DataTable();
                     dataAD.Fill(dt);
+
                     gridPeople.DataSource = dt;
                     gridPeople.Columns["persoanaID"].Visible = false;
                     gridPeople.Columns["judetID"].Visible = false;
@@ -100,8 +102,66 @@ namespace AppSondaj
         private void btnAddPpl_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, colorList.lightBlue);
-            addPerson person = new addPerson();
+            newPerson person = new newPerson();
             person.Show();
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            ActivateButton(sender, colorList.lightBlue);
+            if (gridPeople.SelectedRows.Count > 0)
+            {
+                // Get the selected record's identifier
+                int selectedID = Convert.ToInt32(gridPeople.SelectedRows[0].Cells["persoanaID"].Value);
+
+                newPerson person = new newPerson();
+
+                try
+                {
+                    person.personID = selectedID;
+
+                    person.usrName.Text = Convert.ToString(gridPeople.SelectedRows[0].Cells["Nume"].Value);
+                    person.usrSurname.Text = Convert.ToString(gridPeople.SelectedRows[0].Cells["Prenume"].Value);
+                    if (Convert.ToChar(gridPeople.SelectedRows[0].Cells["sex"].Value) == 'M')
+                    {
+                        person.usrM.Checked = true;
+                    }
+                    else
+                    {
+                        person.usrF.Checked = true;
+                    }
+                    person.usrStudies.Text = Convert.ToString(gridPeople.SelectedRows[0].Cells["studii"].Value);
+                    person.usrEmail.Text = Convert.ToString(gridPeople.SelectedRows[0].Cells["email"].Value);
+                    person.usrBirthday.Value = Convert.ToDateTime(gridPeople.SelectedRows[0].Cells["DataNasterii"].Value);
+                    person.usrJudet.Text = Convert.ToString(gridPeople.SelectedRows[0].Cells["numeJudet"].Value);
+                    person.usrMunicipiu.Text = Convert.ToString(gridPeople.SelectedRows[0].Cells["numeMunicipiu"].Value);
+                    person.usrOras.Text = Convert.ToString(gridPeople.SelectedRows[0].Cells["numeOras"].Value);
+                    if (Convert.ToBoolean(gridPeople.SelectedRows[0].Cells["Casatorit"].Value) == true)
+                    {
+                        person.usrMarried.Checked = true;
+                    }
+                    if (Convert.ToBoolean(gridPeople.SelectedRows[0].Cells["Divortat"].Value) == true)
+                    {
+                        person.usrDivorced.Checked = true;
+                    }
+                    if (Convert.ToBoolean(gridPeople.SelectedRows[0].Cells["Participant"].Value) == true)
+                    {
+                        person.usrParticipated.Checked = true;
+                    }
+
+                    person.btnSave.Visible = false;
+                    person.btnUpdate.Visible = true;
+                    person.Show();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Select the row containing the person whose data you want to update!", "Select row!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
 
         private void btnDeletePpl_Click(object sender, EventArgs e)
@@ -182,64 +242,6 @@ namespace AppSondaj
             else
             {
                 MessageBox.Show("Select the row containing the person you want to delete!", "Select row!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-        }
-
-        private void btnUpdate_Click(object sender, EventArgs e)
-        {
-            ActivateButton(sender, colorList.lightBlue);
-            if (gridPeople.SelectedRows.Count > 0)
-            {
-                // Get the selected record's identifier
-                int selectedID = Convert.ToInt32(gridPeople.SelectedRows[0].Cells["persoanaID"].Value);
-
-                addPerson person = new addPerson();
-
-                try
-                {
-                    person.personID = selectedID;
-
-                    person.usrName.Text = Convert.ToString(gridPeople.SelectedRows[0].Cells["Nume"].Value);
-                    person.usrSurname.Text = Convert.ToString(gridPeople.SelectedRows[0].Cells["Prenume"].Value);
-                    if (Convert.ToChar(gridPeople.SelectedRows[0].Cells["sex"].Value) == 'M')
-                    {
-                        person.usrM.Checked = true;
-                    }
-                    else
-                    {
-                        person.usrF.Checked = true;
-                    }
-                    person.usrStudies.Text = Convert.ToString(gridPeople.SelectedRows[0].Cells["studii"].Value);
-                    person.usrEmail.Text = Convert.ToString(gridPeople.SelectedRows[0].Cells["email"].Value);
-                    person.usrBirthday.Value = Convert.ToDateTime(gridPeople.SelectedRows[0].Cells["DataNasterii"].Value);
-                    person.usrJudet.Text = Convert.ToString(gridPeople.SelectedRows[0].Cells["numeJudet"].Value);
-                    person.usrMunicipiu.Text = Convert.ToString(gridPeople.SelectedRows[0].Cells["numeMunicipiu"].Value);
-                    person.usrOras.Text = Convert.ToString(gridPeople.SelectedRows[0].Cells["numeOras"].Value);
-                    if (Convert.ToBoolean(gridPeople.SelectedRows[0].Cells["Casatorit"].Value) == true)
-                    {
-                        person.usrMarried.Checked = true;
-                    }
-                    if (Convert.ToBoolean(gridPeople.SelectedRows[0].Cells["Divortat"].Value) == true)
-                    {
-                        person.usrDivorced.Checked = true;
-                    }
-                    if (Convert.ToBoolean(gridPeople.SelectedRows[0].Cells["Participant"].Value) == true)
-                    {
-                        person.usrParticipated.Checked = true;
-                    }
-
-                    person.btnSave.Visible = false;
-                    person.btnUpdate.Visible = true;
-                    person.Show();
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }
-            }
-            else
-            {
-                MessageBox.Show("Select the row containing the person whose data you want to update!", "Select row!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 

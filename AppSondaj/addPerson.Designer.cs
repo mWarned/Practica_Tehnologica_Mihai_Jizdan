@@ -1,6 +1,6 @@
 ﻿namespace AppSondaj
 {
-    partial class addPerson
+    partial class newPerson
     {
         /// <summary>
         /// Required designer variable.
@@ -28,11 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(addPerson));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(newPerson));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.iconButton1 = new FontAwesome.Sharp.IconButton();
-            this.btnClose = new FontAwesome.Sharp.IconButton();
-            this.btnExit = new FontAwesome.Sharp.IconButton();
             this.usrName = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -53,11 +50,14 @@
             this.usrMarried = new System.Windows.Forms.CheckBox();
             this.usrDivorced = new System.Windows.Forms.CheckBox();
             this.usrParticipated = new System.Windows.Forms.CheckBox();
-            this.btnSave = new System.Windows.Forms.Button();
-            this.btnMinimize = new FontAwesome.Sharp.IconButton();
             this.usrM = new System.Windows.Forms.RadioButton();
             this.usrF = new System.Windows.Forms.RadioButton();
             this.btnUpdate = new System.Windows.Forms.Button();
+            this.btnSave = new System.Windows.Forms.Button();
+            this.iconButton1 = new FontAwesome.Sharp.IconButton();
+            this.btnClose = new FontAwesome.Sharp.IconButton();
+            this.btnExit = new FontAwesome.Sharp.IconButton();
+            this.btnMinimize = new FontAwesome.Sharp.IconButton();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -67,56 +67,11 @@
             this.panel1.Controls.Add(this.iconButton1);
             this.panel1.Controls.Add(this.btnClose);
             this.panel1.Controls.Add(this.btnExit);
-            this.panel1.Location = new System.Drawing.Point(0, 1);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(649, 30);
+            this.panel1.Size = new System.Drawing.Size(645, 30);
             this.panel1.TabIndex = 0;
-            // 
-            // iconButton1
-            // 
-            this.iconButton1.FlatAppearance.BorderSize = 0;
-            this.iconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(246)))));
-            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.WindowMinimize;
-            this.iconButton1.IconColor = System.Drawing.Color.White;
-            this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton1.IconSize = 14;
-            this.iconButton1.Location = new System.Drawing.Point(723, -2);
-            this.iconButton1.Name = "iconButton1";
-            this.iconButton1.Size = new System.Drawing.Size(34, 32);
-            this.iconButton1.TabIndex = 6;
-            this.iconButton1.UseVisualStyleBackColor = true;
-            // 
-            // btnClose
-            // 
-            this.btnClose.FlatAppearance.BorderSize = 0;
-            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClose.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(246)))));
-            this.btnClose.IconChar = FontAwesome.Sharp.IconChar.X;
-            this.btnClose.IconColor = System.Drawing.Color.White;
-            this.btnClose.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnClose.IconSize = 14;
-            this.btnClose.Location = new System.Drawing.Point(601, 0);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(32, 30);
-            this.btnClose.TabIndex = 13;
-            this.btnClose.UseVisualStyleBackColor = true;
-            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
-            // 
-            // btnExit
-            // 
-            this.btnExit.FlatAppearance.BorderSize = 0;
-            this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(246)))));
-            this.btnExit.IconChar = FontAwesome.Sharp.IconChar.X;
-            this.btnExit.IconColor = System.Drawing.Color.White;
-            this.btnExit.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnExit.IconSize = 14;
-            this.btnExit.Location = new System.Drawing.Point(763, -2);
-            this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(36, 32);
-            this.btnExit.TabIndex = 2;
-            this.btnExit.UseVisualStyleBackColor = true;
             // 
             // usrName
             // 
@@ -241,14 +196,14 @@
             // 
             // usrBirthday
             // 
-            this.usrBirthday.CustomFormat = "";
+            this.usrBirthday.CustomFormat = "dd/MM/yyyy";
             this.usrBirthday.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.usrBirthday.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.usrBirthday.Location = new System.Drawing.Point(138, 244);
             this.usrBirthday.Name = "usrBirthday";
-            this.usrBirthday.Size = new System.Drawing.Size(117, 29);
+            this.usrBirthday.Size = new System.Drawing.Size(125, 29);
             this.usrBirthday.TabIndex = 12;
-            this.usrBirthday.Value = new System.DateTime(2023, 5, 10, 0, 0, 0, 0);
+            this.usrBirthday.Value = new System.DateTime(2023, 6, 10, 0, 0, 0, 0);
             // 
             // label7
             // 
@@ -360,39 +315,6 @@
             this.usrParticipated.Text = "A participat";
             this.usrParticipated.UseVisualStyleBackColor = true;
             // 
-            // btnSave
-            // 
-            this.btnSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
-            this.btnSave.FlatAppearance.BorderSize = 0;
-            this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSave.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSave.ForeColor = System.Drawing.Color.White;
-            this.btnSave.Image = global::AppSondaj.Properties.Resources.save;
-            this.btnSave.Location = new System.Drawing.Point(482, 455);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(151, 51);
-            this.btnSave.TabIndex = 22;
-            this.btnSave.Text = "Save";
-            this.btnSave.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.btnSave.UseVisualStyleBackColor = false;
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
-            // 
-            // btnMinimize
-            // 
-            this.btnMinimize.FlatAppearance.BorderSize = 0;
-            this.btnMinimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMinimize.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(246)))));
-            this.btnMinimize.IconChar = FontAwesome.Sharp.IconChar.WindowMinimize;
-            this.btnMinimize.IconColor = System.Drawing.Color.White;
-            this.btnMinimize.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnMinimize.IconSize = 14;
-            this.btnMinimize.Location = new System.Drawing.Point(725, -2);
-            this.btnMinimize.Name = "btnMinimize";
-            this.btnMinimize.Size = new System.Drawing.Size(36, 32);
-            this.btnMinimize.TabIndex = 3;
-            this.btnMinimize.UseVisualStyleBackColor = true;
-            this.btnMinimize.Click += new System.EventHandler(this.btnMinimize_Click);
-            // 
             // usrM
             // 
             this.usrM.AutoSize = true;
@@ -437,8 +359,88 @@
             this.btnUpdate.Visible = false;
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
-            // addPerson
+            // btnSave
             // 
+            this.btnSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
+            this.btnSave.FlatAppearance.BorderSize = 0;
+            this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSave.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSave.ForeColor = System.Drawing.Color.White;
+            this.btnSave.Image = global::AppSondaj.Properties.Resources.save;
+            this.btnSave.Location = new System.Drawing.Point(482, 455);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(151, 51);
+            this.btnSave.TabIndex = 22;
+            this.btnSave.Text = "Save";
+            this.btnSave.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btnSave.UseVisualStyleBackColor = false;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            // 
+            // iconButton1
+            // 
+            this.iconButton1.FlatAppearance.BorderSize = 0;
+            this.iconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(246)))));
+            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.WindowMinimize;
+            this.iconButton1.IconColor = System.Drawing.Color.White;
+            this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton1.IconSize = 14;
+            this.iconButton1.Location = new System.Drawing.Point(723, -2);
+            this.iconButton1.Name = "iconButton1";
+            this.iconButton1.Size = new System.Drawing.Size(34, 32);
+            this.iconButton1.TabIndex = 6;
+            this.iconButton1.UseVisualStyleBackColor = true;
+            // 
+            // btnClose
+            // 
+            this.btnClose.FlatAppearance.BorderSize = 0;
+            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClose.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(246)))));
+            this.btnClose.IconChar = FontAwesome.Sharp.IconChar.X;
+            this.btnClose.IconColor = System.Drawing.Color.White;
+            this.btnClose.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnClose.IconSize = 14;
+            this.btnClose.Location = new System.Drawing.Point(601, 0);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(32, 30);
+            this.btnClose.TabIndex = 13;
+            this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            // 
+            // btnExit
+            // 
+            this.btnExit.FlatAppearance.BorderSize = 0;
+            this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(246)))));
+            this.btnExit.IconChar = FontAwesome.Sharp.IconChar.X;
+            this.btnExit.IconColor = System.Drawing.Color.White;
+            this.btnExit.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnExit.IconSize = 14;
+            this.btnExit.Location = new System.Drawing.Point(763, -2);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(36, 32);
+            this.btnExit.TabIndex = 2;
+            this.btnExit.UseVisualStyleBackColor = true;
+            // 
+            // btnMinimize
+            // 
+            this.btnMinimize.FlatAppearance.BorderSize = 0;
+            this.btnMinimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMinimize.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(246)))));
+            this.btnMinimize.IconChar = FontAwesome.Sharp.IconChar.WindowMinimize;
+            this.btnMinimize.IconColor = System.Drawing.Color.White;
+            this.btnMinimize.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnMinimize.IconSize = 14;
+            this.btnMinimize.Location = new System.Drawing.Point(725, -2);
+            this.btnMinimize.Name = "btnMinimize";
+            this.btnMinimize.Size = new System.Drawing.Size(36, 32);
+            this.btnMinimize.TabIndex = 3;
+            this.btnMinimize.UseVisualStyleBackColor = true;
+            this.btnMinimize.Click += new System.EventHandler(this.btnMinimize_Click);
+            // 
+            // newPerson
+            // 
+            this.AccessibleName = "";
             this.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -471,9 +473,9 @@
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "addPerson";
+            this.Name = "newPerson";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "addPerson";
+            this.Text = "Add new person";
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();

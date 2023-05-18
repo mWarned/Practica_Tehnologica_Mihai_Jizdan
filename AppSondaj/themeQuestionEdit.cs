@@ -20,6 +20,9 @@ namespace AppSondaj
         public themeQuestionEdit()
         {
             InitializeComponent();
+
+            gridThemes.MultiSelect = false;
+            gridQuestions.MultiSelect = false;
         }
 
         // A struct to store the colors
@@ -36,56 +39,51 @@ namespace AppSondaj
             {
                 if (side.Equals("left"))
                 {
-                    DisableButton(side);
+                    DisableButton();
                     currentBtn = (Button)senderBtn;
                     currentBtn.ForeColor = color;
 
                     // Panel on the right of the button
-                    pnlSideBtn.BackColor = color;
-                    pnlSideBtn.Location = new Point(224, currentBtn.Location.Y);
-                    pnlSideBtn.Visible = true;
-                    pnlSideBtn.BringToFront();
+                    pnlSideBtn1.BackColor = color;
+                    pnlSideBtn1.Location = new Point(225, currentBtn.Location.Y);
+                    pnlSideBtn1.Visible = true;
+                    pnlSideBtn1.BringToFront();
                 }
                 else if (side.Equals("right"))
                 {
-                    DisableButton(side);
+                    DisableButton();
                     currentBtn = (Button)senderBtn;
                     currentBtn.ForeColor = color;
 
                     // Panel on the right of the button
-                    pnlSideBtn.BackColor = color;
-                    pnlSideBtn.Location = new Point(1100, currentBtn.Location.Y);
-                    pnlSideBtn.Visible = true;
-                    pnlSideBtn.BringToFront();
+                    pnlSideBtn2.BackColor = color;
+                    pnlSideBtn2.Location = new Point(225, currentBtn.Location.Y);
+                    pnlSideBtn2.Visible = true;
+                    pnlSideBtn2.BringToFront();
                 }
             }
         }
 
         // Method for disabling previous activated button
-        private void DisableButton(string side)
+        private void DisableButton()
         {
             if (currentBtn != null)
             {
-                if (side.Equals("left"))
-                {
-                    currentBtn.ForeColor = colorList.lightBlue;
+                currentBtn.ForeColor = colorList.lightBlue;
 
-                    // Panel on the right of the button
-                    pnlSideBtn.BackColor = colorList.back;
-                    pnlSideBtn.Location = new Point(250, currentBtn.Location.Y);
-                    pnlSideBtn.Visible = true;
-                    pnlSideBtn.BringToFront();
-                }
-                else if (side.Equals("right"))
-                {
-                    currentBtn.ForeColor = colorList.lightBlue;
+                // Panel on the right of the button
+                pnlSideBtn1.BackColor = colorList.back;
+                pnlSideBtn1.Location = new Point(250, currentBtn.Location.Y);
+                pnlSideBtn1.Visible = false;
+                pnlSideBtn1.BringToFront();
+                
+                currentBtn.ForeColor = colorList.lightBlue;
 
-                    // Panel on the right of the button
-                    pnlSideBtn.BackColor = colorList.back;
-                    pnlSideBtn.Location = new Point(1015, currentBtn.Location.Y);
-                    pnlSideBtn.Visible = true;
-                    pnlSideBtn.BringToFront();
-                }
+                // Panel on the right of the button
+                pnlSideBtn2.BackColor = colorList.back;
+                pnlSideBtn2.Location = new Point(250, currentBtn.Location.Y);
+                pnlSideBtn2.Visible = false;
+                pnlSideBtn2.BringToFront();
             }
         }
 
@@ -116,14 +114,37 @@ namespace AppSondaj
             }
         }
 
-        private void themeEdit_Load(object sender, EventArgs e)
+        public void refreshQuestions()
         {
-            refreshThemes();
+            try
+            {
+                using (IDbConnection connection = new SqlConnection(Helper.dbConn("dbSondaj")))
+                {
+                    dataAD = new SqlDataAdapter("select intrebareID, Tematica, Intrebare from Intrebare inner join Tematica on Intrebare.tematicaID = Tematica.tematicaID", (SqlConnection)connection);
+
+                    dt = new System.Data.DataTable();
+                    dataAD.Fill(dt);
+                    gridQuestions.DataSource = dt;
+                    gridQuestions.Columns["intrebareID"].Visible = false;
+
+                    // Adapt columns width to the largest string
+                    foreach (DataGridViewColumn column in gridQuestions.Columns)
+                    {
+                        column.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void btnAddTheme_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, colorList.lightBlue, "left");
+            addTheme themes = new addTheme();
+            themes.Show();
         }
 
         private void btnUpdateTheme_Click(object sender, EventArgs e)
@@ -139,6 +160,7 @@ namespace AppSondaj
         private void btnRefreshTheme_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, colorList.lightBlue, "left");
+            refreshThemes();
         }
 
         private void btnAddQuestion_Click(object sender, EventArgs e)
@@ -159,6 +181,13 @@ namespace AppSondaj
         private void btnRefreshQuestion_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, colorList.lightBlue, "right");
+            refreshQuestions();
+        }
+
+        private void themeEdit_Load(object sender, EventArgs e)
+        {
+            refreshThemes();
+            refreshQuestions();
         }
     }
 }

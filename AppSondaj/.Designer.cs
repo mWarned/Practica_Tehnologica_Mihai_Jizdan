@@ -30,29 +30,29 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             this.navPanel = new System.Windows.Forms.Panel();
-            this.btnThemesQuestions = new System.Windows.Forms.Button();
-            this.btnPeople = new System.Windows.Forms.Button();
-            this.btnReports = new System.Windows.Forms.Button();
             this.pnlSideBtn = new System.Windows.Forms.Panel();
-            this.btnPoll = new System.Windows.Forms.Button();
-            this.btnLogin = new System.Windows.Forms.Button();
-            this.btnSettings = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.usrImg = new System.Windows.Forms.PictureBox();
             this.lblUsername = new System.Windows.Forms.Label();
-            this.imgUser = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.pnlDesktop = new System.Windows.Forms.Panel();
             this.btnMinimize = new FontAwesome.Sharp.IconButton();
             this.btnExit = new FontAwesome.Sharp.IconButton();
-            this.pnlDesktop = new System.Windows.Forms.Panel();
+            this.btnThemesQuestions = new System.Windows.Forms.Button();
+            this.btnPeople = new System.Windows.Forms.Button();
+            this.btnReports = new System.Windows.Forms.Button();
+            this.btnPoll = new System.Windows.Forms.Button();
+            this.btnLogin = new System.Windows.Forms.Button();
+            this.btnSettings = new System.Windows.Forms.Button();
+            this.usrImg = new System.Windows.Forms.PictureBox();
+            this.imgUser = new System.Windows.Forms.PictureBox();
             this.navPanel.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.usrImg)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgUser)).BeginInit();
-            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // navPanel
@@ -71,6 +71,110 @@
             this.navPanel.Name = "navPanel";
             this.navPanel.Size = new System.Drawing.Size(225, 700);
             this.navPanel.TabIndex = 0;
+            // 
+            // pnlSideBtn
+            // 
+            this.pnlSideBtn.Location = new System.Drawing.Point(3, 508);
+            this.pnlSideBtn.Name = "pnlSideBtn";
+            this.pnlSideBtn.Size = new System.Drawing.Size(7, 56);
+            this.pnlSideBtn.TabIndex = 1;
+            this.pnlSideBtn.Visible = false;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.panel2);
+            this.panel1.Controls.Add(this.lblUsername);
+            this.panel1.Controls.Add(this.imgUser);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(225, 152);
+            this.panel1.TabIndex = 0;
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.label1);
+            this.panel2.Controls.Add(this.usrImg);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(225, 152);
+            this.panel2.TabIndex = 2;
+            // 
+            // label1
+            // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(246)))));
+            this.label1.Location = new System.Drawing.Point(64, 100);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(91, 20);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Username";
+            // 
+            // lblUsername
+            // 
+            this.lblUsername.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblUsername.AutoSize = true;
+            this.lblUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lblUsername.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(246)))));
+            this.lblUsername.Location = new System.Drawing.Point(64, 100);
+            this.lblUsername.Name = "lblUsername";
+            this.lblUsername.Size = new System.Drawing.Size(91, 20);
+            this.lblUsername.TabIndex = 1;
+            this.lblUsername.Text = "Username";
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
+            this.panel3.Controls.Add(this.btnMinimize);
+            this.panel3.Controls.Add(this.btnExit);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel3.Location = new System.Drawing.Point(225, 0);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(1275, 29);
+            this.panel3.TabIndex = 1;
+            // 
+            // pnlDesktop
+            // 
+            this.pnlDesktop.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlDesktop.Location = new System.Drawing.Point(225, 29);
+            this.pnlDesktop.Name = "pnlDesktop";
+            this.pnlDesktop.Size = new System.Drawing.Size(1275, 671);
+            this.pnlDesktop.TabIndex = 2;
+            // 
+            // btnMinimize
+            // 
+            this.btnMinimize.FlatAppearance.BorderSize = 0;
+            this.btnMinimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMinimize.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(246)))));
+            this.btnMinimize.IconChar = FontAwesome.Sharp.IconChar.WindowMinimize;
+            this.btnMinimize.IconColor = System.Drawing.Color.White;
+            this.btnMinimize.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnMinimize.IconSize = 14;
+            this.btnMinimize.Location = new System.Drawing.Point(1202, 0);
+            this.btnMinimize.Name = "btnMinimize";
+            this.btnMinimize.Size = new System.Drawing.Size(32, 29);
+            this.btnMinimize.TabIndex = 1;
+            this.btnMinimize.UseVisualStyleBackColor = true;
+            this.btnMinimize.Click += new System.EventHandler(this.btnMinimize_Click);
+            // 
+            // btnExit
+            // 
+            this.btnExit.FlatAppearance.BorderSize = 0;
+            this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(246)))));
+            this.btnExit.IconChar = FontAwesome.Sharp.IconChar.X;
+            this.btnExit.IconColor = System.Drawing.Color.White;
+            this.btnExit.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnExit.IconSize = 14;
+            this.btnExit.Location = new System.Drawing.Point(1240, 0);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(32, 29);
+            this.btnExit.TabIndex = 0;
+            this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // btnThemesQuestions
             // 
@@ -120,14 +224,6 @@
             this.btnReports.UseVisualStyleBackColor = true;
             this.btnReports.Click += new System.EventHandler(this.btnReports_Click);
             // 
-            // pnlSideBtn
-            // 
-            this.pnlSideBtn.Location = new System.Drawing.Point(3, 508);
-            this.pnlSideBtn.Name = "pnlSideBtn";
-            this.pnlSideBtn.Size = new System.Drawing.Size(7, 56);
-            this.pnlSideBtn.TabIndex = 1;
-            this.pnlSideBtn.Visible = false;
-            // 
             // btnPoll
             // 
             this.btnPoll.FlatAppearance.BorderSize = 0;
@@ -176,39 +272,6 @@
             this.btnSettings.UseVisualStyleBackColor = true;
             this.btnSettings.Click += new System.EventHandler(this.btnSettings_Click);
             // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.panel2);
-            this.panel1.Controls.Add(this.lblUsername);
-            this.panel1.Controls.Add(this.imgUser);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(225, 152);
-            this.panel1.TabIndex = 0;
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.label1);
-            this.panel2.Controls.Add(this.usrImg);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(225, 152);
-            this.panel2.TabIndex = 2;
-            // 
-            // label1
-            // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(246)))));
-            this.label1.Location = new System.Drawing.Point(64, 100);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(91, 20);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Username";
-            // 
             // usrImg
             // 
             this.usrImg.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -221,18 +284,6 @@
             this.usrImg.TabIndex = 0;
             this.usrImg.TabStop = false;
             this.usrImg.Click += new System.EventHandler(this.usrImg_Click);
-            // 
-            // lblUsername
-            // 
-            this.lblUsername.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblUsername.AutoSize = true;
-            this.lblUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lblUsername.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(246)))));
-            this.lblUsername.Location = new System.Drawing.Point(64, 100);
-            this.lblUsername.Name = "lblUsername";
-            this.lblUsername.Size = new System.Drawing.Size(91, 20);
-            this.lblUsername.TabIndex = 1;
-            this.lblUsername.Text = "Username";
             // 
             // imgUser
             // 
@@ -247,57 +298,6 @@
             this.imgUser.TabStop = false;
             this.imgUser.Click += new System.EventHandler(this.imgUser_Click);
             // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
-            this.panel3.Controls.Add(this.btnMinimize);
-            this.panel3.Controls.Add(this.btnExit);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel3.Location = new System.Drawing.Point(225, 0);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1275, 29);
-            this.panel3.TabIndex = 1;
-            // 
-            // btnMinimize
-            // 
-            this.btnMinimize.FlatAppearance.BorderSize = 0;
-            this.btnMinimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMinimize.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(246)))));
-            this.btnMinimize.IconChar = FontAwesome.Sharp.IconChar.WindowMinimize;
-            this.btnMinimize.IconColor = System.Drawing.Color.White;
-            this.btnMinimize.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnMinimize.IconSize = 14;
-            this.btnMinimize.Location = new System.Drawing.Point(1202, 0);
-            this.btnMinimize.Name = "btnMinimize";
-            this.btnMinimize.Size = new System.Drawing.Size(32, 29);
-            this.btnMinimize.TabIndex = 1;
-            this.btnMinimize.UseVisualStyleBackColor = true;
-            this.btnMinimize.Click += new System.EventHandler(this.btnMinimize_Click);
-            // 
-            // btnExit
-            // 
-            this.btnExit.FlatAppearance.BorderSize = 0;
-            this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(246)))));
-            this.btnExit.IconChar = FontAwesome.Sharp.IconChar.X;
-            this.btnExit.IconColor = System.Drawing.Color.White;
-            this.btnExit.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnExit.IconSize = 14;
-            this.btnExit.Location = new System.Drawing.Point(1240, 0);
-            this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(32, 29);
-            this.btnExit.TabIndex = 0;
-            this.btnExit.UseVisualStyleBackColor = true;
-            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
-            // 
-            // pnlDesktop
-            // 
-            this.pnlDesktop.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlDesktop.Location = new System.Drawing.Point(225, 29);
-            this.pnlDesktop.Name = "pnlDesktop";
-            this.pnlDesktop.Size = new System.Drawing.Size(1275, 671);
-            this.pnlDesktop.TabIndex = 2;
-            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -311,15 +311,15 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Main";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form1";
+            this.Text = "Poll App";
             this.navPanel.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.usrImg)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgUser)).EndInit();
-            this.panel3.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

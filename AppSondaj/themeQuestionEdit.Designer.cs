@@ -32,7 +32,7 @@
             this.grpActions = new System.Windows.Forms.GroupBox();
             this.btnRefreshTheme = new System.Windows.Forms.Button();
             this.btnUpdateTheme = new System.Windows.Forms.Button();
-            this.pnlSideBtn = new System.Windows.Forms.Panel();
+            this.pnlSideBtn1 = new System.Windows.Forms.Panel();
             this.btnDeleteTheme = new System.Windows.Forms.Button();
             this.btnAddTheme = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -41,6 +41,9 @@
             this.btnDeleteQuestion = new System.Windows.Forms.Button();
             this.btnAddQuestion = new System.Windows.Forms.Button();
             this.gridQuestions = new System.Windows.Forms.DataGridView();
+            this.pnlSideBtn2 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.gridThemes)).BeginInit();
             this.grpActions.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -51,10 +54,10 @@
             // 
             this.gridThemes.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
             this.gridThemes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gridThemes.Location = new System.Drawing.Point(12, 12);
+            this.gridThemes.Location = new System.Drawing.Point(12, 46);
             this.gridThemes.Name = "gridThemes";
             this.gridThemes.ReadOnly = true;
-            this.gridThemes.Size = new System.Drawing.Size(230, 647);
+            this.gridThemes.Size = new System.Drawing.Size(230, 613);
             this.gridThemes.TabIndex = 9;
             // 
             // grpActions
@@ -62,14 +65,14 @@
             this.grpActions.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.grpActions.Controls.Add(this.btnRefreshTheme);
             this.grpActions.Controls.Add(this.btnUpdateTheme);
-            this.grpActions.Controls.Add(this.pnlSideBtn);
+            this.grpActions.Controls.Add(this.pnlSideBtn1);
             this.grpActions.Controls.Add(this.btnDeleteTheme);
             this.grpActions.Controls.Add(this.btnAddTheme);
             this.grpActions.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grpActions.ForeColor = System.Drawing.Color.White;
-            this.grpActions.Location = new System.Drawing.Point(260, 12);
+            this.grpActions.Location = new System.Drawing.Point(260, 21);
             this.grpActions.Name = "grpActions";
-            this.grpActions.Size = new System.Drawing.Size(238, 647);
+            this.grpActions.Size = new System.Drawing.Size(238, 638);
             this.grpActions.TabIndex = 10;
             this.grpActions.TabStop = false;
             this.grpActions.Text = "Actions";
@@ -106,13 +109,13 @@
             this.btnUpdateTheme.UseVisualStyleBackColor = true;
             this.btnUpdateTheme.Click += new System.EventHandler(this.btnUpdateTheme_Click);
             // 
-            // pnlSideBtn
+            // pnlSideBtn1
             // 
-            this.pnlSideBtn.Location = new System.Drawing.Point(225, 31);
-            this.pnlSideBtn.Name = "pnlSideBtn";
-            this.pnlSideBtn.Size = new System.Drawing.Size(7, 66);
-            this.pnlSideBtn.TabIndex = 4;
-            this.pnlSideBtn.Visible = false;
+            this.pnlSideBtn1.Location = new System.Drawing.Point(225, 34);
+            this.pnlSideBtn1.Name = "pnlSideBtn1";
+            this.pnlSideBtn1.Size = new System.Drawing.Size(7, 66);
+            this.pnlSideBtn1.TabIndex = 4;
+            this.pnlSideBtn1.Visible = false;
             // 
             // btnDeleteTheme
             // 
@@ -149,15 +152,16 @@
             // groupBox1
             // 
             this.groupBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.groupBox1.Controls.Add(this.pnlSideBtn2);
             this.groupBox1.Controls.Add(this.btnRefreshQuestion);
             this.groupBox1.Controls.Add(this.btnUpdateQuestion);
             this.groupBox1.Controls.Add(this.btnDeleteQuestion);
             this.groupBox1.Controls.Add(this.btnAddQuestion);
             this.groupBox1.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.Color.White;
-            this.groupBox1.Location = new System.Drawing.Point(1025, 12);
+            this.groupBox1.Location = new System.Drawing.Point(1025, 21);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(238, 647);
+            this.groupBox1.Size = new System.Drawing.Size(238, 638);
             this.groupBox1.TabIndex = 12;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Actions";
@@ -230,11 +234,41 @@
             // 
             this.gridQuestions.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
             this.gridQuestions.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gridQuestions.Location = new System.Drawing.Point(543, 12);
+            this.gridQuestions.Location = new System.Drawing.Point(543, 46);
             this.gridQuestions.Name = "gridQuestions";
             this.gridQuestions.ReadOnly = true;
-            this.gridQuestions.Size = new System.Drawing.Size(464, 647);
+            this.gridQuestions.Size = new System.Drawing.Size(464, 613);
             this.gridQuestions.TabIndex = 11;
+            // 
+            // pnlSideBtn2
+            // 
+            this.pnlSideBtn2.Location = new System.Drawing.Point(225, 34);
+            this.pnlSideBtn2.Name = "pnlSideBtn2";
+            this.pnlSideBtn2.Size = new System.Drawing.Size(7, 66);
+            this.pnlSideBtn2.TabIndex = 5;
+            this.pnlSideBtn2.Visible = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Nirmala UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(7, 12);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(88, 30);
+            this.label1.TabIndex = 13;
+            this.label1.Text = "Themes";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Nirmala UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(538, 12);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(111, 30);
+            this.label2.TabIndex = 14;
+            this.label2.Text = "Questions";
             // 
             // themeQuestionEdit
             // 
@@ -242,6 +276,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
             this.ClientSize = new System.Drawing.Size(1275, 671);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.gridQuestions);
             this.Controls.Add(this.grpActions);
@@ -256,6 +292,7 @@
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridQuestions)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -265,7 +302,7 @@
         private System.Windows.Forms.GroupBox grpActions;
         private System.Windows.Forms.Button btnRefreshTheme;
         private System.Windows.Forms.Button btnUpdateTheme;
-        private System.Windows.Forms.Panel pnlSideBtn;
+        private System.Windows.Forms.Panel pnlSideBtn1;
         private System.Windows.Forms.Button btnDeleteTheme;
         private System.Windows.Forms.Button btnAddTheme;
         private System.Windows.Forms.GroupBox groupBox1;
@@ -274,5 +311,8 @@
         private System.Windows.Forms.Button btnDeleteQuestion;
         private System.Windows.Forms.Button btnAddQuestion;
         public System.Windows.Forms.DataGridView gridQuestions;
+        private System.Windows.Forms.Panel pnlSideBtn2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
     }
 }
