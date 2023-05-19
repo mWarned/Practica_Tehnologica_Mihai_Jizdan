@@ -32,6 +32,8 @@
             this.gridPeople = new System.Windows.Forms.DataGridView();
             this.grpActions = new System.Windows.Forms.GroupBox();
             this.pnlSideBtn = new System.Windows.Forms.Panel();
+            this.btnSortDesc = new System.Windows.Forms.Button();
+            this.btnSortAsc = new System.Windows.Forms.Button();
             this.btnRefresh = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
@@ -53,6 +55,8 @@
             // grpActions
             // 
             this.grpActions.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.grpActions.Controls.Add(this.btnSortDesc);
+            this.grpActions.Controls.Add(this.btnSortAsc);
             this.grpActions.Controls.Add(this.btnRefresh);
             this.grpActions.Controls.Add(this.btnUpdate);
             this.grpActions.Controls.Add(this.pnlSideBtn);
@@ -74,6 +78,38 @@
             this.pnlSideBtn.Size = new System.Drawing.Size(7, 66);
             this.pnlSideBtn.TabIndex = 4;
             this.pnlSideBtn.Visible = false;
+            // 
+            // btnSortDesc
+            // 
+            this.btnSortDesc.FlatAppearance.BorderSize = 0;
+            this.btnSortDesc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSortDesc.Font = new System.Drawing.Font("Nirmala UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSortDesc.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(246)))));
+            this.btnSortDesc.Image = global::AppSondaj.Properties.Resources.down_arrow;
+            this.btnSortDesc.Location = new System.Drawing.Point(6, 319);
+            this.btnSortDesc.Name = "btnSortDesc";
+            this.btnSortDesc.Size = new System.Drawing.Size(226, 66);
+            this.btnSortDesc.TabIndex = 8;
+            this.btnSortDesc.Text = "Age Sort";
+            this.btnSortDesc.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btnSortDesc.UseVisualStyleBackColor = true;
+            this.btnSortDesc.Click += new System.EventHandler(this.btnSortDesc_Click);
+            // 
+            // btnSortAsc
+            // 
+            this.btnSortAsc.FlatAppearance.BorderSize = 0;
+            this.btnSortAsc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSortAsc.Font = new System.Drawing.Font("Nirmala UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSortAsc.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(246)))));
+            this.btnSortAsc.Image = global::AppSondaj.Properties.Resources.up_arrow;
+            this.btnSortAsc.Location = new System.Drawing.Point(6, 247);
+            this.btnSortAsc.Name = "btnSortAsc";
+            this.btnSortAsc.Size = new System.Drawing.Size(226, 66);
+            this.btnSortAsc.TabIndex = 7;
+            this.btnSortAsc.Text = "Age Sort";
+            this.btnSortAsc.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btnSortAsc.UseVisualStyleBackColor = true;
+            this.btnSortAsc.Click += new System.EventHandler(this.btnSortAsc_Click);
             // 
             // btnRefresh
             // 
@@ -168,5 +204,7 @@
         private System.Windows.Forms.Button btnUpdate;
         public System.Windows.Forms.DataGridView gridPeople;
         private System.Windows.Forms.Button btnRefresh;
+        private System.Windows.Forms.Button btnSortDesc;
+        private System.Windows.Forms.Button btnSortAsc;
     }
 }

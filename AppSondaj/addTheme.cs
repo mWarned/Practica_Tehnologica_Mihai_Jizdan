@@ -31,14 +31,14 @@ namespace AppSondaj
                     cmd = new SqlCommand("insert into Tematica (Tematica) values ('" + usrTheme.Text + "')", (SqlConnection)connection);
                     cmd.ExecuteNonQuery();
 
-                    MessageBox.Show("Theme added!");
-
                     if (System.Windows.Forms.Application.OpenForms["themeQuestionEdit"] != null)
                     {
                         (System.Windows.Forms.Application.OpenForms["themeQuestionEdit"] as themeQuestionEdit).refreshThemes();
                     }
 
                     this.Close();
+
+                    MessageBox.Show("Theme added!");
                 }
             }
             catch (Exception ex)

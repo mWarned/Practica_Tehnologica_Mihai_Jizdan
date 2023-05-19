@@ -33,6 +33,7 @@ namespace AppSondaj
         {
             try
             {
+                // Output all data from Judet
                 using (IDbConnection connection = new SqlConnection(Helper.dbConn("dbSondaj")))
                 {
                     dataAD = new SqlDataAdapter("select * from Judet", (SqlConnection)connection);
@@ -54,7 +55,10 @@ namespace AppSondaj
             int val;
             try
             {
+                // Get the selected value index
                 int.TryParse(usrJudet.SelectedValue.ToString(), out val);
+
+                // Output Municipiu based on Judet ID
                 using (IDbConnection connection = new SqlConnection(Helper.dbConn("dbSondaj")))
                 {
                     dataAD = new SqlDataAdapter("select * from Municipiu where judetID='" + val + "'", (SqlConnection)connection);
@@ -76,7 +80,10 @@ namespace AppSondaj
             int val;
             try
             {
+                // Get the selected value index
                 int.TryParse(usrMunicipiu.SelectedValue.ToString(), out val);
+
+                // Output Orase based on Municipiu ID
                 using (IDbConnection connection = new SqlConnection(Helper.dbConn("dbSondaj")))
                 {
                     dataAD = new SqlDataAdapter("select * from Oras where municipiuID='" + val + "'", (SqlConnection)connection);
@@ -105,6 +112,7 @@ namespace AppSondaj
 
         private void btnSave_Click(object sender, EventArgs e)
         {
+            // Get the inserted data
             int judetID = Convert.ToInt32(usrJudet.SelectedValue);
             int municipiuID = Convert.ToInt32(usrMunicipiu.SelectedValue);
             int orasID = Convert.ToInt32(usrOras.SelectedValue);
@@ -118,7 +126,8 @@ namespace AppSondaj
                 using (IDbConnection connection = new SqlConnection(Helper.dbConn("dbSondaj")))
                 {
                     connection.Open();
-
+                    
+                    // Check data
                     if (usrM.Checked)
                     {
                         sex = "M";
@@ -155,19 +164,21 @@ namespace AppSondaj
                         participated = false;
                     }
 
+                    // Check if all data was inserted
                     if (usrName.Text != "" && usrSurname.Text != "" && usrStudies.Text != ""
                         && usrEmail.Text != "" && usrBirthday.Text != "" && usrJudet.Text != ""
                         && usrMunicipiu.Text != "" && usrOras.Text != "")
                     {
+                        // SQL insert
                         cmd = new SqlCommand("insert into Persoana values('" + usrName.Text + "', '" +
                             usrSurname.Text + "','" + sex + "', '" + usrStudies.Text + "','" + usrEmail.Text + "', '" +
                             usrBirthday.Text + "', '" + judetID + "','" + municipiuID + "', '" + orasID + "', '" +
                             married + "', '" + divorced + "', '" + participated + "')", (SqlConnection)connection);
                         cmd.ExecuteNonQuery();
 
-                        MessageBox.Show("New person added!");
-
                         this.Close();
+
+                        MessageBox.Show("New person added!");
                     }
                     else
                     {
@@ -184,6 +195,7 @@ namespace AppSondaj
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
+            // Get the new data
             int judetID = Convert.ToInt32(usrJudet.SelectedValue);
             int municipiuID = Convert.ToInt32(usrMunicipiu.SelectedValue);
             int orasID = Convert.ToInt32(usrOras.SelectedValue);
@@ -198,6 +210,7 @@ namespace AppSondaj
                 {
                     connection.Open();
 
+                    // Check data
                     if (usrM.Checked)
                     {
                         sex = "M";
@@ -234,24 +247,27 @@ namespace AppSondaj
                         participated = false;
                     }
 
+                    // Check if all the data was inserted
                     if (usrName.Text != "" && usrSurname.Text != "" && usrStudies.Text != ""
                         && usrEmail.Text != "" && usrBirthday.Text != "" && usrJudet.Text != ""
                         && usrMunicipiu.Text != "" && usrOras.Text != "")
                     {
+                        // SQL update
                         cmd = new SqlCommand("update Persoana set Nume='" + usrName.Text + "', Prenume='" +
                             usrSurname.Text + "', sex='" + sex + "', studii='" + usrStudies.Text + "', email='" + usrEmail.Text + "', DataNasterii='" +
                             usrBirthday.Text + "', judetID='" + judetID + "', municipiuID='" + municipiuID + "', orasID='" + orasID + "', Casatorit='" +
                             married + "', Divortat='" + divorced + "', Participant='" + participated + "' where persoanaID = " + personID, (SqlConnection)connection);
                         cmd.ExecuteNonQuery();
 
-                        MessageBox.Show("Changes were saved!");
-
+                        // Trigger DataGridView update
                         if (System.Windows.Forms.Application.OpenForms["peopleEdit"] != null)
                         {
                             (System.Windows.Forms.Application.OpenForms["peopleEdit"] as peopleEdit).refreshPeople();
                         }
 
                         this.Close();
+
+                        MessageBox.Show("Changes were saved!");
                     }
                     else
                     {

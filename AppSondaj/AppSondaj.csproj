@@ -152,6 +152,8 @@
     <None Include="images\update.png" />
     <None Include="images\refresh.png" />
     <None Include="images\questions.png" />
+    <None Include="images\down-arrow.png" />
+    <None Include="images\up-arrow.png" />
     <Content Include="queries\createPoll.sql" />
     <Content Include="queries\insertPoll.sql" />
     <None Include="images\report.png" />

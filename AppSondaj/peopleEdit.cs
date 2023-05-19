@@ -23,6 +23,7 @@ namespace AppSondaj
             InitializeComponent();
 
             gridPeople.MultiSelect = false;
+            gridPeople.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
         }
 
         // A struct to store the colors
@@ -79,10 +80,25 @@ namespace AppSondaj
                     dataAD.Fill(dt);
 
                     gridPeople.DataSource = dt;
+
+                    DataColumn Age = new DataColumn();
+
+                    dt.Columns.Add("Age", typeof(int));
+
+                    foreach (DataRow row in dt.Rows)
+                    {
+                        DateTime d0 = new DateTime(1, 1, 1);
+                        DateTime now = DateTime.Now;
+                        TimeSpan ts = now - Convert.ToDateTime(row["DataNasterii"]);
+
+                        row["Age"] = ((d0 + ts).Year - 1);
+                    }
+
                     gridPeople.Columns["persoanaID"].Visible = false;
                     gridPeople.Columns["judetID"].Visible = false;
                     gridPeople.Columns["municipiuID"].Visible = false;
                     gridPeople.Columns["orasID"].Visible = false;
+                    gridPeople.Columns["Age"].Visible = false;
 
                     // Adapt columns width to the largest string
                     foreach (DataGridViewColumn column in gridPeople.Columns)
@@ -118,6 +134,7 @@ namespace AppSondaj
 
                 try
                 {
+                    // insert the selected person data to the form for the update
                     person.personID = selectedID;
 
                     person.usrName.Text = Convert.ToString(gridPeople.SelectedRows[0].Cells["Nume"].Value);
@@ -149,6 +166,7 @@ namespace AppSondaj
                         person.usrParticipated.Checked = true;
                     }
 
+                    // Hide save button and show the update button
                     person.btnSave.Visible = false;
                     person.btnUpdate.Visible = true;
                     person.Show();
@@ -176,20 +194,22 @@ namespace AppSondaj
                 {
                     using (IDbConnection connection = new SqlConnection(Helper.dbConn("dbSondaj")))
                     {
-                        // Check if the selected person has any foreign key references
+                        // Check if the selected person has any foreign key references in answers table
                         using (SqlCommand command = new SqlCommand("select count(*) from Raspuns where persoanaID = @ID", (SqlConnection)connection))
                         {
                             command.Parameters.AddWithValue("@ID", selectedID);
 
                             connection.Open();
-                            int count = (int)command.ExecuteScalar();
+                            int count = (int)command.ExecuteScalar(); // Execute scalar to get the number of foreign keys
 
                             if (count > 0)
                             {
-                                DialogResult result = MessageBox.Show("Selected person has given an answer to the poll, are you willing to delete the poll result as well?",
+                                // Ask user if he wants to delete all the answers record as well
+                                DialogResult result = MessageBox.Show("Selected person has given an answer to the poll, are you willing to delete the poll records as well?",
                                     "Delete answer as well?", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                                 if (result == DialogResult.Yes)
                                 {
+                                    // Delete the poll based on the ID of the answer of the person
                                     using (SqlCommand cmd = new SqlCommand("delete from Sondaj where raspunsID in (select raspunsID from Raspuns where persoanaID = @ID)",
                                         (SqlConnection)connection))
                                     {
@@ -199,12 +219,14 @@ namespace AppSondaj
                                         connection.Close();
                                     }
 
+                                    // Delete the answer of the person
                                     using (SqlCommand commandDelete = new SqlCommand("delete from Raspuns where persoanaID = @ID", (SqlConnection)connection))
                                     {
                                         commandDelete.Parameters.AddWithValue("@ID", selectedID);
                                         commandDelete.ExecuteNonQuery();
                                     }
 
+                                    // Delete the person
                                     using (SqlCommand commandDelete = new SqlCommand("delete from Persoana where persoanaID = @ID", (SqlConnection)connection))
                                     {
                                         commandDelete.Parameters.AddWithValue("@ID", selectedID);
@@ -219,6 +241,7 @@ namespace AppSondaj
                             }
                             else
                             {
+                                // Delete the person
                                 using (SqlCommand commandDelete = new SqlCommand("delete from Persoana where persoanaID = @ID", (SqlConnection)connection))
                                 {
                                     commandDelete.Parameters.AddWithValue("@ID", selectedID);
@@ -245,12 +268,22 @@ namespace AppSondaj
             }
         }
 
-        private void peopleEdit_Load(object sender, EventArgs e)
+        private void btnSortAsc_Click(object sender, EventArgs e)
+        {
+            gridPeople.Sort(gridPeople.Columns["Age"], ListSortDirection.Ascending);
+        }
+
+        private void btnSortDesc_Click(object sender, EventArgs e)
+        {
+            gridPeople.Sort(gridPeople.Columns["Age"], ListSortDirection.Descending);
+        }
+
+        private void btnRefresh_Click(object sender, EventArgs e)
         {
             refreshPeople();
         }
 
-        private void btnRefresh_Click(object sender, EventArgs e)
+        private void peopleEdit_Load(object sender, EventArgs e)
         {
             refreshPeople();
         }
