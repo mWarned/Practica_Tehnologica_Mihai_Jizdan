@@ -24,6 +24,8 @@ namespace AppSondaj
             gridThemes.MultiSelect = false;
             gridQuestions.MultiSelect = false;
 
+            gridThemes.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            gridQuestions.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
         }
 
         // A struct to store the colors
@@ -144,83 +146,151 @@ namespace AppSondaj
         private void btnAddTheme_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, colorList.lightBlue, "left");
-            addTheme themes = new addTheme();
+            newTheme themes = new newTheme();
+            themes.btnSave.Visible = true;
+            themes.btnUpdate.Visible = false;
             themes.Show();
         }
 
         private void btnUpdateTheme_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, colorList.lightBlue, "left");
+            if (gridThemes.SelectedRows.Count > 0)
+            {
+                // Get the selected record's identifier
+                int selectedID = Convert.ToInt32(gridThemes.SelectedRows[0].Cells["tematicaID"].Value);
+
+                newTheme theme = new newTheme();
+
+                try
+                {
+                    // Insert the selected theme data in the update form
+                    theme.themeID = selectedID;
+
+                    theme.usrTheme.Text = Convert.ToString(gridThemes.SelectedRows[0].Cells["Tematica"].Value);
+
+                    // Hide save button and show the update button
+                    theme.btnSave.Visible = false;
+                    theme.btnUpdate.Visible = true;
+                    theme.Show();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Select the row containing the person whose data you want to update!", "Select row!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
 
         private void btnDeleteTheme_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, colorList.lightBlue, "left");
 
-            // Default selected index
-            int selectedID = -1;
-
             // Get the selected record's identifier
+            int selectedID = Convert.ToInt32(gridThemes.SelectedRows[0].Cells["tematicaID"].Value);
+
+            // Check selected row
             if (gridThemes.SelectedRows.Count > 0)
-            {
-                selectedID = Convert.ToInt32(gridThemes.SelectedRows[0].Cells["tematicaID"].Value);
-            }
-            else if (gridThemes.SelectedCells.Count > 0)
-            {
-                selectedID = Convert.ToInt32(gridThemes.Rows[gridThemes.SelectedCells[0].RowIndex].Cells["tematicaID"].Value);
-            }
-            else
-            {
-                MessageBox.Show("Select the theme to be deleted!", "Select theme!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-
-            MessageBox.Show(gridThemes.SelectedCells.Count.ToString() + " " + gridThemes.SelectedRows.Count.ToString());
-
-            // If selectedID is not -1 (default value) - then start deletion
-            if (selectedID != -1)
             {
                 try
                 {
                     using (IDbConnection connection = new SqlConnection(Helper.dbConn("dbSondaj")))
                     {
                         // Check if the selected theme has any foreign key references in answers table
-                        using (SqlCommand command = new SqlCommand("select count(*) from Raspuns where tematicaID = @ID", (SqlConnection)connection))
+                        using (SqlCommand command = new SqlCommand("select count(*) from Raspuns where intrebareID in (select intrebareID from Intrebare where tematicaID = @ID)", (SqlConnection)connection))
                         {
+                            connection.Open();
+
                             command.Parameters.AddWithValue("@ID", selectedID);
 
-                            connection.Open();
-                            int count = (int)command.ExecuteScalar(); // Execute scalar to get the number of foreign keys
+                            int countQ;
+
+                            using (SqlCommand checkQuestions = new SqlCommand("select count(*) from Intrebare where tematicaID = @ID", (SqlConnection)connection))
+                            {
+                                checkQuestions.Parameters.AddWithValue("ID", selectedID);
+
+                                countQ = (int)checkQuestions.ExecuteScalar(); // Execute scalar to get number of foreign keys with Questions table
+                            }
+                           
+                            int count = (int)command.ExecuteScalar(); // Execute scalar to get the number of foreign keys Answers table
+
+                            connection.Close();
 
                             if (count > 0)
                             {
-                                // Ask user if he wants to delete all the answers record as well
+                                // Ask user if he wants to delete all the answers records as well
                                 DialogResult result = MessageBox.Show("Selected theme was used in the poll, are you willing to delete the poll records as well?",
-                                    "Delete answer as well?", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                                    "Delete answers as well?", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                                 if (result == DialogResult.Yes)
                                 {
-                                    // Delete the poll based on the ID of the theme
-                                    using (SqlCommand cmd = new SqlCommand("delete from Sondaj where raspunsID in (select raspunsID from Raspuns where tematicaID = @ID)",
+                                    connection.Open();
+
+                                    // Delete the polls
+                                    using (SqlCommand cmd = new SqlCommand("delete from Sondaj where raspunsID in (select raspunsID from Raspuns where intrebareID in (select intrebareID from Intrebare where tematicaID = @ID))",
                                         (SqlConnection)connection))
                                     {
                                         cmd.Parameters.AddWithValue("@ID", selectedID);
                                         cmd.ExecuteNonQuery();
-
-                                        connection.Close();
                                     }
 
-                                    // Delete the answer
-                                    using (SqlCommand commandDelete = new SqlCommand("delete from Raspuns where tematicaID = @ID", (SqlConnection)connection))
+                                    // Delete the answers
+                                    using (SqlCommand commandDelete = new SqlCommand("delete from Raspuns where intrebareID in (select intrebareID from Intrebare where tematicaID = @ID)",
+                                        (SqlConnection)connection))
+                                    {
+                                        commandDelete.Parameters.AddWithValue("@ID", selectedID);
+                                        commandDelete.ExecuteNonQuery();
+                                    }
+
+                                    // Delete the questions
+                                    using (SqlCommand commandDelete = new SqlCommand("delete from Intrebare where tematicaID = @ID", (SqlConnection)connection))
                                     {
                                         commandDelete.Parameters.AddWithValue("@ID", selectedID);
                                         commandDelete.ExecuteNonQuery();
                                     }
 
                                     // Delete the theme
-                                    using (SqlCommand commandDelete = new SqlCommand("delete from Persoana where tematicaID = @ID", (SqlConnection)connection))
+                                    using (SqlCommand commandDelete = new SqlCommand("delete from Tematica where tematicaID = @ID", (SqlConnection)connection))
                                     {
                                         commandDelete.Parameters.AddWithValue("@ID", selectedID);
                                         commandDelete.ExecuteNonQuery();
                                     }
+
+                                    connection.Close();
+
+                                    // Refresh the DataGridView after deletion
+                                    refreshThemes();
+
+                                    MessageBox.Show("Theme was deleted!");
+                                }
+                            }
+                            else if (countQ > 0)
+                            {
+                                // Ask user if he wants to delete all the questions records as well
+                                DialogResult result = MessageBox.Show("Selected theme was used for questions, are you willing to delete the questions records as well?",
+                                    "Delete questions as well?", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                                if (result == DialogResult.Yes)
+                                {
+                                    connection.Open();
+
+                                    // Delete the questions
+                                    using (SqlCommand commandDelete = new SqlCommand("delete from Intrebare where tematicaID = @ID", (SqlConnection)connection))
+                                    {
+                                        commandDelete.Parameters.AddWithValue("@ID", selectedID);
+
+                                        commandDelete.ExecuteNonQuery();
+                                    }
+
+                                    // Delete the theme
+                                    using (SqlCommand commandDelete = new SqlCommand("delete from Tematica where tematicaID = @ID", (SqlConnection)connection))
+                                    {
+                                        commandDelete.Parameters.AddWithValue("@ID", selectedID);
+                                        commandDelete.ExecuteNonQuery();
+                                    }
+
+                                    connection.Close();
 
                                     // Refresh the DataGridView after deletion
                                     refreshThemes();
@@ -238,6 +308,8 @@ namespace AppSondaj
                                     commandDelete.Parameters.AddWithValue("@ID", selectedID);
 
                                     commandDelete.ExecuteNonQuery();
+
+                                    connection.Close();
                                 }
 
                                 // Refresh the DataGridView after deletion
@@ -249,8 +321,6 @@ namespace AppSondaj
 
                         // Refresh the DataGridView after deletion
                         refreshThemes();
-
-                        MessageBox.Show("Theme was deleted!");
                     }
                 }
                 catch (Exception ex)
@@ -262,8 +332,6 @@ namespace AppSondaj
             {
                 MessageBox.Show("Select the theme to be deleted!", "Select theme!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-
-            selectedID = -1;
         }
 
         private void btnRefreshTheme_Click(object sender, EventArgs e)
@@ -275,16 +343,145 @@ namespace AppSondaj
         private void btnAddQuestion_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, colorList.lightBlue, "right");
+            newQuestion questions = new newQuestion();
+            questions.btnSave.Visible = true;
+            questions.btnUpdate.Visible = false;
+            questions.Show();
         }
 
         private void btnUpdateQuestion_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, colorList.lightBlue, "right");
+            if (gridQuestions.SelectedRows.Count > 0)
+            {
+                // Get the selected record's identifier
+                int selectedID = Convert.ToInt32(gridQuestions.SelectedRows[0].Cells["intrebareID"].Value);
+
+                newQuestion questions = new newQuestion();
+
+                try
+                {
+                    // Insert the selected theme data in the update form
+                    questions.questionID = selectedID;
+
+                    questions.usrTheme.Text = Convert.ToString(gridQuestions.SelectedRows[0].Cells["Tematica"].Value);
+                    questions.usrQuestion.Text = Convert.ToString(gridQuestions.SelectedRows[0].Cells["Intrebare"].Value);
+
+                    // Hide save button and show the update button
+                    questions.btnSave.Visible = false;
+                    questions.btnUpdate.Visible = true;
+                    questions.Show();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Select the row containing the person whose data you want to update!", "Select row!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
 
         private void btnDeleteQuestion_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, colorList.lightBlue, "right");
+
+            // Get the selected record's identifier
+            int selectedID = Convert.ToInt32(gridQuestions.SelectedRows[0].Cells["intrebareID"].Value);
+
+            // Check selected row
+            if (gridQuestions.SelectedRows.Count > 0)
+            {
+                try
+                {
+                    using (IDbConnection connection = new SqlConnection(Helper.dbConn("dbSondaj")))
+                    {
+                        // Check if the selected theme has any foreign key references in answers table
+                        using (SqlCommand command = new SqlCommand("select count(*) from Raspuns where intrebareID = @ID", (SqlConnection)connection))
+                        {
+                            connection.Open();
+
+                            command.Parameters.AddWithValue("@ID", selectedID);
+
+                            int count = (int)command.ExecuteScalar(); // Execute scalar to get the number of foreign keys Answers table
+
+                            connection.Close();
+
+                            if (count > 0)
+                            {
+                                // Ask user if he wants to delete all the answers records as well
+                                DialogResult result = MessageBox.Show("Selected question was used in the poll, are you willing to delete the poll records as well?",
+                                    "Delete answers as well?", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                                if (result == DialogResult.Yes)
+                                {
+                                    connection.Open();
+
+                                    // Delete the polls
+                                    using (SqlCommand cmd = new SqlCommand("delete from Sondaj where raspunsID in (select raspunsID from Raspuns where intrebareID = @ID)",
+                                        (SqlConnection)connection))
+                                    {
+                                        cmd.Parameters.AddWithValue("@ID", selectedID);
+                                        cmd.ExecuteNonQuery();
+                                    }
+
+                                    // Delete the answers
+                                    using (SqlCommand commandDelete = new SqlCommand("delete from Raspuns where intrebareID = @ID",
+                                        (SqlConnection)connection))
+                                    {
+                                        commandDelete.Parameters.AddWithValue("@ID", selectedID);
+                                        commandDelete.ExecuteNonQuery();
+                                    }
+
+                                    // Delete the question
+                                    using (SqlCommand commandDelete = new SqlCommand("delete from Intrebare where intrebareID = @ID", (SqlConnection)connection))
+                                    {
+                                        commandDelete.Parameters.AddWithValue("@ID", selectedID);
+                                        commandDelete.ExecuteNonQuery();
+                                    }
+
+                                    connection.Close();
+
+                                    // Refresh the DataGridView after deletion
+                                    refreshQuestions();
+
+                                    MessageBox.Show("Question was deleted!");
+                                }
+                            }
+                            else
+                            {
+                                // If theme has no foreign keys proceed to deletion
+                                using (SqlCommand commandDelete = new SqlCommand("delete from Intrebare where intrebareID = @ID", (SqlConnection)connection))
+                                {
+                                    connection.Open();
+
+                                    commandDelete.Parameters.AddWithValue("@ID", selectedID);
+
+                                    commandDelete.ExecuteNonQuery();
+
+                                    connection.Close();
+                                }
+
+                                // Refresh the DataGridView after deletion
+                                refreshQuestions();
+
+                                MessageBox.Show("Question was deleted!");
+                            }
+                        }
+
+                        // Refresh the DataGridView after deletion
+                        refreshQuestions();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Select the question to be deleted!", "Select question!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
 
         private void btnRefreshQuestion_Click(object sender, EventArgs e)

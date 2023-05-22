@@ -54,17 +54,23 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="addPerson.cs">
+    <Compile Include="newPerson.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="addPerson.Designer.cs">
-      <DependentUpon>addPerson.cs</DependentUpon>
+    <Compile Include="newPerson.Designer.cs">
+      <DependentUpon>newPerson.cs</DependentUpon>
     </Compile>
-    <Compile Include="addTheme.cs">
+    <Compile Include="newQuestion.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="addTheme.Designer.cs">
-      <DependentUpon>addTheme.cs</DependentUpon>
+    <Compile Include="newQuestion.Designer.cs">
+      <DependentUpon>newQuestion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="newTheme.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="newTheme.Designer.cs">
+      <DependentUpon>newTheme.cs</DependentUpon>
     </Compile>
     <Compile Include="dbActions.cs" />
     <Compile Include="Helper.cs" />
@@ -96,11 +102,14 @@
       <DependentUpon>themeQuestionEdit.cs</DependentUpon>
     </Compile>
     <None Include="Resources\questions.png" />
-    <EmbeddedResource Include="addPerson.resx">
-      <DependentUpon>addPerson.cs</DependentUpon>
+    <EmbeddedResource Include="newPerson.resx">
+      <DependentUpon>newPerson.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="addTheme.resx">
-      <DependentUpon>addTheme.cs</DependentUpon>
+    <EmbeddedResource Include="newQuestion.resx">
+      <DependentUpon>newQuestion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="newTheme.resx">
+      <DependentUpon>newTheme.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>

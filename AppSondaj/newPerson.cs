@@ -100,16 +100,6 @@ namespace AppSondaj
             }
         }
 
-        private void btnMinimize_Click(object sender, EventArgs e)
-        {
-            WindowState = FormWindowState.Minimized;
-        }
-
-        private void btnClose_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
         private void btnSave_Click(object sender, EventArgs e)
         {
             // Get the inserted data
@@ -126,7 +116,7 @@ namespace AppSondaj
                 using (IDbConnection connection = new SqlConnection(Helper.dbConn("dbSondaj")))
                 {
                     connection.Open();
-                    
+
                     // Check data
                     if (usrM.Checked)
                     {
@@ -182,7 +172,7 @@ namespace AppSondaj
                     }
                     else
                     {
-                        MessageBox.Show("Data incomplete, please fill all fields");
+                        MessageBox.Show("Data incomplete, please fill all fields!");
                     }
                 }
 
@@ -280,6 +270,16 @@ namespace AppSondaj
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void btnMinimize_Click(object sender, EventArgs e)
+        {
+            WindowState = FormWindowState.Minimized;
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

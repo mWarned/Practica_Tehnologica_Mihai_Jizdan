@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(themeQuestionEdit));
             this.gridThemes = new System.Windows.Forms.DataGridView();
             this.grpActions = new System.Windows.Forms.GroupBox();
             this.btnRefreshTheme = new System.Windows.Forms.Button();
@@ -36,12 +37,12 @@
             this.btnDeleteTheme = new System.Windows.Forms.Button();
             this.btnAddTheme = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.pnlSideBtn2 = new System.Windows.Forms.Panel();
             this.btnRefreshQuestion = new System.Windows.Forms.Button();
             this.btnUpdateQuestion = new System.Windows.Forms.Button();
             this.btnDeleteQuestion = new System.Windows.Forms.Button();
             this.btnAddQuestion = new System.Windows.Forms.Button();
             this.gridQuestions = new System.Windows.Forms.DataGridView();
-            this.pnlSideBtn2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.gridThemes)).BeginInit();
@@ -166,6 +167,14 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Actions";
             // 
+            // pnlSideBtn2
+            // 
+            this.pnlSideBtn2.Location = new System.Drawing.Point(225, 34);
+            this.pnlSideBtn2.Name = "pnlSideBtn2";
+            this.pnlSideBtn2.Size = new System.Drawing.Size(7, 66);
+            this.pnlSideBtn2.TabIndex = 5;
+            this.pnlSideBtn2.Visible = false;
+            // 
             // btnRefreshQuestion
             // 
             this.btnRefreshQuestion.FlatAppearance.BorderSize = 0;
@@ -240,14 +249,6 @@
             this.gridQuestions.Size = new System.Drawing.Size(464, 613);
             this.gridQuestions.TabIndex = 11;
             // 
-            // pnlSideBtn2
-            // 
-            this.pnlSideBtn2.Location = new System.Drawing.Point(225, 34);
-            this.pnlSideBtn2.Name = "pnlSideBtn2";
-            this.pnlSideBtn2.Size = new System.Drawing.Size(7, 66);
-            this.pnlSideBtn2.TabIndex = 5;
-            this.pnlSideBtn2.Visible = false;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -283,6 +284,7 @@
             this.Controls.Add(this.grpActions);
             this.Controls.Add(this.gridThemes);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "themeQuestionEdit";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "themeEdit";
