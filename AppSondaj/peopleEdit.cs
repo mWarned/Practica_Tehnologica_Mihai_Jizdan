@@ -209,16 +209,6 @@ namespace AppSondaj
                                     "Delete answer as well?", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                                 if (result == DialogResult.Yes)
                                 {
-                                    // Delete the poll based on the ID of the answer of the person
-                                    using (SqlCommand cmd = new SqlCommand("delete from Sondaj where raspunsID in (select raspunsID from Raspuns where persoanaID = @ID)",
-                                        (SqlConnection)connection))
-                                    {
-                                        cmd.Parameters.AddWithValue("@ID", selectedID);
-                                        cmd.ExecuteNonQuery();
-
-                                        connection.Close();
-                                    }
-
                                     // Delete the answer of the person
                                     using (SqlCommand commandDelete = new SqlCommand("delete from Raspuns where persoanaID = @ID", (SqlConnection)connection))
                                     {

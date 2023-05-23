@@ -46,22 +46,16 @@ create table Intrebare(
 	tematicaID int foreign key references Tematica(tematicaID)
 )
 
-create table Raspuns(
-	raspunsID int primary key identity(1, 1),
-	Raspuns varchar(200),
-	intrebareID int foreign key references Intrebare(intrebareID),
-	persoanaID int foreign key references Persoana(persoanaID)
-)
-
 create table Limba(
 	limbaID int primary key identity(1, 1),
 	Limba varchar(50)
 )
 
-create table Sondaj(
-	sondajID int primary key identity(1, 1),
-	raspunsID int foreign key references Raspuns(raspunsID),
+create table Raspuns(
+	raspunsID int primary key identity(1, 1),
+	Raspuns varchar(200),
+	intrebareID int foreign key references Intrebare(intrebareID),
+	persoanaID int foreign key references Persoana(persoanaID),
 	limbaID int foreign key references Limba(limbaID)
 )
-
 

@@ -63,16 +63,17 @@ namespace AppSondaj
             {
                 using (IDbConnection connection = new SqlConnection(Helper.dbConn("dbSondaj")))
                 {
-                    dataAD = new SqlDataAdapter("select Nume, Prenume, Tematica, Intrebare, Raspuns, Limba from Sondaj " +
-                        "inner join Raspuns on Sondaj.sondajID = Raspuns.raspunsID " +
+                    dataAD = new SqlDataAdapter("select raspunsID, Nume, Prenume, Tematica, Intrebare, Raspuns, Limba from Raspuns " +
                         "inner join Persoana on Raspuns.persoanaID = Persoana.persoanaID " +
                         "inner join Intrebare on Raspuns.intrebareID = Intrebare.intrebareID " +
                         "inner join Tematica on Intrebare.tematicaID = Tematica.tematicaID " +
-                        "inner join Limba on Sondaj.limbaID = Limba.limbaID", (SqlConnection)connection);
+                        "inner join Limba on Raspuns.limbaID = Limba.limbaID", (SqlConnection)connection);
 
                     dt = new System.Data.DataTable();
                     dataAD.Fill(dt);
                     outPoll.DataSource = dt;
+
+                    outPoll.Columns["raspunsID"].Visible = false;
 
                     // Adapt columns width to the largest string
                     foreach (DataGridViewColumn column in outPoll.Columns)
@@ -93,6 +94,7 @@ namespace AppSondaj
         {
             ActivateButton(sender, colorList.lightBlue);
             newPoll poll = new newPoll();
+            MessageBox.Show(outPoll.SelectedRows[0].Cells["raspunsID"].Value.ToString()) ;
             poll.Show();
         }
 

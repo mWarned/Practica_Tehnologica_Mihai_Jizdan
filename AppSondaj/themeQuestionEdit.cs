@@ -228,14 +228,6 @@ namespace AppSondaj
                                 {
                                     connection.Open();
 
-                                    // Delete the polls
-                                    using (SqlCommand cmd = new SqlCommand("delete from Sondaj where raspunsID in (select raspunsID from Raspuns where intrebareID in (select intrebareID from Intrebare where tematicaID = @ID))",
-                                        (SqlConnection)connection))
-                                    {
-                                        cmd.Parameters.AddWithValue("@ID", selectedID);
-                                        cmd.ExecuteNonQuery();
-                                    }
-
                                     // Delete the answers
                                     using (SqlCommand commandDelete = new SqlCommand("delete from Raspuns where intrebareID in (select intrebareID from Intrebare where tematicaID = @ID)",
                                         (SqlConnection)connection))
@@ -416,14 +408,6 @@ namespace AppSondaj
                                 if (result == DialogResult.Yes)
                                 {
                                     connection.Open();
-
-                                    // Delete the polls
-                                    using (SqlCommand cmd = new SqlCommand("delete from Sondaj where raspunsID in (select raspunsID from Raspuns where intrebareID = @ID)",
-                                        (SqlConnection)connection))
-                                    {
-                                        cmd.Parameters.AddWithValue("@ID", selectedID);
-                                        cmd.ExecuteNonQuery();
-                                    }
 
                                     // Delete the answers
                                     using (SqlCommand commandDelete = new SqlCommand("delete from Raspuns where intrebareID = @ID",
