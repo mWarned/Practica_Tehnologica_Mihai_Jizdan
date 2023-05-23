@@ -133,6 +133,16 @@ VALUES
 	('Care este cel mai interesant lucru pe care l-ai invatat recent?', 14),
 	('Ce inseamnă religia pentru tine?', 15);
 	
+INSERT INTO Limba (Limba)
+VALUES
+	('Engleza'), 
+	('Franceza'), 
+	('Germana'), 
+	('Spaniola'), 
+	('Italiana'), 
+	('Romana'), 
+	('Rusa')
+
 INSERT INTO Raspuns (Raspuns, intrebareID, persoanaID, limbaID)
 VALUES
 	('Michael Jackson', 1, 1, 2),
@@ -196,12 +206,3 @@ VALUES
 	('Nu am o opinie', 12, 4, 4),
 	('Este extrem de important sa atragem atentia aspura acestei probleme', 12, 5, 7)
 	
-INSERT INTO Limba (Limba)
-VALUES
-	('Engleza'), 
-	('Franceza'), 
-	('Germana'), 
-	('Spaniola'), 
-	('Italiana'), 
-	('Romana'), 
-	('Rusa')
