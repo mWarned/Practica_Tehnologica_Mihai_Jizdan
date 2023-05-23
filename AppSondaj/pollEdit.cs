@@ -56,26 +56,14 @@ namespace AppSondaj
             }
         }
 
-        // Events for button clicks
-
-        private void btnAdd_Click(object sender, EventArgs e)
-        {
-            ActivateButton(sender, colorList.lightBlue);
-        }
-
-        private void btnDelete_Click(object sender, EventArgs e)
-        {
-            ActivateButton(sender, colorList.lightBlue);
-        }
-
-        // Loading the data from the database nad outputting it 
-        private void pollEdit_Load(object sender, EventArgs e)
+        // Method for outputting data 
+        public void refreshPoll()
         {
             try
             {
                 using (IDbConnection connection = new SqlConnection(Helper.dbConn("dbSondaj")))
                 {
-                    dataAD = new SqlDataAdapter("select Nume, Prenume, Tematica, Intrebare, Raspuns from Sondaj " +
+                    dataAD = new SqlDataAdapter("select Nume, Prenume, Tematica, Intrebare, Raspuns, Limba from Sondaj " +
                         "inner join Raspuns on Sondaj.sondajID = Raspuns.raspunsID " +
                         "inner join Persoana on Raspuns.persoanaID = Persoana.persoanaID " +
                         "inner join Intrebare on Raspuns.intrebareID = Intrebare.intrebareID " +
@@ -97,6 +85,36 @@ namespace AppSondaj
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        // Events for button clicks
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            ActivateButton(sender, colorList.lightBlue);
+            newPoll poll = new newPoll();
+            poll.Show();
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            ActivateButton(sender, colorList.lightBlue);
+        }
+
+        // Loading the data from the database and outputting it 
+        private void pollEdit_Load(object sender, EventArgs e)
+        {
+            refreshPoll();
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            ActivateButton(sender, colorList.lightBlue);
+        }
+
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            ActivateButton(sender, colorList.lightBlue);
         }
     }
 }

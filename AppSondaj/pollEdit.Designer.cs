@@ -31,9 +31,11 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(pollEdit));
             this.grpActions = new System.Windows.Forms.GroupBox();
             this.pnlSideBtn = new System.Windows.Forms.Panel();
+            this.outPoll = new System.Windows.Forms.DataGridView();
+            this.btnRefresh = new System.Windows.Forms.Button();
+            this.btnUpdate = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
-            this.outPoll = new System.Windows.Forms.DataGridView();
             this.grpActions.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.outPoll)).BeginInit();
             this.SuspendLayout();
@@ -41,6 +43,8 @@
             // grpActions
             // 
             this.grpActions.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.grpActions.Controls.Add(this.btnRefresh);
+            this.grpActions.Controls.Add(this.btnUpdate);
             this.grpActions.Controls.Add(this.pnlSideBtn);
             this.grpActions.Controls.Add(this.btnDelete);
             this.grpActions.Controls.Add(this.btnAdd);
@@ -61,6 +65,48 @@
             this.pnlSideBtn.TabIndex = 4;
             this.pnlSideBtn.Visible = false;
             // 
+            // outPoll
+            // 
+            this.outPoll.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
+            this.outPoll.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.outPoll.Location = new System.Drawing.Point(12, 12);
+            this.outPoll.Name = "outPoll";
+            this.outPoll.ReadOnly = true;
+            this.outPoll.Size = new System.Drawing.Size(998, 647);
+            this.outPoll.TabIndex = 7;
+            // 
+            // btnRefresh
+            // 
+            this.btnRefresh.FlatAppearance.BorderSize = 0;
+            this.btnRefresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRefresh.Font = new System.Drawing.Font("Nirmala UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRefresh.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(246)))));
+            this.btnRefresh.Image = global::AppSondaj.Properties.Resources.refresh;
+            this.btnRefresh.Location = new System.Drawing.Point(6, 575);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(226, 66);
+            this.btnRefresh.TabIndex = 6;
+            this.btnRefresh.Text = "Refresh";
+            this.btnRefresh.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btnRefresh.UseVisualStyleBackColor = true;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
+            // 
+            // btnUpdate
+            // 
+            this.btnUpdate.FlatAppearance.BorderSize = 0;
+            this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUpdate.Font = new System.Drawing.Font("Nirmala UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpdate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(246)))));
+            this.btnUpdate.Image = global::AppSondaj.Properties.Resources.update;
+            this.btnUpdate.Location = new System.Drawing.Point(6, 103);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(226, 66);
+            this.btnUpdate.TabIndex = 5;
+            this.btnUpdate.Text = "Update";
+            this.btnUpdate.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
+            // 
             // btnDelete
             // 
             this.btnDelete.FlatAppearance.BorderSize = 0;
@@ -68,7 +114,7 @@
             this.btnDelete.Font = new System.Drawing.Font("Nirmala UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDelete.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(246)))));
             this.btnDelete.Image = global::AppSondaj.Properties.Resources.delete;
-            this.btnDelete.Location = new System.Drawing.Point(6, 117);
+            this.btnDelete.Location = new System.Drawing.Point(6, 175);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(226, 66);
             this.btnDelete.TabIndex = 3;
@@ -92,16 +138,6 @@
             this.btnAdd.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
-            // 
-            // outPoll
-            // 
-            this.outPoll.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
-            this.outPoll.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.outPoll.Location = new System.Drawing.Point(12, 12);
-            this.outPoll.Name = "outPoll";
-            this.outPoll.ReadOnly = true;
-            this.outPoll.Size = new System.Drawing.Size(998, 647);
-            this.outPoll.TabIndex = 7;
             // 
             // pollEdit
             // 
@@ -129,5 +165,7 @@
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.DataGridView outPoll;
         private System.Windows.Forms.Panel pnlSideBtn;
+        private System.Windows.Forms.Button btnRefresh;
+        private System.Windows.Forms.Button btnUpdate;
     }
 }

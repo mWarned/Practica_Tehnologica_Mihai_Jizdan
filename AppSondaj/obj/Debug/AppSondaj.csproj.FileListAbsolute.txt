@@ -44,3 +44,4 @@ C:\Users\PC\Source\Repos\mWarned\Practica_Tehnologica_Mihai_Jizdan\AppSondaj\obj
 C:\Users\PC\Source\Repos\mWarned\Practica_Tehnologica_Mihai_Jizdan\AppSondaj\obj\Debug\AppSondaj.newPerson.resources
 C:\Users\PC\Source\Repos\mWarned\Practica_Tehnologica_Mihai_Jizdan\AppSondaj\obj\Debug\AppSondaj.newTheme.resources
 C:\Users\PC\Source\Repos\mWarned\Practica_Tehnologica_Mihai_Jizdan\AppSondaj\obj\Debug\AppSondaj.newQuestion.resources
+C:\Users\PC\Source\Repos\mWarned\Practica_Tehnologica_Mihai_Jizdan\AppSondaj\obj\Debug\AppSondaj.newPoll.resources
