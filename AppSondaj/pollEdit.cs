@@ -15,6 +15,9 @@ namespace AppSondaj
         public pollEdit()
         {
             InitializeComponent();
+
+            gridPoll.MultiSelect = false;
+            gridPoll.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
         }
 
         // A struct to store the colors
@@ -71,12 +74,12 @@ namespace AppSondaj
 
                     dt = new System.Data.DataTable();
                     dataAD.Fill(dt);
-                    outPoll.DataSource = dt;
+                    gridPoll.DataSource = dt;
 
-                    outPoll.Columns["raspunsID"].Visible = false;
+                    gridPoll.Columns["raspunsID"].Visible = false;
 
                     // Adapt columns width to the largest string
-                    foreach (DataGridViewColumn column in outPoll.Columns)
+                    foreach (DataGridViewColumn column in gridPoll.Columns)
                     {
                         column.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
                     }
@@ -93,30 +96,96 @@ namespace AppSondaj
         private void btnAdd_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, colorList.lightBlue);
-            newPoll poll = new newPoll();
-            MessageBox.Show(outPoll.SelectedRows[0].Cells["raspunsID"].Value.ToString()) ;
+            newAnswer poll = new newAnswer();
             poll.Show();
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            ActivateButton(sender, colorList.lightBlue);
+            if (gridPoll.SelectedRows.Count > 0)
+            {
+                // Get the selected record's identifier
+                int selectedID = Convert.ToInt32(gridPoll.SelectedRows[0].Cells["raspunsID"].Value);
+
+                newAnswer answer = new newAnswer();
+
+                try
+                {
+                    // insert the selected answer data for the update
+                    answer.pollID = selectedID;
+
+                    answer.usrPerson.Text = Convert.ToString(gridPoll.SelectedRows[0].Cells["Nume"].Value) + " " + Convert.ToString(gridPoll.SelectedRows[0].Cells["Prenume"].Value);
+                    answer.usrTheme.Text = Convert.ToString(gridPoll.SelectedRows[0].Cells["Tematica"].Value);
+                    answer.usrQuestion.Text = Convert.ToString(gridPoll.SelectedRows[0].Cells["Intrebare"].Value);
+                    answer.usrAnswer.Text = Convert.ToString(gridPoll.SelectedRows[0].Cells["Raspuns"].Value);
+                    answer.usrLanguage.Text = Convert.ToString(gridPoll.SelectedRows[0].Cells["Limba"].Value);
+
+                    // Hide save button and show the update button
+                    answer.btnSave.Visible = false;
+                    answer.btnUpdate.Visible = true;
+                    answer.Show();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Select the row containing the person whose data you want to update!", "Select row!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, colorList.lightBlue);
+            if (gridPoll.SelectedRows.Count > 0)
+            {
+                // Get the selected record's identifier
+                int selectedID = Convert.ToInt32(gridPoll.SelectedRows[0].Cells["raspunsID"].Value);
+
+                try
+                {
+                    using (IDbConnection connection = new SqlConnection(Helper.dbConn("dbSondaj")))
+                    {
+                        // Delete the answer
+                        using (SqlCommand commandDelete = new SqlCommand("delete from Raspuns where raspunsID = @ID", (SqlConnection)connection))
+                        {
+                            connection.Open();
+                            commandDelete.Parameters.AddWithValue("@ID", selectedID);
+
+                            commandDelete.ExecuteNonQuery();
+                            connection.Close();
+                        }
+
+                        // Refresh the DataGridView after deletion
+                        refreshPoll();
+
+                        MessageBox.Show("Answer was deleted!");
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Select the row containing the answer whose data you want to delete!", "Select row!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            ActivateButton(sender, colorList.lightBlue);
+            refreshPoll();
         }
 
         // Loading the data from the database and outputting it 
         private void pollEdit_Load(object sender, EventArgs e)
         {
             refreshPoll();
-        }
-
-        private void btnUpdate_Click(object sender, EventArgs e)
-        {
-            ActivateButton(sender, colorList.lightBlue);
-        }
-
-        private void btnRefresh_Click(object sender, EventArgs e)
-        {
-            ActivateButton(sender, colorList.lightBlue);
         }
     }
 }

@@ -60,11 +60,11 @@
     <Compile Include="newPerson.Designer.cs">
       <DependentUpon>newPerson.cs</DependentUpon>
     </Compile>
-    <Compile Include="newPoll.cs">
+    <Compile Include="newAnswer.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="newPoll.Designer.cs">
-      <DependentUpon>newPoll.cs</DependentUpon>
+    <Compile Include="newAnswer.Designer.cs">
+      <DependentUpon>newAnswer.cs</DependentUpon>
     </Compile>
     <Compile Include="newQuestion.cs">
       <SubType>Form</SubType>
@@ -111,8 +111,8 @@
     <EmbeddedResource Include="newPerson.resx">
       <DependentUpon>newPerson.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="newPoll.resx">
-      <DependentUpon>newPoll.cs</DependentUpon>
+    <EmbeddedResource Include="newAnswer.resx">
+      <DependentUpon>newAnswer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="newQuestion.resx">
       <DependentUpon>newQuestion.cs</DependentUpon>

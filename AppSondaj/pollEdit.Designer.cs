@@ -30,14 +30,14 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(pollEdit));
             this.grpActions = new System.Windows.Forms.GroupBox();
-            this.pnlSideBtn = new System.Windows.Forms.Panel();
-            this.outPoll = new System.Windows.Forms.DataGridView();
             this.btnRefresh = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
+            this.pnlSideBtn = new System.Windows.Forms.Panel();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
+            this.gridPoll = new System.Windows.Forms.DataGridView();
             this.grpActions.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.outPoll)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridPoll)).BeginInit();
             this.SuspendLayout();
             // 
             // grpActions
@@ -56,24 +56,6 @@
             this.grpActions.TabIndex = 6;
             this.grpActions.TabStop = false;
             this.grpActions.Text = "Actions";
-            // 
-            // pnlSideBtn
-            // 
-            this.pnlSideBtn.Location = new System.Drawing.Point(225, 31);
-            this.pnlSideBtn.Name = "pnlSideBtn";
-            this.pnlSideBtn.Size = new System.Drawing.Size(7, 66);
-            this.pnlSideBtn.TabIndex = 4;
-            this.pnlSideBtn.Visible = false;
-            // 
-            // outPoll
-            // 
-            this.outPoll.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
-            this.outPoll.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.outPoll.Location = new System.Drawing.Point(12, 12);
-            this.outPoll.Name = "outPoll";
-            this.outPoll.ReadOnly = true;
-            this.outPoll.Size = new System.Drawing.Size(998, 647);
-            this.outPoll.TabIndex = 7;
             // 
             // btnRefresh
             // 
@@ -107,6 +89,14 @@
             this.btnUpdate.UseVisualStyleBackColor = true;
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
+            // pnlSideBtn
+            // 
+            this.pnlSideBtn.Location = new System.Drawing.Point(225, 31);
+            this.pnlSideBtn.Name = "pnlSideBtn";
+            this.pnlSideBtn.Size = new System.Drawing.Size(7, 66);
+            this.pnlSideBtn.TabIndex = 4;
+            this.pnlSideBtn.Visible = false;
+            // 
             // btnDelete
             // 
             this.btnDelete.FlatAppearance.BorderSize = 0;
@@ -139,13 +129,23 @@
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
+            // gridPoll
+            // 
+            this.gridPoll.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
+            this.gridPoll.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gridPoll.Location = new System.Drawing.Point(12, 12);
+            this.gridPoll.Name = "gridPoll";
+            this.gridPoll.ReadOnly = true;
+            this.gridPoll.Size = new System.Drawing.Size(998, 647);
+            this.gridPoll.TabIndex = 7;
+            // 
             // pollEdit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
             this.ClientSize = new System.Drawing.Size(1275, 671);
-            this.Controls.Add(this.outPoll);
+            this.Controls.Add(this.gridPoll);
             this.Controls.Add(this.grpActions);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -154,7 +154,7 @@
             this.Text = "pollEdit";
             this.Load += new System.EventHandler(this.pollEdit_Load);
             this.grpActions.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.outPoll)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridPoll)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -163,7 +163,7 @@
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.GroupBox grpActions;
         private System.Windows.Forms.Button btnDelete;
-        private System.Windows.Forms.DataGridView outPoll;
+        private System.Windows.Forms.DataGridView gridPoll;
         private System.Windows.Forms.Panel pnlSideBtn;
         private System.Windows.Forms.Button btnRefresh;
         private System.Windows.Forms.Button btnUpdate;

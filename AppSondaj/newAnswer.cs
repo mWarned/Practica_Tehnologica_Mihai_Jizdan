@@ -11,14 +11,14 @@ using System.Windows.Forms;
 
 namespace AppSondaj
 {
-    public partial class newPoll : Form
+    public partial class newAnswer : Form
     {
         SqlDataAdapter dataAD;
         DataTable dt;
         private SqlCommand cmd;
         public int pollID;
 
-        public newPoll()
+        public newAnswer()
         {
             InitializeComponent();
 
@@ -157,26 +157,69 @@ namespace AppSondaj
                 {
                     connection.Open();
 
-                    // Check data
-
                     // Check if all data was inserted
                     if (usrPerson.Text != "" && usrTheme.Text != "" && usrQuestion.Text != ""
                         && usrAnswer.Text != "")
                     {
                         // SQL insert
-                        cmd = new SqlCommand("insert into Raspuns (Raspuns, intrebareID, persoanaID) values('" + usrAnswer.Text + "', '" +
-                            questionID + "','" + personID + "'); select scope_identity();", (SqlConnection)connection);
+                        cmd = new SqlCommand("insert into Raspuns (Raspuns, intrebareID, persoanaID, limbaID) values('" + usrAnswer.Text + "', '" +
+                            questionID + "','" + personID + "','" + languageID + "')", (SqlConnection)connection);
                         cmd.ExecuteNonQuery();
 
-                        int answerID = Convert.ToInt32(cmd.ExecuteScalar());
-
-                        cmd = new SqlCommand("insert into Sondaj (raspunsID, limbaID) values('" + answerID + "', '" +
-                            languageID + "')", (SqlConnection)connection);
-                        cmd.ExecuteNonQuery();
+                        // Trigger DataGridView update
+                        if (System.Windows.Forms.Application.OpenForms["pollEdit"] != null)
+                        {
+                            (System.Windows.Forms.Application.OpenForms["pollEdit"] as pollEdit).refreshPoll();
+                        }
 
                         this.Close();
 
                         MessageBox.Show("Answer added!");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Data incomplete, please fill all fields!");
+                    }
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            // Get the inserted data
+            int personID = Convert.ToInt32(usrPerson.SelectedValue);
+            int questionID = Convert.ToInt32(usrQuestion.SelectedValue);
+            int languageID = Convert.ToInt32(usrLanguage.SelectedValue);
+
+            try
+            {
+                using (IDbConnection connection = new SqlConnection(Helper.dbConn("dbSondaj")))
+                {
+                    connection.Open();
+
+                    // Check if all data was inserted
+                    if (usrPerson.Text != "" && usrTheme.Text != "" && usrQuestion.Text != ""
+                        && usrAnswer.Text != "")
+                    {
+                        // SQL update
+                        cmd = new SqlCommand("update Raspuns set Raspuns='" + usrAnswer.Text + "', intrebareID='" +
+                            questionID + "', persoanaID='" + personID + "', limbaID='" + languageID + "' where raspunsID = " + pollID, (SqlConnection)connection);
+                        cmd.ExecuteNonQuery();
+
+                        // Trigger DataGridView update
+                        if (System.Windows.Forms.Application.OpenForms["pollEdit"] != null)
+                        {
+                            (System.Windows.Forms.Application.OpenForms["pollEdit"] as pollEdit).refreshPoll();
+                        }
+
+                        this.Close();
+
+                        MessageBox.Show("Changes were saved!");
                     }
                     else
                     {
