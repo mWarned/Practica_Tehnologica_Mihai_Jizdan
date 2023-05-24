@@ -115,6 +115,9 @@ namespace AppSondaj
         private void btnLogin_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, colorList.lightBlue);
+            frmLogin login = new frmLogin();
+            login.Show();
+            this.Hide();
         }
 
         private void imgUser_Click(object sender, EventArgs e)

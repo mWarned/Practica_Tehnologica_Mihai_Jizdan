@@ -44,7 +44,6 @@ C:\Users\PC\Source\Repos\mWarned\Practica_Tehnologica_Mihai_Jizdan\AppSondaj\obj
 C:\Users\PC\Source\Repos\mWarned\Practica_Tehnologica_Mihai_Jizdan\AppSondaj\obj\Debug\AppSondaj.newPerson.resources
 C:\Users\PC\Source\Repos\mWarned\Practica_Tehnologica_Mihai_Jizdan\AppSondaj\obj\Debug\AppSondaj.newTheme.resources
 C:\Users\PC\Source\Repos\mWarned\Practica_Tehnologica_Mihai_Jizdan\AppSondaj\obj\Debug\AppSondaj.newQuestion.resources
-C:\Users\PC\Source\Repos\mWarned\Practica_Tehnologica_Mihai_Jizdan\AppSondaj\obj\Debug\AppSondaj.newPoll.resources
 C:\Users\mihai\source\repos\mWarned\Practica_Tehnologica_Mihai_Jizdan\AppSondaj\bin\Debug\AppSondaj.exe.config
 C:\Users\mihai\source\repos\mWarned\Practica_Tehnologica_Mihai_Jizdan\AppSondaj\bin\Debug\AppSondaj.exe
 C:\Users\mihai\source\repos\mWarned\Practica_Tehnologica_Mihai_Jizdan\AppSondaj\bin\Debug\AppSondaj.pdb
@@ -65,3 +64,5 @@ C:\Users\mihai\source\repos\mWarned\Practica_Tehnologica_Mihai_Jizdan\AppSondaj\
 C:\Users\mihai\source\repos\mWarned\Practica_Tehnologica_Mihai_Jizdan\AppSondaj\obj\Debug\AppSondaj.exe
 C:\Users\mihai\source\repos\mWarned\Practica_Tehnologica_Mihai_Jizdan\AppSondaj\obj\Debug\AppSondaj.pdb
 C:\Users\mihai\source\repos\mWarned\Practica_Tehnologica_Mihai_Jizdan\AppSondaj\obj\Debug\AppSondaj.newAnswer.resources
+C:\Users\PC\Source\Repos\mWarned\Practica_Tehnologica_Mihai_Jizdan\AppSondaj\obj\Debug\AppSondaj.newAnswer.resources
+C:\Users\PC\Source\Repos\mWarned\Practica_Tehnologica_Mihai_Jizdan\AppSondaj\obj\Debug\AppSondaj.frmLogin.resources

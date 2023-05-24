@@ -24,8 +24,7 @@ namespace AppSondaj
             InitializeComponent();
 
             listJudet();
-
-            usrJudet.SelectedIndex= 0;
+            usrJudet_SelectedIndexChanged(usrJudet, EventArgs.Empty);
         }
 
         // Output judete
@@ -272,14 +271,14 @@ namespace AppSondaj
             }
         }
 
-        private void btnMinimize_Click(object sender, EventArgs e)
-        {
-            WindowState = FormWindowState.Minimized;
-        }
-
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void newPerson_Load(object sender, EventArgs e)
+        {
+            
         }
     }
 }

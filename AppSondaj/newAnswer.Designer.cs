@@ -162,6 +162,7 @@
             // 
             this.usrPerson.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.usrPerson.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
+            this.usrPerson.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.usrPerson.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.usrPerson.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.usrPerson.ForeColor = System.Drawing.Color.White;
@@ -176,6 +177,7 @@
             // 
             this.usrTheme.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.usrTheme.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
+            this.usrTheme.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.usrTheme.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.usrTheme.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.usrTheme.ForeColor = System.Drawing.Color.White;
@@ -191,6 +193,7 @@
             // 
             this.usrQuestion.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.usrQuestion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
+            this.usrQuestion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.usrQuestion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.usrQuestion.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.usrQuestion.ForeColor = System.Drawing.Color.White;
@@ -230,6 +233,7 @@
             // 
             this.usrLanguage.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.usrLanguage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
+            this.usrLanguage.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.usrLanguage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.usrLanguage.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.usrLanguage.ForeColor = System.Drawing.Color.White;
