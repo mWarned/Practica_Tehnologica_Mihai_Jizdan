@@ -59,3 +59,8 @@ create table Raspuns(
 	limbaID int foreign key references Limba(limbaID)
 )
 
+create table Accounts(
+	accountID int primary key identity(1, 1),
+	login varchar(99),
+	pass varchar(99)
+)

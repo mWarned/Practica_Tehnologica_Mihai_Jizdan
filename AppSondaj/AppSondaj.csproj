@@ -54,31 +54,55 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="newPerson.cs">
+    <Compile Include="frmAccounts.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="newPerson.Designer.cs">
-      <DependentUpon>newPerson.cs</DependentUpon>
+    <Compile Include="frmAccounts.Designer.cs">
+      <DependentUpon>frmAccounts.cs</DependentUpon>
     </Compile>
-    <Compile Include="newAnswer.cs">
+    <Compile Include="frmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="newAnswer.Designer.cs">
-      <DependentUpon>newAnswer.cs</DependentUpon>
+    <Compile Include="frmLogin.Designer.cs">
+      <DependentUpon>frmLogin.cs</DependentUpon>
     </Compile>
-    <Compile Include="newQuestion.cs">
+    <Compile Include="frmPerson.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="newQuestion.Designer.cs">
-      <DependentUpon>newQuestion.cs</DependentUpon>
+    <Compile Include="frmPerson.Designer.cs">
+      <DependentUpon>frmPerson.cs</DependentUpon>
     </Compile>
-    <Compile Include="newTheme.cs">
+    <Compile Include="frmAnswer.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="newTheme.Designer.cs">
-      <DependentUpon>newTheme.cs</DependentUpon>
+    <Compile Include="frmAnswer.Designer.cs">
+      <DependentUpon>frmAnswer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmQuestion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmQuestion.Designer.cs">
+      <DependentUpon>frmQuestion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSettigns.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSettigns.Designer.cs">
+      <DependentUpon>frmSettigns.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmTheme.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTheme.Designer.cs">
+      <DependentUpon>frmTheme.cs</DependentUpon>
     </Compile>
     <Compile Include="dbActions.cs" />
+    <Compile Include="frmUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmUser.Designer.cs">
+      <DependentUpon>frmUser.cs</DependentUpon>
+    </Compile>
     <Compile Include="Helper.cs" />
     <Compile Include="Main.cs">
       <SubType>Form</SubType>
@@ -108,17 +132,29 @@
       <DependentUpon>themeQuestionEdit.cs</DependentUpon>
     </Compile>
     <None Include="Resources\questions.png" />
-    <EmbeddedResource Include="newPerson.resx">
-      <DependentUpon>newPerson.cs</DependentUpon>
+    <EmbeddedResource Include="frmAccounts.resx">
+      <DependentUpon>frmAccounts.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="newAnswer.resx">
-      <DependentUpon>newAnswer.cs</DependentUpon>
+    <EmbeddedResource Include="frmLogin.resx">
+      <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="newQuestion.resx">
-      <DependentUpon>newQuestion.cs</DependentUpon>
+    <EmbeddedResource Include="frmPerson.resx">
+      <DependentUpon>frmPerson.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="newTheme.resx">
-      <DependentUpon>newTheme.cs</DependentUpon>
+    <EmbeddedResource Include="frmAnswer.resx">
+      <DependentUpon>frmAnswer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmQuestion.resx">
+      <DependentUpon>frmQuestion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSettigns.resx">
+      <DependentUpon>frmSettigns.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTheme.resx">
+      <DependentUpon>frmTheme.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmUser.resx">
+      <DependentUpon>frmUser.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
@@ -172,6 +208,10 @@
     <None Include="images\questions.png" />
     <None Include="images\down-arrow.png" />
     <None Include="images\up-arrow.png" />
+    <None Include="images\lock.png" />
+    <None Include="images\password.png" />
+    <None Include="images\userLogin.png" />
+    <None Include="images\list.png" />
     <Content Include="queries\createPoll.sql" />
     <Content Include="queries\insertPoll.sql" />
     <None Include="images\report.png" />

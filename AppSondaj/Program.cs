@@ -16,7 +16,17 @@ namespace AppSondaj
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Main());
+            var login = new frmLogin();
+            login.FormClosed += new FormClosedEventHandler(FormClosed);
+            login.Show();
+            Application.Run();
+        }
+
+        static void FormClosed(object sender, FormClosedEventArgs e)
+        {
+            ((Form)sender).FormClosed -= FormClosed;
+            if (Application.OpenForms.Count == 0) Application.ExitThread();
+            else Application.OpenForms[0].FormClosed += FormClosed;
         }
     }
 }

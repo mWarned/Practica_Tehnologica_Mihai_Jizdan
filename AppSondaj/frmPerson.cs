@@ -12,20 +12,19 @@ using System.Windows.Forms;
 
 namespace AppSondaj
 {
-    public partial class newPerson : Form
+    public partial class frmPerson : Form
     {
         SqlDataAdapter dataAD;
         DataTable dt;
         private SqlCommand cmd;
         public int personID;
 
-        public newPerson()
+        public frmPerson()
         {
             InitializeComponent();
 
             listJudet();
-
-            usrJudet.SelectedIndex= 0;
+            usrJudet_SelectedIndexChanged(usrJudet, EventArgs.Empty);
         }
 
         // Output judete
@@ -272,14 +271,14 @@ namespace AppSondaj
             }
         }
 
-        private void btnMinimize_Click(object sender, EventArgs e)
-        {
-            WindowState = FormWindowState.Minimized;
-        }
-
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void newPerson_Load(object sender, EventArgs e)
+        {
+            
         }
     }
 }

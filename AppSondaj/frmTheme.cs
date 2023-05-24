@@ -11,39 +11,14 @@ using System.Windows.Forms;
 
 namespace AppSondaj
 {
-    public partial class newQuestion : Form
+    public partial class frmTheme : Form
     {
-        SqlDataAdapter dataAD;
-        DataTable dt;
         private SqlCommand cmd;
-        public int questionID;
+        public int themeID;
 
-        public newQuestion()
+        public frmTheme()
         {
             InitializeComponent();
-
-            listThemes();
-        }
-
-        public void listThemes()
-        {
-            try
-            {
-                // Output all data from Judet
-                using (IDbConnection connection = new SqlConnection(Helper.dbConn("dbSondaj")))
-                {
-                    dataAD = new SqlDataAdapter("select * from Tematica", (SqlConnection)connection);
-                    dt = new DataTable();
-                    dataAD.Fill(dt);
-                    usrTheme.DataSource = dt;
-                    usrTheme.DisplayMember = "Tematica";
-                    usrTheme.ValueMember = "tematicaID";
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -52,21 +27,19 @@ namespace AppSondaj
             {
                 using (IDbConnection connection = new SqlConnection(Helper.dbConn("dbSondaj")))
                 {
-                    int themeID = Convert.ToInt32(usrTheme.SelectedValue);
-
                     connection.Open();
 
-                    cmd = new SqlCommand("insert into Intrebare (Intrebare, tematicaID) values ('" + usrQuestion.Text + "', '" + themeID + "')", (SqlConnection)connection);
+                    cmd = new SqlCommand("insert into Tematica (Tematica) values ('" + usrTheme.Text + "')", (SqlConnection)connection);
                     cmd.ExecuteNonQuery();
 
                     if (System.Windows.Forms.Application.OpenForms["themeQuestionEdit"] != null)
                     {
-                        (System.Windows.Forms.Application.OpenForms["themeQuestionEdit"] as themeQuestionEdit).refreshQuestions();
+                        (System.Windows.Forms.Application.OpenForms["themeQuestionEdit"] as themeQuestionEdit).refreshThemes();
                     }
 
                     this.Close();
 
-                    MessageBox.Show("Question added!");
+                    MessageBox.Show("Theme added!");
                 }
             }
             catch (Exception ex)
@@ -81,21 +54,19 @@ namespace AppSondaj
             {
                 using (IDbConnection connection = new SqlConnection(Helper.dbConn("dbSondaj")))
                 {
-                    int themeID = Convert.ToInt32(usrTheme.SelectedValue);
-
                     connection.Open();
 
                     // Check if the data was inserted
-                    if (usrTheme.Text != "" && usrQuestion.Text != "")
+                    if (usrTheme.Text != "")
                     {
                         // SQL update
-                        cmd = new SqlCommand("update Intrebare set Intrebare='" + usrQuestion.Text + "', tematicaID='" + themeID + "'  where intrebareID = " + questionID, (SqlConnection)connection);
+                        cmd = new SqlCommand("update Tematica set Tematica='" + usrTheme.Text + "' where tematicaID = " + themeID, (SqlConnection)connection);
                         cmd.ExecuteNonQuery();
 
                         // Trigger DataGridView update
                         if (System.Windows.Forms.Application.OpenForms["themeQuestionEdit"] != null)
                         {
-                            (System.Windows.Forms.Application.OpenForms["themeQuestionEdit"] as themeQuestionEdit).refreshQuestions();
+                            (System.Windows.Forms.Application.OpenForms["themeQuestionEdit"] as themeQuestionEdit).refreshThemes();
                         }
 
                         this.Close();
@@ -104,7 +75,7 @@ namespace AppSondaj
                     }
                     else
                     {
-                        MessageBox.Show("Data incomplete, please fill the fields!");
+                        MessageBox.Show("Data incomplete, please fill the field!");
                     }
                 }
 

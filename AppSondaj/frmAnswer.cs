@@ -11,14 +11,14 @@ using System.Windows.Forms;
 
 namespace AppSondaj
 {
-    public partial class newAnswer : Form
+    public partial class frmAnswer : Form
     {
         SqlDataAdapter dataAD;
         DataTable dt;
         private SqlCommand cmd;
         public int pollID;
 
-        public newAnswer()
+        public frmAnswer()
         {
             InitializeComponent();
 

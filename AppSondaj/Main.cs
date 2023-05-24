@@ -110,16 +110,16 @@ namespace AppSondaj
         private void btnSettings_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, colorList.lightBlue);
+            frmSettigns settings = new frmSettigns();
+            settings.Show();
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, colorList.lightBlue);
-        }
-
-        private void imgUser_Click(object sender, EventArgs e)
-        {
-            Reset();
+            frmLogin login = new frmLogin();
+            login.Show();
+            this.Close();
         }
 
         private void btnExit_Click(object sender, EventArgs e)

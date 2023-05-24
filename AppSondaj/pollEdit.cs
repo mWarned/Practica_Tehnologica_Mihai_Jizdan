@@ -96,7 +96,7 @@ namespace AppSondaj
         private void btnAdd_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, colorList.lightBlue);
-            newAnswer poll = new newAnswer();
+            frmAnswer poll = new frmAnswer();
             poll.Show();
         }
 
@@ -108,7 +108,7 @@ namespace AppSondaj
                 // Get the selected record's identifier
                 int selectedID = Convert.ToInt32(gridPoll.SelectedRows[0].Cells["raspunsID"].Value);
 
-                newAnswer answer = new newAnswer();
+                frmAnswer answer = new frmAnswer();
 
                 try
                 {

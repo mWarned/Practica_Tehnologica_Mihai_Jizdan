@@ -287,7 +287,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "themeQuestionEdit";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "themeEdit";
+            this.Text = "Edit themes and questions";
             this.Load += new System.EventHandler(this.themeEdit_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gridThemes)).EndInit();
             this.grpActions.ResumeLayout(false);

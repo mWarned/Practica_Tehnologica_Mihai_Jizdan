@@ -118,7 +118,7 @@ namespace AppSondaj
         private void btnAddPpl_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, colorList.lightBlue);
-            newPerson person = new newPerson();
+            frmPerson person = new frmPerson();
             person.Show();
         }
 
@@ -130,7 +130,7 @@ namespace AppSondaj
                 // Get the selected record's identifier
                 int selectedID = Convert.ToInt32(gridPeople.SelectedRows[0].Cells["persoanaID"].Value);
 
-                newPerson person = new newPerson();
+                frmPerson person = new frmPerson();
 
                 try
                 {

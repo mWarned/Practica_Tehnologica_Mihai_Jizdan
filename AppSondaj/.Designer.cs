@@ -33,7 +33,7 @@
             this.pnlSideBtn = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblUser = new System.Windows.Forms.Label();
             this.lblUsername = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.pnlDesktop = new System.Windows.Forms.Panel();
@@ -77,7 +77,7 @@
             this.pnlSideBtn.Location = new System.Drawing.Point(3, 508);
             this.pnlSideBtn.Name = "pnlSideBtn";
             this.pnlSideBtn.Size = new System.Drawing.Size(7, 56);
-            this.pnlSideBtn.TabIndex = 1;
+            this.pnlSideBtn.TabIndex = 4;
             this.pnlSideBtn.Visible = false;
             // 
             // panel1
@@ -93,7 +93,7 @@
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.label1);
+            this.panel2.Controls.Add(this.lblUser);
             this.panel2.Controls.Add(this.usrImg);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
@@ -101,17 +101,17 @@
             this.panel2.Size = new System.Drawing.Size(225, 152);
             this.panel2.TabIndex = 2;
             // 
-            // label1
+            // lblUser
             // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(246)))));
-            this.label1.Location = new System.Drawing.Point(64, 100);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(91, 20);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Username";
+            this.lblUser.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblUser.Font = new System.Drawing.Font("Bahnschrift", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lblUser.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(246)))));
+            this.lblUser.Location = new System.Drawing.Point(36, 100);
+            this.lblUser.Name = "lblUser";
+            this.lblUser.Size = new System.Drawing.Size(152, 35);
+            this.lblUser.TabIndex = 1;
+            this.lblUser.Text = "Username";
+            this.lblUser.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblUsername
             // 
@@ -186,7 +186,7 @@
             this.btnThemesQuestions.Location = new System.Drawing.Point(0, 293);
             this.btnThemesQuestions.Name = "btnThemesQuestions";
             this.btnThemesQuestions.Size = new System.Drawing.Size(225, 56);
-            this.btnThemesQuestions.TabIndex = 6;
+            this.btnThemesQuestions.TabIndex = 2;
             this.btnThemesQuestions.Text = "Themes/Questions";
             this.btnThemesQuestions.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.btnThemesQuestions.UseVisualStyleBackColor = true;
@@ -202,7 +202,7 @@
             this.btnPeople.Location = new System.Drawing.Point(0, 169);
             this.btnPeople.Name = "btnPeople";
             this.btnPeople.Size = new System.Drawing.Size(225, 56);
-            this.btnPeople.TabIndex = 5;
+            this.btnPeople.TabIndex = 0;
             this.btnPeople.Text = "People List";
             this.btnPeople.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.btnPeople.UseVisualStyleBackColor = true;
@@ -218,7 +218,7 @@
             this.btnReports.Location = new System.Drawing.Point(0, 355);
             this.btnReports.Name = "btnReports";
             this.btnReports.Size = new System.Drawing.Size(225, 56);
-            this.btnReports.TabIndex = 4;
+            this.btnReports.TabIndex = 3;
             this.btnReports.Text = "Reports";
             this.btnReports.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.btnReports.UseVisualStyleBackColor = true;
@@ -234,7 +234,7 @@
             this.btnPoll.Location = new System.Drawing.Point(0, 231);
             this.btnPoll.Name = "btnPoll";
             this.btnPoll.Size = new System.Drawing.Size(225, 56);
-            this.btnPoll.TabIndex = 3;
+            this.btnPoll.TabIndex = 1;
             this.btnPoll.Text = "Edit Polls";
             this.btnPoll.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.btnPoll.UseVisualStyleBackColor = true;
@@ -250,7 +250,7 @@
             this.btnLogin.Location = new System.Drawing.Point(0, 632);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(225, 56);
-            this.btnLogin.TabIndex = 2;
+            this.btnLogin.TabIndex = 6;
             this.btnLogin.Text = "Log out";
             this.btnLogin.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.btnLogin.UseVisualStyleBackColor = true;
@@ -266,7 +266,7 @@
             this.btnSettings.Location = new System.Drawing.Point(0, 570);
             this.btnSettings.Name = "btnSettings";
             this.btnSettings.Size = new System.Drawing.Size(225, 56);
-            this.btnSettings.TabIndex = 1;
+            this.btnSettings.TabIndex = 5;
             this.btnSettings.Text = "Settings";
             this.btnSettings.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.btnSettings.UseVisualStyleBackColor = true;
@@ -277,7 +277,7 @@
             this.usrImg.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.usrImg.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.usrImg.Image = global::AppSondaj.Properties.Resources.user;
-            this.usrImg.Location = new System.Drawing.Point(80, 28);
+            this.usrImg.Location = new System.Drawing.Point(80, 29);
             this.usrImg.Name = "usrImg";
             this.usrImg.Size = new System.Drawing.Size(60, 60);
             this.usrImg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -287,16 +287,11 @@
             // 
             // imgUser
             // 
-            this.imgUser.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.imgUser.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.imgUser.Image = global::AppSondaj.Properties.Resources.user;
-            this.imgUser.Location = new System.Drawing.Point(80, 28);
+            this.imgUser.Location = new System.Drawing.Point(0, 0);
             this.imgUser.Name = "imgUser";
-            this.imgUser.Size = new System.Drawing.Size(60, 60);
-            this.imgUser.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.imgUser.TabIndex = 0;
+            this.imgUser.Size = new System.Drawing.Size(100, 50);
+            this.imgUser.TabIndex = 3;
             this.imgUser.TabStop = false;
-            this.imgUser.Click += new System.EventHandler(this.imgUser_Click);
             // 
             // Main
             // 
@@ -316,7 +311,6 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.usrImg)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgUser)).EndInit();
@@ -335,7 +329,6 @@
         private System.Windows.Forms.Button btnPoll;
         private System.Windows.Forms.Panel pnlSideBtn;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox usrImg;
         private System.Windows.Forms.Panel panel3;
         private FontAwesome.Sharp.IconButton btnMinimize;
@@ -344,6 +337,7 @@
         private System.Windows.Forms.Panel pnlDesktop;
         private System.Windows.Forms.Button btnPeople;
         private System.Windows.Forms.Button btnThemesQuestions;
+        public System.Windows.Forms.Label lblUser;
     }
 }
 

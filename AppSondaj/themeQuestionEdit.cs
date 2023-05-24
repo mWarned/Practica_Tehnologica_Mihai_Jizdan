@@ -146,7 +146,7 @@ namespace AppSondaj
         private void btnAddTheme_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, colorList.lightBlue, "left");
-            newTheme themes = new newTheme();
+            frmTheme themes = new frmTheme();
             themes.btnSave.Visible = true;
             themes.btnUpdate.Visible = false;
             themes.Show();
@@ -160,7 +160,7 @@ namespace AppSondaj
                 // Get the selected record's identifier
                 int selectedID = Convert.ToInt32(gridThemes.SelectedRows[0].Cells["tematicaID"].Value);
 
-                newTheme theme = new newTheme();
+                frmTheme theme = new frmTheme();
 
                 try
                 {
@@ -335,7 +335,7 @@ namespace AppSondaj
         private void btnAddQuestion_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, colorList.lightBlue, "right");
-            newQuestion questions = new newQuestion();
+            frmQuestion questions = new frmQuestion();
             questions.btnSave.Visible = true;
             questions.btnUpdate.Visible = false;
             questions.Show();
@@ -349,7 +349,7 @@ namespace AppSondaj
                 // Get the selected record's identifier
                 int selectedID = Convert.ToInt32(gridQuestions.SelectedRows[0].Cells["intrebareID"].Value);
 
-                newQuestion questions = new newQuestion();
+                frmQuestion questions = new frmQuestion();
 
                 try
                 {
