@@ -170,6 +170,7 @@
             // 
             this.usrTheme.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.usrTheme.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
+            this.usrTheme.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.usrTheme.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.usrTheme.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.usrTheme.ForeColor = System.Drawing.Color.White;
