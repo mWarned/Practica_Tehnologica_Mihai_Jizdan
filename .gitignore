@@ -1,3 +1,9 @@
 ﻿################################################################################
 # This .gitignore file was automatically created by Microsoft(R) Visual Studio.
 ################################################################################
+/.vs/AppSondaj/v17/.suo
+/AppSondaj/bin/Debug/AppSondaj.exe
+/AppSondaj/bin/Debug/AppSondaj.pdb
+/AppSondaj/obj/Debug/AppSondaj.csproj.GenerateResource.cache
+/AppSondaj/obj/Debug/AppSondaj.exe
+/AppSondaj/obj/Debug/AppSondaj.pdb
