@@ -165,6 +165,11 @@ namespace AppSondaj
                             married + "', '" + divorced + "', '" + participated + "')", (SqlConnection)connection);
                         cmd.ExecuteNonQuery();
 
+                        if (System.Windows.Forms.Application.OpenForms["peopleEdit"] != null)
+                        {
+                            (System.Windows.Forms.Application.OpenForms["peopleEdit"] as peopleEdit).refreshPeople();
+                        }
+
                         this.Close();
 
                         MessageBox.Show("New person added!");

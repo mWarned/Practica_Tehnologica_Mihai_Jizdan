@@ -105,6 +105,7 @@ namespace AppSondaj
         private void btnReports_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, colorList.lightBlue);
+            OpenChildForm(new frmReports());
         }
 
         private void btnSettings_Click(object sender, EventArgs e)
@@ -122,11 +123,6 @@ namespace AppSondaj
             this.Close();
         }
 
-        private void btnExit_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
-
         private void btnMinimize_Click(object sender, EventArgs e)
         {
             WindowState = FormWindowState.Minimized;
@@ -136,6 +132,11 @@ namespace AppSondaj
         {
             pnlDesktop.Controls.Clear();
             Reset();
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

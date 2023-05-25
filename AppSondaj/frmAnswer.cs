@@ -38,7 +38,7 @@ namespace AppSondaj
                 // Output all data from Persoana
                 using (IDbConnection connection = new SqlConnection(Helper.dbConn("dbSondaj")))
                 {
-                    dataAD = new SqlDataAdapter("select persoanaID, Nume, Prenume from Persoana", (SqlConnection)connection);
+                    dataAD = new SqlDataAdapter("select persoanaID, Nume, Prenume from Persoana where Participant = 1", (SqlConnection)connection);
                     dt = new DataTable();
                     dataAD.Fill(dt);
 
