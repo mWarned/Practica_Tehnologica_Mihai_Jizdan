@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.persoaneToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.divorcedPercentageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menWithHigherEducationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -37,26 +37,24 @@
             this.malesFemalesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.marriedAndOlderThan20YoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.peopleThatRefusedToParticipateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.repView = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.pnlReport = new System.Windows.Forms.Panel();
+            this.pollDBDataSourceBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.PersoanaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pollDBDataSourceBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PersoanaBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
             // 
             this.menuStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripMenuItem1,
             this.persoaneToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1259, 27);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
-            // 
-            // toolStripMenuItem1
-            // 
-            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(12, 23);
             // 
             // persoaneToolStripMenuItem
             // 
@@ -92,6 +90,7 @@
             this.menWithHigherEducationToolStripMenuItem.Name = "menWithHigherEducationToolStripMenuItem";
             this.menWithHigherEducationToolStripMenuItem.Size = new System.Drawing.Size(406, 24);
             this.menWithHigherEducationToolStripMenuItem.Text = "Men with higher education in given age range";
+            this.menWithHigherEducationToolStripMenuItem.Click += new System.EventHandler(this.menWithHigherEducationToolStripMenuItem_Click);
             // 
             // peopleBornInGivenMonthToolStripMenuItem
             // 
@@ -101,6 +100,7 @@
             this.peopleBornInGivenMonthToolStripMenuItem.Name = "peopleBornInGivenMonthToolStripMenuItem";
             this.peopleBornInGivenMonthToolStripMenuItem.Size = new System.Drawing.Size(406, 24);
             this.peopleBornInGivenMonthToolStripMenuItem.Text = "People born in given month";
+            this.peopleBornInGivenMonthToolStripMenuItem.Click += new System.EventHandler(this.peopleBornInGivenMonthToolStripMenuItem_Click);
             // 
             // malesFemalesToolStripMenuItem
             // 
@@ -110,6 +110,7 @@
             this.malesFemalesToolStripMenuItem.Name = "malesFemalesToolStripMenuItem";
             this.malesFemalesToolStripMenuItem.Size = new System.Drawing.Size(406, 24);
             this.malesFemalesToolStripMenuItem.Text = "Males / Females with age under 18";
+            this.malesFemalesToolStripMenuItem.Click += new System.EventHandler(this.malesFemalesToolStripMenuItem_Click);
             // 
             // marriedAndOlderThan20YoToolStripMenuItem
             // 
@@ -119,6 +120,7 @@
             this.marriedAndOlderThan20YoToolStripMenuItem.Name = "marriedAndOlderThan20YoToolStripMenuItem";
             this.marriedAndOlderThan20YoToolStripMenuItem.Size = new System.Drawing.Size(406, 24);
             this.marriedAndOlderThan20YoToolStripMenuItem.Text = "Married and age over 20";
+            this.marriedAndOlderThan20YoToolStripMenuItem.Click += new System.EventHandler(this.marriedAndOlderThan20YoToolStripMenuItem_Click);
             // 
             // peopleThatRefusedToParticipateToolStripMenuItem
             // 
@@ -128,15 +130,15 @@
             this.peopleThatRefusedToParticipateToolStripMenuItem.Name = "peopleThatRefusedToParticipateToolStripMenuItem";
             this.peopleThatRefusedToParticipateToolStripMenuItem.Size = new System.Drawing.Size(406, 24);
             this.peopleThatRefusedToParticipateToolStripMenuItem.Text = "People that refused to participate";
+            this.peopleThatRefusedToParticipateToolStripMenuItem.Click += new System.EventHandler(this.peopleThatRefusedToParticipateToolStripMenuItem_Click);
             // 
-            // repView
+            // pnlReport
             // 
-            this.repView.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.repView.Location = new System.Drawing.Point(0, 30);
-            this.repView.Name = "repView";
-            this.repView.ServerReport.BearerToken = null;
-            this.repView.Size = new System.Drawing.Size(1259, 602);
-            this.repView.TabIndex = 1;
+            this.pnlReport.Location = new System.Drawing.Point(0, 30);
+            this.pnlReport.Name = "pnlReport";
+            this.pnlReport.Size = new System.Drawing.Size(1259, 601);
+            this.pnlReport.TabIndex = 1;
+            this.pnlReport.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlReport_Paint);
             // 
             // frmReports
             // 
@@ -144,7 +146,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
             this.ClientSize = new System.Drawing.Size(1259, 632);
-            this.Controls.Add(this.repView);
+            this.Controls.Add(this.pnlReport);
             this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MainMenuStrip = this.menuStrip1;
@@ -153,6 +155,8 @@
             this.Load += new System.EventHandler(this.frmReports_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pollDBDataSourceBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PersoanaBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -161,7 +165,6 @@
         #endregion
 
         private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem persoaneToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem divorcedPercentageToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem menWithHigherEducationToolStripMenuItem;
@@ -169,6 +172,8 @@
         private System.Windows.Forms.ToolStripMenuItem malesFemalesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem marriedAndOlderThan20YoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem peopleThatRefusedToParticipateToolStripMenuItem;
-        private Microsoft.Reporting.WinForms.ReportViewer repView;
+        private System.Windows.Forms.BindingSource pollDBDataSourceBindingSource;
+        private System.Windows.Forms.BindingSource PersoanaBindingSource;
+        private System.Windows.Forms.Panel pnlReport;
     }
 }

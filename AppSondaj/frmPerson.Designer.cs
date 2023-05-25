@@ -209,7 +209,7 @@
             // 
             // usrBirthday
             // 
-            this.usrBirthday.CustomFormat = "dd/MM/yyyy";
+            this.usrBirthday.CustomFormat = "dd.MM.yyyy";
             this.usrBirthday.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.usrBirthday.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.usrBirthday.Location = new System.Drawing.Point(138, 244);
