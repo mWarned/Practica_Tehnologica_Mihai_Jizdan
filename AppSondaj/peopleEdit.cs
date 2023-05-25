@@ -201,6 +201,7 @@ namespace AppSondaj
 
                             connection.Open();
                             int count = (int)command.ExecuteScalar(); // Execute scalar to get the number of foreign keys
+                            connection.Close();
 
                             if (count > 0)
                             {
@@ -209,6 +210,8 @@ namespace AppSondaj
                                     "Delete answer as well?", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                                 if (result == DialogResult.Yes)
                                 {
+                                    connection.Open();
+
                                     // Delete the answer of the person
                                     using (SqlCommand commandDelete = new SqlCommand("delete from Raspuns where persoanaID = @ID", (SqlConnection)connection))
                                     {
@@ -223,6 +226,8 @@ namespace AppSondaj
                                         commandDelete.ExecuteNonQuery();
                                     }
 
+                                    connection.Close();
+
                                     // Refresh the DataGridView after deletion
                                     refreshPeople();
 
@@ -231,6 +236,8 @@ namespace AppSondaj
                             }
                             else
                             {
+                                connection.Open();
+
                                 // Delete the person
                                 using (SqlCommand commandDelete = new SqlCommand("delete from Persoana where persoanaID = @ID", (SqlConnection)connection))
                                 {
@@ -238,6 +245,8 @@ namespace AppSondaj
 
                                     commandDelete.ExecuteNonQuery();
                                 }
+
+                                connection.Close();
 
                                 // Refresh the DataGridView after deletion
                                 refreshPeople();

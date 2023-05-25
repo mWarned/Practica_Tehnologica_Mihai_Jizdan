@@ -111,8 +111,7 @@ namespace AppSondaj
         private void btnSettings_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, colorList.lightBlue);
-            frmSettigns settings = new frmSettigns();
-            settings.Show();
+            OpenChildForm(new frmSettigns());
         }
 
         private void btnLogin_Click(object sender, EventArgs e)

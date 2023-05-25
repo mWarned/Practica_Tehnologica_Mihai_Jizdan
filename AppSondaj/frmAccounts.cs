@@ -13,7 +13,6 @@ namespace AppSondaj
 {
     public partial class frmAccounts : Form
     {
-        private Button currentBtn;
         SqlDataAdapter dataAD;
         DataTable dt;
 

@@ -17,11 +17,6 @@ namespace AppSondaj
             InitializeComponent();
         }
 
-        private void btnClose_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
         private void btnAccList_Click(object sender, EventArgs e)
         {
             frmAccounts accList = new frmAccounts();
