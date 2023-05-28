@@ -22,6 +22,16 @@ namespace AppSondaj
 
             gridDivorce.MultiSelect = false;
             gridDivorce.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+
+            // Set theme
+            setTheme();
+        }
+
+        // A struct to store the colors
+        private struct colorList
+        {
+            public static Color color1;
+            public static Color color2;
         }
 
         public void refreshGrid()
@@ -66,6 +76,32 @@ namespace AppSondaj
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        // Changing the theme
+        public void setTheme()
+        {
+            if (Helper.getTheme().Equals("Dark"))
+            {
+                colorList.color1 = Color.FromArgb(68, 68, 68);
+                colorList.color2 = Color.White;
+            }
+            else if (Helper.getTheme().Equals("Light"))
+            {
+                colorList.color1 = Color.White;
+                colorList.color2 = Color.Black;
+            }
+            else if (Helper.getTheme().Equals("Blue"))
+            {
+                colorList.color1 = Color.FromArgb(49, 51, 73);
+                colorList.color2 = Color.FromArgb(0, 126, 246);
+            }
+
+            this.BackColor = colorList.color1;
+            gridDivorce.BackgroundColor = colorList.color1;
+            label1.ForeColor = colorList.color2;
+            divorcePercentage.ForeColor = colorList.color2;
+            divorcePercentage.BackColor = colorList.color1;
         }
 
         private void repDivorcePercentage_Load(object sender, EventArgs e)

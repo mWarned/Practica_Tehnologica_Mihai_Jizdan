@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Windows.Controls.Primitives;
 using System.Windows.Forms;
 
 namespace AppSondaj
@@ -25,6 +26,16 @@ namespace AppSondaj
 
             listJudet();
             usrJudet_SelectedIndexChanged(usrJudet, EventArgs.Empty);
+
+            // Set theme
+            setTheme();
+        }
+
+        // A struct to store the colors
+        private struct colorList
+        {
+            public static Color color1;
+            public static Color color2;
         }
 
         // Output judete
@@ -284,6 +295,78 @@ namespace AppSondaj
         private void newPerson_Load(object sender, EventArgs e)
         {
             
+        }
+
+        // Changing the theme
+        public void setTheme()
+        {
+            if (Helper.getTheme().Equals("Dark"))
+            {
+                colorList.color1 = Color.FromArgb(68, 68, 68);
+                colorList.color2 = Color.White;
+
+                pnlUp.BackColor = Color.FromArgb(23, 23, 23);
+                btnExit.IconColor = Color.White;
+                btnSave.Image = AppSondaj.Properties.Resources.saveD;
+                btnUpdate.Image = AppSondaj.Properties.Resources.updateD;
+            }
+            else if (Helper.getTheme().Equals("Light"))
+            {
+                colorList.color1 = Color.White;
+                colorList.color2 = Color.Black;
+
+                pnlUp.BackColor = Color.FromArgb(210, 211, 219);
+                btnExit.IconColor = Color.Black;
+                btnSave.Image = AppSondaj.Properties.Resources.saveL;
+                btnUpdate.Image = AppSondaj.Properties.Resources.updateL;
+            }
+            else if (Helper.getTheme().Equals("Blue"))
+            {
+                colorList.color1 = Color.FromArgb(49, 51, 73);
+                colorList.color2 = Color.White;
+
+                pnlUp.BackColor = Color.FromArgb(23, 30, 54);
+                btnExit.IconColor = Color.White;
+                btnSave.Image = AppSondaj.Properties.Resources.save;
+                btnUpdate.Image = AppSondaj.Properties.Resources.update;
+            }
+
+            btnSave.BackColor = colorList.color1;
+            btnUpdate.BackColor = colorList.color1;
+
+            btnSave.ForeColor = colorList.color2;
+            btnUpdate.ForeColor = colorList.color2;
+
+            this.BackColor = colorList.color1;
+            label1.ForeColor = colorList.color2;
+            label2.ForeColor = colorList.color2;
+            label3.ForeColor = colorList.color2;
+            label4.ForeColor = colorList.color2;
+            label5.ForeColor = colorList.color2;
+            label6.ForeColor = colorList.color2;
+            label7.ForeColor = colorList.color2;
+            label8.ForeColor = colorList.color2;
+            label9.ForeColor = colorList.color2;
+            usrName.BackColor = colorList.color1;
+            usrName.ForeColor = colorList.color2;
+            usrSurname.BackColor = colorList.color1;
+            usrSurname.ForeColor = colorList.color2;
+            usrStudies.BackColor = colorList.color1;
+            usrStudies.ForeColor = colorList.color2;
+            usrEmail.BackColor = colorList.color1;
+            usrEmail.ForeColor = colorList.color2;
+            usrJudet.BackColor = colorList.color1;
+            usrJudet.ForeColor = colorList.color2;
+            usrMunicipiu.BackColor = colorList.color1;
+            usrMunicipiu.ForeColor = colorList.color2;
+            usrOras.BackColor = colorList.color1;
+            usrOras.ForeColor = colorList.color2;
+
+            usrM.ForeColor = colorList.color2;
+            usrF.ForeColor = colorList.color2;
+            usrMarried.ForeColor = colorList.color2;
+            usrDivorced.ForeColor = colorList.color2;
+            usrParticipated.ForeColor = colorList.color2;
         }
     }
 }

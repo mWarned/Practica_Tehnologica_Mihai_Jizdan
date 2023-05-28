@@ -11,13 +11,13 @@ using System.Windows.Forms;
 
 namespace AppSondaj
 {
-    public partial class themeQuestionEdit : Form
+    public partial class grActions : Form
     {
         private Button currentBtn;
         SqlDataAdapter dataAD;
         DataTable dt;
 
-        public themeQuestionEdit()
+        public grActions()
         {
             InitializeComponent();
 
@@ -26,13 +26,16 @@ namespace AppSondaj
 
             gridThemes.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             gridQuestions.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+
+            // Set theme
+            setTheme();
         }
 
         // A struct to store the colors
         private struct colorList
         {
-            public static Color back = Color.FromArgb(23, 30, 54);
-            public static Color lightBlue = Color.FromArgb(0, 126, 246);
+            public static Color color1;
+            public static Color color2;
         }
 
         // Method for activated button
@@ -72,18 +75,18 @@ namespace AppSondaj
         {
             if (currentBtn != null)
             {
-                currentBtn.ForeColor = colorList.lightBlue;
+                currentBtn.ForeColor = colorList.color2;
 
                 // Panel on the right of the button
-                pnlSideBtn1.BackColor = colorList.back;
+                pnlSideBtn1.BackColor = colorList.color1;
                 pnlSideBtn1.Location = new Point(250, currentBtn.Location.Y);
                 pnlSideBtn1.Visible = false;
                 pnlSideBtn1.BringToFront();
                 
-                currentBtn.ForeColor = colorList.lightBlue;
+                currentBtn.ForeColor = colorList.color2;
 
                 // Panel on the right of the button
-                pnlSideBtn2.BackColor = colorList.back;
+                pnlSideBtn2.BackColor = colorList.color1;
                 pnlSideBtn2.Location = new Point(250, currentBtn.Location.Y);
                 pnlSideBtn2.Visible = false;
                 pnlSideBtn2.BringToFront();
@@ -145,7 +148,7 @@ namespace AppSondaj
 
         private void btnAddTheme_Click(object sender, EventArgs e)
         {
-            ActivateButton(sender, colorList.lightBlue, "left");
+            ActivateButton(sender, colorList.color2, "left");
             frmTheme themes = new frmTheme();
             themes.btnSave.Visible = true;
             themes.btnUpdate.Visible = false;
@@ -154,7 +157,7 @@ namespace AppSondaj
 
         private void btnUpdateTheme_Click(object sender, EventArgs e)
         {
-            ActivateButton(sender, colorList.lightBlue, "left");
+            ActivateButton(sender, colorList.color2, "left");
             if (gridThemes.SelectedRows.Count > 0)
             {
                 // Get the selected record's identifier
@@ -187,7 +190,7 @@ namespace AppSondaj
 
         private void btnDeleteTheme_Click(object sender, EventArgs e)
         {
-            ActivateButton(sender, colorList.lightBlue, "left");
+            ActivateButton(sender, colorList.color2, "left");
 
             // Get the selected record's identifier
             int selectedID = Convert.ToInt32(gridThemes.SelectedRows[0].Cells["tematicaID"].Value);
@@ -328,13 +331,13 @@ namespace AppSondaj
 
         private void btnRefreshTheme_Click(object sender, EventArgs e)
         {
-            ActivateButton(sender, colorList.lightBlue, "left");
+            ActivateButton(sender, colorList.color2, "left");
             refreshThemes();
         }
 
         private void btnAddQuestion_Click(object sender, EventArgs e)
         {
-            ActivateButton(sender, colorList.lightBlue, "right");
+            ActivateButton(sender, colorList.color2, "right");
             frmQuestion questions = new frmQuestion();
             questions.btnSave.Visible = true;
             questions.btnUpdate.Visible = false;
@@ -343,7 +346,7 @@ namespace AppSondaj
 
         private void btnUpdateQuestion_Click(object sender, EventArgs e)
         {
-            ActivateButton(sender, colorList.lightBlue, "right");
+            ActivateButton(sender, colorList.color2, "right");
             if (gridQuestions.SelectedRows.Count > 0)
             {
                 // Get the selected record's identifier
@@ -377,7 +380,7 @@ namespace AppSondaj
 
         private void btnDeleteQuestion_Click(object sender, EventArgs e)
         {
-            ActivateButton(sender, colorList.lightBlue, "right");
+            ActivateButton(sender, colorList.color2, "right");
 
             // Get the selected record's identifier
             int selectedID = Convert.ToInt32(gridQuestions.SelectedRows[0].Cells["intrebareID"].Value);
@@ -470,8 +473,109 @@ namespace AppSondaj
 
         private void btnRefreshQuestion_Click(object sender, EventArgs e)
         {
-            ActivateButton(sender, colorList.lightBlue, "right");
+            ActivateButton(sender, colorList.color2, "right");
             refreshQuestions();
+        }
+
+        // Changing the theme
+        public void setTheme()
+        {
+            if (Helper.getTheme().Equals("Dark"))
+            {
+                colorList.color1 = Color.FromArgb(68, 68, 68);
+                colorList.color2 = Color.White;
+
+                this.BackColor = colorList.color1;
+                gridThemes.BackgroundColor = Color.FromArgb(23, 23, 23);
+                gridQuestions.BackgroundColor = Color.FromArgb(23, 23, 23);
+                grpActionsT.ForeColor = Color.White;
+                grpActionsQ.ForeColor = Color.White;
+
+                label1.ForeColor = Color.White;
+                label2.ForeColor = Color.White;
+                gridThemes.ForeColor = Color.White;
+                gridQuestions.ForeColor = Color.White;
+
+                btnAddTheme.Image = AppSondaj.Properties.Resources.newD;
+                btnAddQuestion.Image = AppSondaj.Properties.Resources.newD;
+
+                btnUpdateTheme.Image = AppSondaj.Properties.Resources.updateD;
+                btnUpdateQuestion.Image = AppSondaj.Properties.Resources.updateD;
+
+                btnDeleteTheme.Image = AppSondaj.Properties.Resources.deleteD;
+                btnDeleteQuestion.Image = AppSondaj.Properties.Resources.deleteD;
+
+                btnRefreshTheme.Image = AppSondaj.Properties.Resources.refreshD;
+                btnRefreshQuestion.Image = AppSondaj.Properties.Resources.refreshD;
+            }
+            else if (Helper.getTheme().Equals("Light"))
+            {
+                colorList.color1 = Color.White;
+                colorList.color2 = Color.Black;
+
+                this.BackColor = colorList.color1;
+                gridThemes.BackgroundColor = Color.FromArgb(210, 211, 219);
+                gridQuestions.BackgroundColor = Color.FromArgb(210, 211, 219);
+                grpActionsT.ForeColor = Color.White;
+                grpActionsQ.ForeColor = Color.White;
+
+                label1.ForeColor = Color.White;
+                label2.ForeColor = Color.White;
+                gridThemes.ForeColor = Color.White;
+                grpActionsQ.ForeColor = Color.White;
+
+                btnAddTheme.Image = AppSondaj.Properties.Resources.newL;
+                btnAddQuestion.Image = AppSondaj.Properties.Resources.newL;
+
+                btnUpdateTheme.Image = AppSondaj.Properties.Resources.updateL;
+                btnUpdateQuestion.Image = AppSondaj.Properties.Resources.updateL;
+
+                btnDeleteTheme.Image = AppSondaj.Properties.Resources.deleteL;
+                btnDeleteQuestion.Image = AppSondaj.Properties.Resources.deleteL;
+
+                btnRefreshTheme.Image = AppSondaj.Properties.Resources.refreshL;
+                btnRefreshQuestion.Image = AppSondaj.Properties.Resources.refreshL;
+            }
+            else if (Helper.getTheme().Equals("Blue"))
+            {
+                colorList.color1 = Color.FromArgb(49, 51, 73);
+                colorList.color2 = Color.FromArgb(0, 126, 246);
+
+                this.BackColor = colorList.color1;
+                gridThemes.BackgroundColor = Color.FromArgb(23, 30, 54);
+                gridQuestions.BackgroundColor = Color.FromArgb(23, 30, 54);
+                grpActionsT.ForeColor = Color.White;
+                grpActionsQ.ForeColor = Color.White;
+
+                label1.ForeColor = Color.White;
+                label2.ForeColor = Color.White;
+                gridThemes.ForeColor = Color.White;
+                grpActionsQ.ForeColor = Color.White;
+
+                btnAddTheme.Image = AppSondaj.Properties.Resources._new;
+                btnAddQuestion.Image = AppSondaj.Properties.Resources._new;
+
+                btnUpdateTheme.Image = AppSondaj.Properties.Resources.update;
+                btnUpdateQuestion.Image = AppSondaj.Properties.Resources.update;
+
+                btnDeleteTheme.Image = AppSondaj.Properties.Resources.delete;
+                btnDeleteQuestion.Image = AppSondaj.Properties.Resources.delete;
+
+                btnRefreshTheme.Image = AppSondaj.Properties.Resources.refresh;
+                btnRefreshQuestion.Image = AppSondaj.Properties.Resources.refresh;
+            }
+
+            gridThemes.ForeColor = Color.Black;
+            gridQuestions.ForeColor = Color.Black;
+
+            btnAddTheme.ForeColor = colorList.color2;
+            btnUpdateTheme.ForeColor = colorList.color2;
+            btnDeleteTheme.ForeColor = colorList.color2;
+            btnRefreshTheme.ForeColor = colorList.color2;
+            btnAddQuestion.ForeColor = colorList.color2;
+            btnUpdateQuestion.ForeColor = colorList.color2;
+            btnDeleteQuestion.ForeColor = colorList.color2;
+            btnRefreshQuestion.ForeColor = colorList.color2;
         }
 
         private void themeEdit_Load(object sender, EventArgs e)

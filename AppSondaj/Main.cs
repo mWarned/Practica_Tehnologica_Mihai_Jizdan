@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -24,8 +25,8 @@ namespace AppSondaj
         // A struct to store the colors
         private struct colorList
         {
-            public static Color back = Color.FromArgb(23, 30, 54);
-            public static Color lightBlue = Color.FromArgb(0, 126, 246);
+            public static Color color1;
+            public static Color color2;
         }
 
         // Method for activated button
@@ -49,10 +50,10 @@ namespace AppSondaj
         {
             if (currentBtn != null)
             {
-                currentBtn.ForeColor = colorList.lightBlue;
+                currentBtn.ForeColor = colorList.color2;
 
                 // Panel on the left of the button
-                pnlSideBtn.BackColor = colorList.back;
+                pnlSideBtn.BackColor = colorList.color1;
                 pnlSideBtn.Location = new Point(0, currentBtn.Location.Y);
                 pnlSideBtn.Visible = true;
                 pnlSideBtn.BringToFront();
@@ -87,31 +88,31 @@ namespace AppSondaj
 
         private void btnPeople_Click(object sender, EventArgs e)
         {
-            ActivateButton(sender, colorList.lightBlue);
+            ActivateButton(sender, colorList.color2);
             OpenChildForm(new peopleEdit());
         }
 
         private void btnPoll_Click(object sender, EventArgs e)
         {
-            ActivateButton(sender, colorList.lightBlue);
+            ActivateButton(sender, colorList.color2);
             OpenChildForm(new pollEdit());
         }
 
         private void btnThemesQuestions_Click(object sender, EventArgs e)
         {
-            ActivateButton(sender, colorList.lightBlue);
-            OpenChildForm(new themeQuestionEdit());
+            ActivateButton(sender, colorList.color2);
+            OpenChildForm(new grActions());
         }
 
         private void btnReports_Click(object sender, EventArgs e)
         {
-            ActivateButton(sender, colorList.lightBlue);
+            ActivateButton(sender, colorList.color2);
             OpenChildForm(new frmReports());
         }
 
         private void btnSettings_Click(object sender, EventArgs e)
         {
-            ActivateButton(sender, colorList.lightBlue);
+            ActivateButton(sender, colorList.color2);
             frmSettigns settings = new frmSettigns();
             if(isAdmin == true)
             {
@@ -128,7 +129,7 @@ namespace AppSondaj
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            ActivateButton(sender, colorList.lightBlue);
+            ActivateButton(sender, colorList.color2);
             frmLogin login = new frmLogin();
             login.Show();
             this.Close();
@@ -150,20 +151,76 @@ namespace AppSondaj
             Application.Exit();
         }
 
+        // Changing the theme
+        public void setTheme()
+        {
+            if (Helper.getTheme().Equals("Dark"))
+            {
+                colorList.color1 = Color.FromArgb(68, 68, 68);
+                colorList.color2 = Color.White;
+
+                pnlUp.BackColor = Color.FromArgb(23, 23, 23);
+                pnlUser.BackColor = Color.FromArgb(23, 23, 23);
+                pnlActions.BackColor = Color.FromArgb(23, 23, 23);
+                pnlDesktop.BackColor = Color.FromArgb(68, 68, 68);
+
+                usrImg.Image = AppSondaj.Properties.Resources.userD;
+                btnPeople.Image = AppSondaj.Properties.Resources.peopleD;
+                btnPoll.Image = AppSondaj.Properties.Resources.editD;
+                btnThemesQuestions.Image = AppSondaj.Properties.Resources.questionsD;
+                btnReports.Image = AppSondaj.Properties.Resources.reportD;
+                btnSettings.Image = AppSondaj.Properties.Resources.settingD;
+                btnLogin.Image = AppSondaj.Properties.Resources.logoutD;
+            }
+            else if (Helper.getTheme().Equals("Light"))
+            {
+                colorList.color1 = Color.White;
+                colorList.color2 = Color.Black;
+
+                pnlUp.BackColor = Color.FromArgb(210, 211, 219);
+                pnlUser.BackColor = Color.FromArgb(210, 211, 219);
+                pnlActions.BackColor = Color.FromArgb(210, 211, 219);
+                pnlDesktop.BackColor = Color.White;
+
+                usrImg.Image = AppSondaj.Properties.Resources.userL;
+                btnPeople.Image = AppSondaj.Properties.Resources.peopleL;
+                btnPoll.Image = AppSondaj.Properties.Resources.editL;
+                btnThemesQuestions.Image = AppSondaj.Properties.Resources.questionsL;
+                btnReports.Image = AppSondaj.Properties.Resources.reportL;
+                btnSettings.Image = AppSondaj.Properties.Resources.settingL;
+                btnLogin.Image = AppSondaj.Properties.Resources.logoutL;
+            }
+            else if (Helper.getTheme().Equals("Blue"))
+            {
+                colorList.color1 = Color.FromArgb(49, 51, 73);
+                colorList.color2 = Color.FromArgb(0, 126, 246);
+
+                pnlUp.BackColor = Color.FromArgb(23, 30, 54);
+                pnlUser.BackColor = Color.FromArgb(23, 30, 54);
+                pnlActions.BackColor = Color.FromArgb(23, 30, 54);
+                pnlDesktop.BackColor = Color.FromArgb(49, 51, 73);
+
+                usrImg.Image = AppSondaj.Properties.Resources.user;
+                btnPeople.Image = AppSondaj.Properties.Resources.people;
+                btnPoll.Image = AppSondaj.Properties.Resources.edit;
+                btnThemesQuestions.Image = AppSondaj.Properties.Resources.questions;
+                btnReports.Image = AppSondaj.Properties.Resources.report;
+                btnSettings.Image = AppSondaj.Properties.Resources.setting;
+                btnLogin.Image = AppSondaj.Properties.Resources.logout;
+            }
+
+            lblUser.ForeColor = colorList.color2;
+            btnPeople.ForeColor = colorList.color2;
+            btnPoll.ForeColor = colorList.color2;
+            btnThemesQuestions.ForeColor = colorList.color2;
+            btnReports.ForeColor = colorList.color2;
+            btnSettings.ForeColor = colorList.color2;
+            btnLogin.ForeColor = colorList.color2;
+        }
+
         private void Main_Load(object sender, EventArgs e)
         {
-            if (Helper.themeSettings().Equals("Dark"))
-            {
-
-            }
-            else if (Helper.themeSettings().Equals("Light"))
-            {
-
-            }
-            else if (Helper.themeSettings().Equals("Blue"))
-            {
-
-            }
+            setTheme();
         }
     }
 }

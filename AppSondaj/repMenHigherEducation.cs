@@ -22,6 +22,16 @@ namespace AppSondaj
 
             gridMenHighEducation.MultiSelect = false;
             gridMenHighEducation.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+
+            // Set theme
+            setTheme();
+        }
+
+        // A struct to store the colors
+        private struct colorList
+        {
+            public static Color color1;
+            public static Color color2;
         }
 
         public void refreshGrid()
@@ -89,7 +99,7 @@ namespace AppSondaj
                 int.TryParse(usrAge1.Text, out age1);
                 int.TryParse(usrAge2.Text, out age2);
 
-                if (age1 < age2)
+                if (age1 <= age2)
                 {
                     refreshGrid();
                 }
@@ -118,6 +128,42 @@ namespace AppSondaj
             {
                 e.Handled = true;
             }
+        }
+
+        // Changing the theme
+        public void setTheme()
+        {
+            if (Helper.getTheme().Equals("Dark"))
+            {
+                colorList.color1 = Color.FromArgb(68, 68, 68);
+                colorList.color2 = Color.White;
+
+                btnSearch.Image = AppSondaj.Properties.Resources.searchD;
+            }
+            else if (Helper.getTheme().Equals("Light"))
+            {
+                colorList.color1 = Color.White;
+                colorList.color2 = Color.Black;
+
+                btnSearch.Image = AppSondaj.Properties.Resources.searchL;
+            }
+            else if (Helper.getTheme().Equals("Blue"))
+            {
+                colorList.color1 = Color.FromArgb(49, 51, 73);
+                colorList.color2 = Color.FromArgb(0, 126, 246);
+
+                btnSearch.Image = AppSondaj.Properties.Resources.search;
+            }
+
+            this.BackColor = colorList.color1;
+            gridMenHighEducation.BackgroundColor = colorList.color1;
+            label1.ForeColor = colorList.color2;
+            label2.ForeColor = colorList.color2;
+            usrAge1.ForeColor = colorList.color2;
+            usrAge1.BackColor = colorList.color1;
+            usrAge2.ForeColor = colorList.color2;
+            usrAge2.BackColor = colorList.color1;
+            btnSearch.ForeColor = colorList.color2;
         }
     }
 }

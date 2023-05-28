@@ -22,6 +22,16 @@ namespace AppSondaj
 
             gridAccounts.MultiSelect = false;
             gridAccounts.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+
+            // Set theme
+            setTheme();
+        }
+
+        // A struct to store the colors
+        private struct colorList
+        {
+            public static Color color1;
+            public static Color color2;
         }
 
         public void refreshAccounts()
@@ -141,6 +151,46 @@ namespace AppSondaj
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        // Changing the theme
+        public void setTheme()
+        {
+            if (Helper.getTheme().Equals("Dark"))
+            {
+                colorList.color1 = Color.FromArgb(68, 68, 68);
+                colorList.color2 = Color.White;
+
+                pnlUp.BackColor = Color.FromArgb(23, 23, 23);
+                btnClose.IconColor = Color.White;
+                btnUpdate.Image = AppSondaj.Properties.Resources.updateD;
+                btnDelete.Image = AppSondaj.Properties.Resources.deleteD;
+            }
+            else if (Helper.getTheme().Equals("Light"))
+            {
+                colorList.color1 = Color.White;
+                colorList.color2 = Color.Black;
+
+                pnlUp.BackColor = Color.FromArgb(210, 211, 219);
+                btnClose.IconColor = Color.Black;
+                btnUpdate.Image = AppSondaj.Properties.Resources.updateL;
+                btnDelete.Image = AppSondaj.Properties.Resources.deleteL;
+            }
+            else if (Helper.getTheme().Equals("Blue"))
+            {
+                colorList.color1 = Color.FromArgb(49, 51, 73);
+                colorList.color2 = Color.FromArgb(0, 126, 246);
+
+                pnlUp.BackColor = Color.FromArgb(23, 30, 54);
+                btnClose.IconColor = Color.White;
+                btnUpdate.Image = AppSondaj.Properties.Resources.update;
+                btnDelete.Image = AppSondaj.Properties.Resources.delete;
+            }
+
+            this.BackColor = colorList.color1;
+            gridAccounts.BackgroundColor = colorList.color1;
+            btnUpdate.ForeColor = colorList.color2;
+            btnDelete.ForeColor = colorList.color2;
         }
     }
 }

@@ -24,6 +24,16 @@ namespace AppSondaj
 
             gridPplGivenMonth.MultiSelect = false;
             gridPplGivenMonth.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+
+            // Set theme
+            setTheme();
+        }
+
+        // A struct to store the colors
+        private struct colorList
+        {
+            public static Color color1;
+            public static Color color2;
         }
 
         public void refreshGrid()
@@ -111,6 +121,39 @@ namespace AppSondaj
         private void usrMonth_SelectedIndexChanged(object sender, EventArgs e)
         {
             refreshGrid();
+        }
+
+        // Changing the theme
+        public void setTheme()
+        {
+            if (Helper.getTheme().Equals("Dark"))
+            {
+                colorList.color1 = Color.FromArgb(68, 68, 68);
+                colorList.color2 = Color.White;
+
+                btnExcel.Image = AppSondaj.Properties.Resources.saveD;
+            }
+            else if (Helper.getTheme().Equals("Light"))
+            {
+                colorList.color1 = Color.White;
+                colorList.color2 = Color.Black;
+
+                btnExcel.Image = AppSondaj.Properties.Resources.saveL;
+            }
+            else if (Helper.getTheme().Equals("Blue"))
+            {
+                colorList.color1 = Color.FromArgb(49, 51, 73);
+                colorList.color2 = Color.FromArgb(0, 126, 246);
+
+                btnExcel.Image = AppSondaj.Properties.Resources.save;
+            }
+
+            this.BackColor = colorList.color1;
+            gridPplGivenMonth.BackgroundColor = colorList.color1;
+            label1.ForeColor = colorList.color2;
+            usrMonth.ForeColor = colorList.color2;
+            usrMonth.BackColor = colorList.color1;
+            btnExcel.ForeColor = colorList.color2;
         }
     }
 }

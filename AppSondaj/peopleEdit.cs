@@ -8,6 +8,7 @@ using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Controls.Primitives;
 using System.Windows.Documents;
 using System.Windows.Forms;
 
@@ -25,13 +26,16 @@ namespace AppSondaj
 
             gridPeople.MultiSelect = false;
             gridPeople.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+
+            // Set theme
+            setTheme();
         }
 
         // A struct to store the colors
         private struct colorList
         {
-            public static Color back = Color.FromArgb(23, 30, 54);
-            public static Color lightBlue = Color.FromArgb(0, 126, 246);
+            public static Color color1;
+            public static Color color2;
         }
 
         // Method for activated button
@@ -56,10 +60,10 @@ namespace AppSondaj
         {
             if (currentBtn != null)
             {
-                currentBtn.ForeColor = colorList.lightBlue;
+                currentBtn.ForeColor = colorList.color2;
 
                 // Panel on the right of the button
-                pnlSideBtn.BackColor = colorList.back;
+                pnlSideBtn.BackColor = colorList.color1;
                 pnlSideBtn.Location = new Point(225, currentBtn.Location.Y);
                 pnlSideBtn.Visible = true;
                 pnlSideBtn.BringToFront();
@@ -133,14 +137,14 @@ namespace AppSondaj
 
         private void btnAddPpl_Click(object sender, EventArgs e)
         {
-            ActivateButton(sender, colorList.lightBlue);
+            ActivateButton(sender, colorList.color2);
             frmPerson person = new frmPerson();
             person.Show();
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            ActivateButton(sender, colorList.lightBlue);
+            ActivateButton(sender, colorList.color2);
             if (gridPeople.SelectedRows.Count > 0)
             {
                 // Get the selected record's identifier
@@ -165,7 +169,15 @@ namespace AppSondaj
                     }
                     person.usrStudies.Text = Convert.ToString(gridPeople.SelectedRows[0].Cells["studii"].Value);
                     person.usrEmail.Text = Convert.ToString(gridPeople.SelectedRows[0].Cells["email"].Value);
-                    person.usrBirthday.Value = Convert.ToDateTime(gridPeople.SelectedRows[0].Cells["DataNasterii"].Value);
+                    try
+                    {
+                        DateTime usrBirthday = DateTime.ParseExact((string)gridPeople.SelectedRows[0].Cells["DataNasterii"].Value, "dd.MM.yyyy", CultureInfo.InvariantCulture);
+                        person.usrBirthday.Value = usrBirthday;
+                    }
+                    catch (FormatException)
+                    {
+                        MessageBox.Show("Date format error!");
+                    }
                     person.usrJudet.Text = Convert.ToString(gridPeople.SelectedRows[0].Cells["numeJudet"].Value);
                     person.usrMunicipiu.Text = Convert.ToString(gridPeople.SelectedRows[0].Cells["numeMunicipiu"].Value);
                     person.usrOras.Text = Convert.ToString(gridPeople.SelectedRows[0].Cells["numeOras"].Value);
@@ -200,7 +212,7 @@ namespace AppSondaj
 
         private void btnDeletePpl_Click(object sender, EventArgs e)
         {
-            ActivateButton(sender, colorList.lightBlue);
+            ActivateButton(sender, colorList.color2);
             if (gridPeople.SelectedRows.Count > 0)
             {
                 // Get the selected record's identifier
@@ -296,6 +308,67 @@ namespace AppSondaj
         private void btnRefresh_Click(object sender, EventArgs e)
         {
             refreshPeople();
+        }
+
+        public void setTheme()
+        {
+            if (Helper.getTheme().Equals("Dark"))
+            {
+                colorList.color1 = Color.FromArgb(68, 68, 68);
+                colorList.color2 = Color.White;
+
+                this.BackColor = colorList.color1;
+                gridPeople.BackgroundColor = Color.FromArgb(23, 23, 23);
+
+                btnAdd.Image = AppSondaj.Properties.Resources.newD;
+                btnUpdate.Image = AppSondaj.Properties.Resources.updateD;
+                btnDelete.Image = AppSondaj.Properties.Resources.deleteD;
+                btnSortAsc.Image = AppSondaj.Properties.Resources.up_arrowD;
+                btnSortDesc.Image = AppSondaj.Properties.Resources.down_arrowD;
+                btnRefresh.Image = AppSondaj.Properties.Resources.refreshD;
+                grpActions.ForeColor = Color.White;
+            }
+            else if (Helper.getTheme().Equals("Light"))
+            {
+                colorList.color1 = Color.White;
+                colorList.color2 = Color.Black;
+
+                this.BackColor = colorList.color1;
+                gridPeople.BackgroundColor = Color.FromArgb(210, 211, 219);
+
+                btnAdd.Image = AppSondaj.Properties.Resources.newL;
+                btnUpdate.Image = AppSondaj.Properties.Resources.updateL;
+                btnDelete.Image = AppSondaj.Properties.Resources.deleteL;
+                btnSortAsc.Image = AppSondaj.Properties.Resources.up_arrowL;
+                btnSortDesc.Image = AppSondaj.Properties.Resources.down_arrowL;
+                btnRefresh.Image = AppSondaj.Properties.Resources.refreshL;
+                grpActions.ForeColor = Color.White;
+            }
+            else if (Helper.getTheme().Equals("Blue"))
+            {
+                colorList.color1 = Color.FromArgb(49, 51, 73);
+                colorList.color2 = Color.FromArgb(0, 126, 246);
+
+                this.BackColor = colorList.color1;
+                gridPeople.BackgroundColor = Color.FromArgb(23, 30, 54);
+
+                btnAdd.Image = AppSondaj.Properties.Resources._new;
+                btnUpdate.Image = AppSondaj.Properties.Resources.update;
+                btnDelete.Image = AppSondaj.Properties.Resources.delete;
+                btnSortAsc.Image = AppSondaj.Properties.Resources.up_arrow;
+                btnSortDesc.Image = AppSondaj.Properties.Resources.down_arrow;
+                btnRefresh.Image = AppSondaj.Properties.Resources.refresh;
+                grpActions.ForeColor = Color.White;
+            }
+
+            gridPeople.BackgroundColor = colorList.color1;
+
+            btnAdd.ForeColor = colorList.color2;
+            btnUpdate.ForeColor = colorList.color2;
+            btnDelete.ForeColor = colorList.color2;
+            btnSortAsc.ForeColor = colorList.color2;
+            btnSortDesc.ForeColor = colorList.color2;
+            btnRefresh.ForeColor = colorList.color2;
         }
 
         private void peopleEdit_Load(object sender, EventArgs e)

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(repMenHigherEducation));
             this.gridMenHighEducation = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.usrAge1 = new System.Windows.Forms.TextBox();
@@ -65,7 +66,7 @@
             this.usrAge1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
             this.usrAge1.Font = new System.Drawing.Font("Bahnschrift", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.usrAge1.ForeColor = System.Drawing.SystemColors.Window;
-            this.usrAge1.Location = new System.Drawing.Point(378, 22);
+            this.usrAge1.Location = new System.Drawing.Point(387, 22);
             this.usrAge1.Multiline = true;
             this.usrAge1.Name = "usrAge1";
             this.usrAge1.Size = new System.Drawing.Size(106, 33);
@@ -78,8 +79,8 @@
             this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSearch.Font = new System.Drawing.Font("Nirmala UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSearch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(246)))));
-            this.btnSearch.Image = global::AppSondaj.Properties.Resources.search;
-            this.btnSearch.Location = new System.Drawing.Point(653, 19);
+            this.btnSearch.Image = ((System.Drawing.Image)(resources.GetObject("btnSearch.Image")));
+            this.btnSearch.Location = new System.Drawing.Point(669, 19);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(160, 46);
             this.btnSearch.TabIndex = 48;
@@ -93,7 +94,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Bahnschrift", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(246)))));
-            this.label2.Location = new System.Drawing.Point(490, 25);
+            this.label2.Location = new System.Drawing.Point(504, 25);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(36, 33);
             this.label2.TabIndex = 49;
@@ -105,7 +106,7 @@
             this.usrAge2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
             this.usrAge2.Font = new System.Drawing.Font("Bahnschrift", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.usrAge2.ForeColor = System.Drawing.SystemColors.Window;
-            this.usrAge2.Location = new System.Drawing.Point(532, 22);
+            this.usrAge2.Location = new System.Drawing.Point(546, 22);
             this.usrAge2.Multiline = true;
             this.usrAge2.Name = "usrAge2";
             this.usrAge2.Size = new System.Drawing.Size(106, 33);

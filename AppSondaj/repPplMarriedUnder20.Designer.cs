@@ -28,24 +28,24 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.txtNotTakenPart = new System.Windows.Forms.TextBox();
+            this.txtMarriedUnder20 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.gridPplMarriedUnder20 = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.gridPplMarriedUnder20)).BeginInit();
             this.SuspendLayout();
             // 
-            // txtNotTakenPart
+            // txtMarriedUnder20
             // 
-            this.txtNotTakenPart.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtNotTakenPart.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
-            this.txtNotTakenPart.Font = new System.Drawing.Font("Bahnschrift", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNotTakenPart.ForeColor = System.Drawing.SystemColors.Window;
-            this.txtNotTakenPart.Location = new System.Drawing.Point(671, 22);
-            this.txtNotTakenPart.Multiline = true;
-            this.txtNotTakenPart.Name = "txtNotTakenPart";
-            this.txtNotTakenPart.ReadOnly = true;
-            this.txtNotTakenPart.Size = new System.Drawing.Size(106, 33);
-            this.txtNotTakenPart.TabIndex = 53;
+            this.txtMarriedUnder20.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtMarriedUnder20.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
+            this.txtMarriedUnder20.Font = new System.Drawing.Font("Bahnschrift", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMarriedUnder20.ForeColor = System.Drawing.SystemColors.Window;
+            this.txtMarriedUnder20.Location = new System.Drawing.Point(671, 22);
+            this.txtMarriedUnder20.Multiline = true;
+            this.txtMarriedUnder20.Name = "txtMarriedUnder20";
+            this.txtMarriedUnder20.ReadOnly = true;
+            this.txtMarriedUnder20.Size = new System.Drawing.Size(106, 33);
+            this.txtMarriedUnder20.TabIndex = 53;
             // 
             // label1
             // 
@@ -75,7 +75,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
             this.ClientSize = new System.Drawing.Size(1259, 601);
-            this.Controls.Add(this.txtNotTakenPart);
+            this.Controls.Add(this.txtMarriedUnder20);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.gridPplMarriedUnder20);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -90,7 +90,7 @@
 
         #endregion
 
-        public System.Windows.Forms.TextBox txtNotTakenPart;
+        public System.Windows.Forms.TextBox txtMarriedUnder20;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView gridPplMarriedUnder20;
     }

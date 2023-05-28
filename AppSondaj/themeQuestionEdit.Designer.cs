@@ -1,6 +1,6 @@
 ﻿namespace AppSondaj
 {
-    partial class themeQuestionEdit
+    partial class grActions
     {
         /// <summary>
         /// Required designer variable.
@@ -28,15 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(themeQuestionEdit));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(grActions));
             this.gridThemes = new System.Windows.Forms.DataGridView();
-            this.grpActions = new System.Windows.Forms.GroupBox();
+            this.grpActionsT = new System.Windows.Forms.GroupBox();
             this.btnRefreshTheme = new System.Windows.Forms.Button();
             this.btnUpdateTheme = new System.Windows.Forms.Button();
             this.pnlSideBtn1 = new System.Windows.Forms.Panel();
             this.btnDeleteTheme = new System.Windows.Forms.Button();
             this.btnAddTheme = new System.Windows.Forms.Button();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.grpActionsQ = new System.Windows.Forms.GroupBox();
             this.pnlSideBtn2 = new System.Windows.Forms.Panel();
             this.btnRefreshQuestion = new System.Windows.Forms.Button();
             this.btnUpdateQuestion = new System.Windows.Forms.Button();
@@ -46,8 +46,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.gridThemes)).BeginInit();
-            this.grpActions.SuspendLayout();
-            this.groupBox1.SuspendLayout();
+            this.grpActionsT.SuspendLayout();
+            this.grpActionsQ.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridQuestions)).BeginInit();
             this.SuspendLayout();
             // 
@@ -61,22 +61,22 @@
             this.gridThemes.Size = new System.Drawing.Size(230, 613);
             this.gridThemes.TabIndex = 9;
             // 
-            // grpActions
+            // grpActionsT
             // 
-            this.grpActions.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.grpActions.Controls.Add(this.btnRefreshTheme);
-            this.grpActions.Controls.Add(this.btnUpdateTheme);
-            this.grpActions.Controls.Add(this.pnlSideBtn1);
-            this.grpActions.Controls.Add(this.btnDeleteTheme);
-            this.grpActions.Controls.Add(this.btnAddTheme);
-            this.grpActions.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grpActions.ForeColor = System.Drawing.Color.White;
-            this.grpActions.Location = new System.Drawing.Point(260, 21);
-            this.grpActions.Name = "grpActions";
-            this.grpActions.Size = new System.Drawing.Size(238, 638);
-            this.grpActions.TabIndex = 10;
-            this.grpActions.TabStop = false;
-            this.grpActions.Text = "Actions";
+            this.grpActionsT.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.grpActionsT.Controls.Add(this.btnRefreshTheme);
+            this.grpActionsT.Controls.Add(this.btnUpdateTheme);
+            this.grpActionsT.Controls.Add(this.pnlSideBtn1);
+            this.grpActionsT.Controls.Add(this.btnDeleteTheme);
+            this.grpActionsT.Controls.Add(this.btnAddTheme);
+            this.grpActionsT.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grpActionsT.ForeColor = System.Drawing.Color.White;
+            this.grpActionsT.Location = new System.Drawing.Point(260, 21);
+            this.grpActionsT.Name = "grpActionsT";
+            this.grpActionsT.Size = new System.Drawing.Size(238, 638);
+            this.grpActionsT.TabIndex = 10;
+            this.grpActionsT.TabStop = false;
+            this.grpActionsT.Text = "Actions";
             // 
             // btnRefreshTheme
             // 
@@ -84,7 +84,7 @@
             this.btnRefreshTheme.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRefreshTheme.Font = new System.Drawing.Font("Nirmala UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRefreshTheme.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(246)))));
-            this.btnRefreshTheme.Image = global::AppSondaj.Properties.Resources.refresh;
+            this.btnRefreshTheme.Image = ((System.Drawing.Image)(resources.GetObject("btnRefreshTheme.Image")));
             this.btnRefreshTheme.Location = new System.Drawing.Point(6, 575);
             this.btnRefreshTheme.Name = "btnRefreshTheme";
             this.btnRefreshTheme.Size = new System.Drawing.Size(226, 66);
@@ -100,7 +100,7 @@
             this.btnUpdateTheme.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUpdateTheme.Font = new System.Drawing.Font("Nirmala UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdateTheme.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(246)))));
-            this.btnUpdateTheme.Image = global::AppSondaj.Properties.Resources.update;
+            this.btnUpdateTheme.Image = ((System.Drawing.Image)(resources.GetObject("btnUpdateTheme.Image")));
             this.btnUpdateTheme.Location = new System.Drawing.Point(6, 103);
             this.btnUpdateTheme.Name = "btnUpdateTheme";
             this.btnUpdateTheme.Size = new System.Drawing.Size(226, 66);
@@ -124,7 +124,7 @@
             this.btnDeleteTheme.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDeleteTheme.Font = new System.Drawing.Font("Nirmala UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDeleteTheme.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(246)))));
-            this.btnDeleteTheme.Image = global::AppSondaj.Properties.Resources.delete;
+            this.btnDeleteTheme.Image = ((System.Drawing.Image)(resources.GetObject("btnDeleteTheme.Image")));
             this.btnDeleteTheme.Location = new System.Drawing.Point(6, 175);
             this.btnDeleteTheme.Name = "btnDeleteTheme";
             this.btnDeleteTheme.Size = new System.Drawing.Size(226, 66);
@@ -140,7 +140,7 @@
             this.btnAddTheme.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddTheme.Font = new System.Drawing.Font("Nirmala UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddTheme.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(246)))));
-            this.btnAddTheme.Image = global::AppSondaj.Properties.Resources._new;
+            this.btnAddTheme.Image = ((System.Drawing.Image)(resources.GetObject("btnAddTheme.Image")));
             this.btnAddTheme.Location = new System.Drawing.Point(6, 34);
             this.btnAddTheme.Name = "btnAddTheme";
             this.btnAddTheme.Size = new System.Drawing.Size(226, 66);
@@ -150,22 +150,22 @@
             this.btnAddTheme.UseVisualStyleBackColor = true;
             this.btnAddTheme.Click += new System.EventHandler(this.btnAddTheme_Click);
             // 
-            // groupBox1
+            // grpActionsQ
             // 
-            this.groupBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.groupBox1.Controls.Add(this.pnlSideBtn2);
-            this.groupBox1.Controls.Add(this.btnRefreshQuestion);
-            this.groupBox1.Controls.Add(this.btnUpdateQuestion);
-            this.groupBox1.Controls.Add(this.btnDeleteQuestion);
-            this.groupBox1.Controls.Add(this.btnAddQuestion);
-            this.groupBox1.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.ForeColor = System.Drawing.Color.White;
-            this.groupBox1.Location = new System.Drawing.Point(1025, 21);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(238, 638);
-            this.groupBox1.TabIndex = 12;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Actions";
+            this.grpActionsQ.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.grpActionsQ.Controls.Add(this.pnlSideBtn2);
+            this.grpActionsQ.Controls.Add(this.btnRefreshQuestion);
+            this.grpActionsQ.Controls.Add(this.btnUpdateQuestion);
+            this.grpActionsQ.Controls.Add(this.btnDeleteQuestion);
+            this.grpActionsQ.Controls.Add(this.btnAddQuestion);
+            this.grpActionsQ.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grpActionsQ.ForeColor = System.Drawing.Color.White;
+            this.grpActionsQ.Location = new System.Drawing.Point(1025, 21);
+            this.grpActionsQ.Name = "grpActionsQ";
+            this.grpActionsQ.Size = new System.Drawing.Size(238, 638);
+            this.grpActionsQ.TabIndex = 12;
+            this.grpActionsQ.TabStop = false;
+            this.grpActionsQ.Text = "Actions";
             // 
             // pnlSideBtn2
             // 
@@ -181,7 +181,7 @@
             this.btnRefreshQuestion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRefreshQuestion.Font = new System.Drawing.Font("Nirmala UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRefreshQuestion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(246)))));
-            this.btnRefreshQuestion.Image = global::AppSondaj.Properties.Resources.refresh;
+            this.btnRefreshQuestion.Image = ((System.Drawing.Image)(resources.GetObject("btnRefreshQuestion.Image")));
             this.btnRefreshQuestion.Location = new System.Drawing.Point(6, 575);
             this.btnRefreshQuestion.Name = "btnRefreshQuestion";
             this.btnRefreshQuestion.Size = new System.Drawing.Size(226, 66);
@@ -197,7 +197,7 @@
             this.btnUpdateQuestion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUpdateQuestion.Font = new System.Drawing.Font("Nirmala UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdateQuestion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(246)))));
-            this.btnUpdateQuestion.Image = global::AppSondaj.Properties.Resources.update;
+            this.btnUpdateQuestion.Image = ((System.Drawing.Image)(resources.GetObject("btnUpdateQuestion.Image")));
             this.btnUpdateQuestion.Location = new System.Drawing.Point(6, 103);
             this.btnUpdateQuestion.Name = "btnUpdateQuestion";
             this.btnUpdateQuestion.Size = new System.Drawing.Size(226, 66);
@@ -213,7 +213,7 @@
             this.btnDeleteQuestion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDeleteQuestion.Font = new System.Drawing.Font("Nirmala UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDeleteQuestion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(246)))));
-            this.btnDeleteQuestion.Image = global::AppSondaj.Properties.Resources.delete;
+            this.btnDeleteQuestion.Image = ((System.Drawing.Image)(resources.GetObject("btnDeleteQuestion.Image")));
             this.btnDeleteQuestion.Location = new System.Drawing.Point(6, 175);
             this.btnDeleteQuestion.Name = "btnDeleteQuestion";
             this.btnDeleteQuestion.Size = new System.Drawing.Size(226, 66);
@@ -229,7 +229,7 @@
             this.btnAddQuestion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddQuestion.Font = new System.Drawing.Font("Nirmala UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddQuestion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(246)))));
-            this.btnAddQuestion.Image = global::AppSondaj.Properties.Resources._new;
+            this.btnAddQuestion.Image = ((System.Drawing.Image)(resources.GetObject("btnAddQuestion.Image")));
             this.btnAddQuestion.Location = new System.Drawing.Point(6, 34);
             this.btnAddQuestion.Name = "btnAddQuestion";
             this.btnAddQuestion.Size = new System.Drawing.Size(226, 66);
@@ -271,7 +271,7 @@
             this.label2.TabIndex = 14;
             this.label2.Text = "Questions";
             // 
-            // themeQuestionEdit
+            // grActions
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -279,19 +279,19 @@
             this.ClientSize = new System.Drawing.Size(1275, 671);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.grpActionsQ);
             this.Controls.Add(this.gridQuestions);
-            this.Controls.Add(this.grpActions);
+            this.Controls.Add(this.grpActionsT);
             this.Controls.Add(this.gridThemes);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "themeQuestionEdit";
+            this.Name = "grActions";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Edit themes and questions";
             this.Load += new System.EventHandler(this.themeEdit_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gridThemes)).EndInit();
-            this.grpActions.ResumeLayout(false);
-            this.groupBox1.ResumeLayout(false);
+            this.grpActionsT.ResumeLayout(false);
+            this.grpActionsQ.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridQuestions)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -301,13 +301,13 @@
         #endregion
 
         public System.Windows.Forms.DataGridView gridThemes;
-        private System.Windows.Forms.GroupBox grpActions;
+        private System.Windows.Forms.GroupBox grpActionsT;
         private System.Windows.Forms.Button btnRefreshTheme;
         private System.Windows.Forms.Button btnUpdateTheme;
         private System.Windows.Forms.Panel pnlSideBtn1;
         private System.Windows.Forms.Button btnDeleteTheme;
         private System.Windows.Forms.Button btnAddTheme;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox grpActionsQ;
         private System.Windows.Forms.Button btnRefreshQuestion;
         private System.Windows.Forms.Button btnUpdateQuestion;
         private System.Windows.Forms.Button btnDeleteQuestion;

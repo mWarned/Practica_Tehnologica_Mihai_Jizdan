@@ -15,9 +15,19 @@ namespace AppSondaj
             return ConfigurationManager.ConnectionStrings[name].ConnectionString;
         }
 
-        public static string themeSettings()
+        // Getting the theme
+        public static string getTheme()
         {
             return ConfigurationManager.AppSettings["Theme"];
+        }
+
+        // Changing the theme value
+        public static void changeTheme(string theme)
+        {
+            Configuration config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
+            config.AppSettings.Settings["Theme"].Value = theme;
+            config.Save(ConfigurationSaveMode.Modified);
+            ConfigurationManager.RefreshSection("appSettings");
         }
     }
 }
