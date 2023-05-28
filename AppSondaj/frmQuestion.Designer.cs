@@ -29,42 +29,42 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmQuestion));
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.btnThemeClose = new FontAwesome.Sharp.IconButton();
+            this.pnlUp = new System.Windows.Forms.Panel();
+            this.btnExit = new FontAwesome.Sharp.IconButton();
             this.label1 = new System.Windows.Forms.Label();
             this.usrTheme = new System.Windows.Forms.ComboBox();
             this.usrQuestion = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
-            this.panel1.SuspendLayout();
+            this.pnlUp.SuspendLayout();
             this.SuspendLayout();
             // 
-            // panel1
+            // pnlUp
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
-            this.panel1.Controls.Add(this.btnThemeClose);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(453, 31);
-            this.panel1.TabIndex = 3;
+            this.pnlUp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
+            this.pnlUp.Controls.Add(this.btnExit);
+            this.pnlUp.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlUp.Location = new System.Drawing.Point(0, 0);
+            this.pnlUp.Name = "pnlUp";
+            this.pnlUp.Size = new System.Drawing.Size(453, 31);
+            this.pnlUp.TabIndex = 3;
             // 
-            // btnThemeClose
+            // btnExit
             // 
-            this.btnThemeClose.FlatAppearance.BorderSize = 0;
-            this.btnThemeClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnThemeClose.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(246)))));
-            this.btnThemeClose.IconChar = FontAwesome.Sharp.IconChar.X;
-            this.btnThemeClose.IconColor = System.Drawing.Color.White;
-            this.btnThemeClose.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnThemeClose.IconSize = 14;
-            this.btnThemeClose.Location = new System.Drawing.Point(414, 0);
-            this.btnThemeClose.Name = "btnThemeClose";
-            this.btnThemeClose.Size = new System.Drawing.Size(32, 31);
-            this.btnThemeClose.TabIndex = 14;
-            this.btnThemeClose.UseVisualStyleBackColor = true;
-            this.btnThemeClose.Click += new System.EventHandler(this.btnThemeClose_Click);
+            this.btnExit.FlatAppearance.BorderSize = 0;
+            this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(246)))));
+            this.btnExit.IconChar = FontAwesome.Sharp.IconChar.X;
+            this.btnExit.IconColor = System.Drawing.Color.White;
+            this.btnExit.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnExit.IconSize = 14;
+            this.btnExit.Location = new System.Drawing.Point(414, 0);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(32, 31);
+            this.btnExit.TabIndex = 14;
+            this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.Click += new System.EventHandler(this.btnThemeClose_Click);
             // 
             // label1
             // 
@@ -125,7 +125,7 @@
             this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUpdate.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdate.ForeColor = System.Drawing.Color.White;
-            this.btnUpdate.Image = global::AppSondaj.Properties.Resources.update;
+            this.btnUpdate.Image = ((System.Drawing.Image)(resources.GetObject("btnUpdate.Image")));
             this.btnUpdate.Location = new System.Drawing.Point(324, 261);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(115, 40);
@@ -144,7 +144,7 @@
             this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSave.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSave.ForeColor = System.Drawing.Color.White;
-            this.btnSave.Image = global::AppSondaj.Properties.Resources.save;
+            this.btnSave.Image = ((System.Drawing.Image)(resources.GetObject("btnSave.Image")));
             this.btnSave.Location = new System.Drawing.Point(324, 261);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(115, 40);
@@ -166,13 +166,13 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.btnSave);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.pnlUp);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmQuestion";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Question menu";
-            this.panel1.ResumeLayout(false);
+            this.pnlUp.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -180,8 +180,8 @@
 
         #endregion
 
-        private System.Windows.Forms.Panel panel1;
-        private FontAwesome.Sharp.IconButton btnThemeClose;
+        private System.Windows.Forms.Panel pnlUp;
+        private FontAwesome.Sharp.IconButton btnExit;
         public System.Windows.Forms.Button btnUpdate;
         public System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Label label1;

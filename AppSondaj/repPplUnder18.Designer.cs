@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.gridPplUnder18 = new System.Windows.Forms.DataGridView();
-            this.txtNotTakenPart = new System.Windows.Forms.TextBox();
+            this.txtPplUnder18 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.usrFemale = new System.Windows.Forms.RadioButton();
             this.usrMale = new System.Windows.Forms.RadioButton();
@@ -47,18 +47,18 @@
             this.gridPplUnder18.Size = new System.Drawing.Size(1259, 524);
             this.gridPplUnder18.TabIndex = 48;
             // 
-            // txtNotTakenPart
+            // txtPplUnder18
             // 
-            this.txtNotTakenPart.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtNotTakenPart.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
-            this.txtNotTakenPart.Font = new System.Drawing.Font("Bahnschrift", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNotTakenPart.ForeColor = System.Drawing.SystemColors.Window;
-            this.txtNotTakenPart.Location = new System.Drawing.Point(638, 20);
-            this.txtNotTakenPart.Multiline = true;
-            this.txtNotTakenPart.Name = "txtNotTakenPart";
-            this.txtNotTakenPart.ReadOnly = true;
-            this.txtNotTakenPart.Size = new System.Drawing.Size(106, 33);
-            this.txtNotTakenPart.TabIndex = 50;
+            this.txtPplUnder18.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtPplUnder18.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
+            this.txtPplUnder18.Font = new System.Drawing.Font("Bahnschrift", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPplUnder18.ForeColor = System.Drawing.SystemColors.Window;
+            this.txtPplUnder18.Location = new System.Drawing.Point(638, 20);
+            this.txtPplUnder18.Multiline = true;
+            this.txtPplUnder18.Name = "txtPplUnder18";
+            this.txtPplUnder18.ReadOnly = true;
+            this.txtPplUnder18.Size = new System.Drawing.Size(106, 33);
+            this.txtPplUnder18.TabIndex = 50;
             // 
             // label1
             // 
@@ -107,7 +107,7 @@
             this.ClientSize = new System.Drawing.Size(1259, 601);
             this.Controls.Add(this.usrMale);
             this.Controls.Add(this.usrFemale);
-            this.Controls.Add(this.txtNotTakenPart);
+            this.Controls.Add(this.txtPplUnder18);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.gridPplUnder18);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -123,7 +123,7 @@
         #endregion
 
         private System.Windows.Forms.DataGridView gridPplUnder18;
-        public System.Windows.Forms.TextBox txtNotTakenPart;
+        public System.Windows.Forms.TextBox txtPplUnder18;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.RadioButton usrFemale;
         private System.Windows.Forms.RadioButton usrMale;

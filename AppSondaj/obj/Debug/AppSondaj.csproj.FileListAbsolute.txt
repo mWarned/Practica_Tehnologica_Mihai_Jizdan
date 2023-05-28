@@ -174,7 +174,6 @@ C:\Users\mihai\source\repos\mWarned\Practica_Tehnologica_Mihai_Jizdan\AppSondaj\
 C:\Users\mihai\source\repos\mWarned\Practica_Tehnologica_Mihai_Jizdan\AppSondaj\obj\Debug\AppSondaj.pollEdit.resources
 C:\Users\mihai\source\repos\mWarned\Practica_Tehnologica_Mihai_Jizdan\AppSondaj\obj\Debug\AppSondaj.Properties.Resources.resources
 C:\Users\mihai\source\repos\mWarned\Practica_Tehnologica_Mihai_Jizdan\AppSondaj\obj\Debug\AppSondaj.repDivorcePercentage.resources
-C:\Users\mihai\source\repos\mWarned\Practica_Tehnologica_Mihai_Jizdan\AppSondaj\obj\Debug\AppSondaj.themeQuestionEdit.resources
 C:\Users\mihai\source\repos\mWarned\Practica_Tehnologica_Mihai_Jizdan\AppSondaj\obj\Debug\AppSondaj.csproj.GenerateResource.cache
 C:\Users\mihai\source\repos\mWarned\Practica_Tehnologica_Mihai_Jizdan\AppSondaj\obj\Debug\AppSondaj.csproj.CoreCompileInputs.cache
 C:\Users\mihai\source\repos\mWarned\Practica_Tehnologica_Mihai_Jizdan\AppSondaj\obj\Debug\AppSondaj.csproj.CopyComplete
@@ -186,3 +185,4 @@ C:\Users\mihai\source\repos\mWarned\Practica_Tehnologica_Mihai_Jizdan\AppSondaj\
 C:\Users\mihai\source\repos\mWarned\Practica_Tehnologica_Mihai_Jizdan\AppSondaj\obj\Debug\AppSondaj.csproj.ResolveComReference.cache
 C:\Users\mihai\source\repos\mWarned\Practica_Tehnologica_Mihai_Jizdan\AppSondaj\obj\Debug\AppSondaj.repPplUnder18.resources
 C:\Users\mihai\source\repos\mWarned\Practica_Tehnologica_Mihai_Jizdan\AppSondaj\obj\Debug\AppSondaj.repPplMarriedUnder20.resources
+C:\Users\mihai\source\repos\mWarned\Practica_Tehnologica_Mihai_Jizdan\AppSondaj\obj\Debug\AppSondaj.grActions.resources

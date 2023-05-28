@@ -29,41 +29,41 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmLogin));
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.pnlUp = new System.Windows.Forms.Panel();
             this.lblLogin = new System.Windows.Forms.Label();
             this.btnExit = new FontAwesome.Sharp.IconButton();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
+            this.underline1 = new System.Windows.Forms.Panel();
+            this.underline2 = new System.Windows.Forms.Panel();
             this.usrPass = new System.Windows.Forms.TextBox();
             this.usrLogin = new System.Windows.Forms.TextBox();
             this.lblClear = new System.Windows.Forms.Label();
             this.btnLogin = new System.Windows.Forms.Button();
             this.btnViewPass = new FontAwesome.Sharp.IconButton();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.imgPassword = new System.Windows.Forms.PictureBox();
+            this.imgUsername = new System.Windows.Forms.PictureBox();
+            this.imgLock = new System.Windows.Forms.PictureBox();
+            this.pnlUp.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.imgPassword)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgUsername)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgLock)).BeginInit();
             this.SuspendLayout();
             // 
-            // panel1
+            // pnlUp
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
-            this.panel1.Controls.Add(this.lblLogin);
-            this.panel1.Controls.Add(this.btnExit);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(373, 31);
-            this.panel1.TabIndex = 5;
+            this.pnlUp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
+            this.pnlUp.Controls.Add(this.lblLogin);
+            this.pnlUp.Controls.Add(this.btnExit);
+            this.pnlUp.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlUp.Location = new System.Drawing.Point(0, 0);
+            this.pnlUp.Name = "pnlUp";
+            this.pnlUp.Size = new System.Drawing.Size(373, 31);
+            this.pnlUp.TabIndex = 5;
             // 
             // lblLogin
             // 
             this.lblLogin.AutoSize = true;
             this.lblLogin.Font = new System.Drawing.Font("Bahnschrift", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLogin.ForeColor = System.Drawing.Color.BlueViolet;
+            this.lblLogin.ForeColor = System.Drawing.Color.DarkViolet;
             this.lblLogin.Location = new System.Drawing.Point(9, 5);
             this.lblLogin.Name = "lblLogin";
             this.lblLogin.Size = new System.Drawing.Size(82, 18);
@@ -87,23 +87,23 @@
             this.btnExit.UseVisualStyleBackColor = true;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
-            // panel2
+            // underline1
             // 
-            this.panel2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.panel2.BackColor = System.Drawing.Color.DarkViolet;
-            this.panel2.Location = new System.Drawing.Point(24, 261);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(322, 1);
-            this.panel2.TabIndex = 9;
+            this.underline1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.underline1.BackColor = System.Drawing.Color.DarkViolet;
+            this.underline1.Location = new System.Drawing.Point(24, 261);
+            this.underline1.Name = "underline1";
+            this.underline1.Size = new System.Drawing.Size(322, 1);
+            this.underline1.TabIndex = 9;
             // 
-            // panel3
+            // underline2
             // 
-            this.panel3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.panel3.BackColor = System.Drawing.Color.DarkViolet;
-            this.panel3.Location = new System.Drawing.Point(24, 340);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(322, 1);
-            this.panel3.TabIndex = 11;
+            this.underline2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.underline2.BackColor = System.Drawing.Color.DarkViolet;
+            this.underline2.Location = new System.Drawing.Point(24, 340);
+            this.underline2.Name = "underline2";
+            this.underline2.Size = new System.Drawing.Size(322, 1);
+            this.underline2.TabIndex = 11;
             // 
             // usrPass
             // 
@@ -146,7 +146,7 @@
             // btnLogin
             // 
             this.btnLogin.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnLogin.BackColor = System.Drawing.Color.BlueViolet;
+            this.btnLogin.BackColor = System.Drawing.Color.DarkViolet;
             this.btnLogin.FlatAppearance.BorderColor = System.Drawing.Color.Indigo;
             this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogin.Font = new System.Drawing.Font("Bahnschrift", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -175,38 +175,38 @@
             this.btnViewPass.UseVisualStyleBackColor = true;
             this.btnViewPass.Click += new System.EventHandler(this.btnViewPass_Click);
             // 
-            // pictureBox3
+            // imgPassword
             // 
-            this.pictureBox3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pictureBox3.Image = global::AppSondaj.Properties.Resources.password;
-            this.pictureBox3.Location = new System.Drawing.Point(24, 305);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(41, 29);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox3.TabIndex = 12;
-            this.pictureBox3.TabStop = false;
+            this.imgPassword.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.imgPassword.Image = ((System.Drawing.Image)(resources.GetObject("imgPassword.Image")));
+            this.imgPassword.Location = new System.Drawing.Point(24, 305);
+            this.imgPassword.Name = "imgPassword";
+            this.imgPassword.Size = new System.Drawing.Size(41, 29);
+            this.imgPassword.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.imgPassword.TabIndex = 12;
+            this.imgPassword.TabStop = false;
             // 
-            // pictureBox2
+            // imgUsername
             // 
-            this.pictureBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pictureBox2.Image = global::AppSondaj.Properties.Resources.userLogin;
-            this.pictureBox2.Location = new System.Drawing.Point(24, 226);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(41, 29);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 10;
-            this.pictureBox2.TabStop = false;
+            this.imgUsername.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.imgUsername.Image = ((System.Drawing.Image)(resources.GetObject("imgUsername.Image")));
+            this.imgUsername.Location = new System.Drawing.Point(24, 226);
+            this.imgUsername.Name = "imgUsername";
+            this.imgUsername.Size = new System.Drawing.Size(41, 29);
+            this.imgUsername.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.imgUsername.TabIndex = 10;
+            this.imgUsername.TabStop = false;
             // 
-            // pictureBox1
+            // imgLock
             // 
-            this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pictureBox1.Image = global::AppSondaj.Properties.Resources._lock;
-            this.pictureBox1.Location = new System.Drawing.Point(118, 55);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(122, 133);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 8;
-            this.pictureBox1.TabStop = false;
+            this.imgLock.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.imgLock.Image = ((System.Drawing.Image)(resources.GetObject("imgLock.Image")));
+            this.imgLock.Location = new System.Drawing.Point(118, 55);
+            this.imgLock.Name = "imgLock";
+            this.imgLock.Size = new System.Drawing.Size(122, 133);
+            this.imgLock.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.imgLock.TabIndex = 8;
+            this.imgLock.TabStop = false;
             // 
             // frmLogin
             // 
@@ -219,23 +219,23 @@
             this.Controls.Add(this.lblClear);
             this.Controls.Add(this.usrLogin);
             this.Controls.Add(this.usrPass);
-            this.Controls.Add(this.pictureBox3);
-            this.Controls.Add(this.panel3);
-            this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.panel2);
-            this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.imgPassword);
+            this.Controls.Add(this.underline2);
+            this.Controls.Add(this.imgUsername);
+            this.Controls.Add(this.underline1);
+            this.Controls.Add(this.imgLock);
+            this.Controls.Add(this.pnlUp);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
             this.Load += new System.EventHandler(this.frmLogin_Load);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.pnlUp.ResumeLayout(false);
+            this.pnlUp.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.imgPassword)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgUsername)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgLock)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -243,13 +243,13 @@
 
         #endregion
 
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel pnlUp;
         private FontAwesome.Sharp.IconButton btnExit;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.PictureBox imgLock;
+        private System.Windows.Forms.Panel underline1;
+        private System.Windows.Forms.PictureBox imgUsername;
+        private System.Windows.Forms.PictureBox imgPassword;
+        private System.Windows.Forms.Panel underline2;
         private System.Windows.Forms.TextBox usrPass;
         private System.Windows.Forms.TextBox usrLogin;
         private System.Windows.Forms.Label lblClear;
