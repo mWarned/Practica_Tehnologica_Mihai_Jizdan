@@ -29,7 +29,18 @@ namespace AppSondaj
                 {
                     connection.Open();
 
-                    cmd = new SqlCommand("insert into Accounts (login, pass) values ('" + usrLogin.Text + "', '" + usrPass.Text + "')", (SqlConnection)connection);
+                    int isAdmin;
+
+                    if (usrAdmin.Checked == true)
+                    {
+                        isAdmin = 1;
+                    }
+                    else
+                    {
+                        isAdmin = 0;
+                    }
+
+                    cmd = new SqlCommand("insert into Accounts (login, pass, isAdmin) values ('" + usrLogin.Text + "', '" + usrPass.Text + "', " + isAdmin + ")", (SqlConnection)connection);
                     cmd.ExecuteNonQuery();
 
                     this.Close();
@@ -54,9 +65,20 @@ namespace AppSondaj
                     // Check if all the data was inserted
                     if (usrLogin.Text != "" && usrPass.Text != "")
                     {
+                        int isAdmin;
+
+                        if (usrAdmin.Checked == true)
+                        {
+                            isAdmin = 1;
+                        }
+                        else
+                        {
+                            isAdmin = 0;
+                        }
+
                         // SQL update
                         cmd = new SqlCommand("update Accounts set login='" + usrLogin.Text + "', pass='" +
-                            usrPass.Text + "' where accountID = " + accountID, (SqlConnection)connection);
+                            usrPass.Text + "', isAdmin = " + isAdmin + " where accountID = " + accountID, (SqlConnection)connection);
                         cmd.ExecuteNonQuery();
 
                         // Trigger DataGridView update

@@ -28,13 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.gridDivorce = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.divorcePercentage = new System.Windows.Forms.TextBox();
-            this.persoanaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.gridDivorce)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.persoanaBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // gridDivorce
@@ -85,14 +82,12 @@
             this.Text = "repDivorcePercentage";
             this.Load += new System.EventHandler(this.repDivorcePercentage_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gridDivorce)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.persoanaBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.BindingSource persoanaBindingSource;
         private System.Windows.Forms.DataGridView gridDivorce;
         private System.Windows.Forms.Label label1;
         public System.Windows.Forms.TextBox divorcePercentage;

@@ -45,7 +45,7 @@ namespace AppSondaj
                     gridDivorce.Columns["orasID"].Visible = false;
 
                     SqlCommand divorced = new SqlCommand("select count(*) from Persoana where Divortat = 1", (SqlConnection)connection);
-                    SqlCommand total = new SqlCommand("select count(*) from Persoana", (SqlConnection)connection);
+                    SqlCommand total = new SqlCommand("select count(*) from Persoana where Casatorit = 1", (SqlConnection)connection);
 
                     connection.Open();
                     int div = (int)divorced.ExecuteScalar();

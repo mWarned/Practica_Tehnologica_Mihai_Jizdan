@@ -22,8 +22,8 @@ namespace AppSondaj
         {
             InitializeComponent();
 
-            gridPplMonth.MultiSelect = false;
-            gridPplMonth.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            gridPplGivenMonth.MultiSelect = false;
+            gridPplGivenMonth.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
         }
 
         public void refreshGrid()
@@ -34,29 +34,22 @@ namespace AppSondaj
                 {
                     dataAD = new SqlDataAdapter("select persoanaID, Nume, Prenume, sex, studii, email, DataNasterii, Persoana.judetID, numeJudet, Persoana.municipiuID, numeMunicipiu, Persoana.orasID, numeOras, Casatorit, Divortat, Participant" +
                         " from Persoana inner join Judet on Persoana.judetID = Judet.judetID inner join Municipiu on Persoana.municipiuID = Municipiu.municipiuID" +
-                        " inner join Oras on Persoana.orasID = Oras.orasID", (SqlConnection)connection);
+                        " inner join Oras on Persoana.orasID = Oras.orasID" + $" WHERE MONTH(CONVERT(date, DataNasterii, 104)) = {usrMonth.SelectedIndex + 1}", (SqlConnection)connection);
 
                     dt = new System.Data.DataTable();
                     dataAD.Fill(dt);
 
-                    gridPplMonth.DataSource = dt;
+                    gridPplGivenMonth.DataSource = dt;
 
-                    gridPplMonth.Columns["persoanaID"].Visible = false;
-                    gridPplMonth.Columns["judetID"].Visible = false;
-                    gridPplMonth.Columns["municipiuID"].Visible = false;
-                    gridPplMonth.Columns["orasID"].Visible = false;
+                    gridPplGivenMonth.Columns["persoanaID"].Visible = false;
+                    gridPplGivenMonth.Columns["judetID"].Visible = false;
+                    gridPplGivenMonth.Columns["municipiuID"].Visible = false;
+                    gridPplGivenMonth.Columns["orasID"].Visible = false;
 
-                    DataRow[] rowsToDelete = dt.Select($"MONTH(DataNasterii) <> {int.Parse(usrMonth.Text)}");
-
-                    foreach (DataRow row in rowsToDelete)
-                    {
-                        dt.Rows.Remove(row);
-                    }
-
-                    gridPplMonth.DataSource = dt;
+                    gridPplGivenMonth.DataSource = dt;
 
                     // Adapt columns width to the largest string
-                    foreach (DataGridViewColumn column in gridPplMonth.Columns)
+                    foreach (DataGridViewColumn column in gridPplGivenMonth.Columns)
                     {
                         column.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
                     }
@@ -66,11 +59,6 @@ namespace AppSondaj
             {
                 MessageBox.Show(ex.Message);
             }
-        }
-
-        private void btnSearch_Click(object sender, EventArgs e)
-        {
-            refreshGrid();
         }
 
         private void usrMonth_KeyPress(object sender, KeyPressEventArgs e)
@@ -83,30 +71,46 @@ namespace AppSondaj
 
         private void btnExcel_Click(object sender, EventArgs e)
         {
-            Microsoft.Office.Interop.Excel.Application Excel;
             Workbook WB;
             Worksheet WS;
 
             try
             {
-                Excel = new Microsoft.Office.Interop.Excel.Application();
+                Microsoft.Office.Interop.Excel.Application Excel = new Microsoft.Office.Interop.Excel.Application();
                 WB = Excel.Workbooks.Add(Type.Missing);
                 WS = null;
 
                 WS = WB.Sheets["Sheet1"];
                 WS = WB.ActiveSheet;
-                WS.Name = "Persoane nascute in luna specificata!";
+                WS.Name = "Persoane_Luna_Aleasa";
                 Excel.Visible = true;
 
-                for (int i = 1; i < gridPplMonth.Columns.Count + 1; i++)
+                // Set headers
+                for (int i = 1; i < gridPplGivenMonth.Columns.Count + 1; i++)
                 {
-                    WS.Cells[1, i] = gridPplMonth.Columns[i - 1].HeaderText;
+                    WS.Cells[1, i] = gridPplGivenMonth.Columns[i - 1].HeaderText;
                 }
+
+                // Set cell values
+                for (int i = 0; i < gridPplGivenMonth.Rows.Count; i++)
+                {
+                    for (int j = 0; j < gridPplGivenMonth.Columns.Count; j++)
+                    {
+                        WS.Cells[i + 2, j + 1] = gridPplGivenMonth.Rows[i].Cells[j].Value?.ToString();
+                    }
+                }
+
+                WS.UsedRange.Columns.AutoFit();
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void usrMonth_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            refreshGrid();
         }
     }
 }

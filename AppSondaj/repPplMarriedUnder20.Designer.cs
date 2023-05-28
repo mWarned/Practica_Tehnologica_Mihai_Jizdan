@@ -1,6 +1,6 @@
 ﻿namespace AppSondaj
 {
-    partial class repPplMarriedOver20
+    partial class repPplMarriedUnder20
     {
         /// <summary>
         /// Required designer variable.
@@ -30,8 +30,8 @@
         {
             this.txtNotTakenPart = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.gridPplUnder18 = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.gridPplUnder18)).BeginInit();
+            this.gridPplMarriedUnder20 = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.gridPplMarriedUnder20)).BeginInit();
             this.SuspendLayout();
             // 
             // txtNotTakenPart
@@ -40,7 +40,7 @@
             this.txtNotTakenPart.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
             this.txtNotTakenPart.Font = new System.Drawing.Font("Bahnschrift", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNotTakenPart.ForeColor = System.Drawing.SystemColors.Window;
-            this.txtNotTakenPart.Location = new System.Drawing.Point(693, 22);
+            this.txtNotTakenPart.Location = new System.Drawing.Point(671, 22);
             this.txtNotTakenPart.Multiline = true;
             this.txtNotTakenPart.Name = "txtNotTakenPart";
             this.txtNotTakenPart.ReadOnly = true;
@@ -54,22 +54,22 @@
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(246)))));
             this.label1.Location = new System.Drawing.Point(12, 22);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(675, 33);
+            this.label1.Size = new System.Drawing.Size(653, 33);
             this.label1.TabIndex = 52;
-            this.label1.Text = "Numarul persoanelor casatorite cu varsta peste 20 ani";
+            this.label1.Text = "Numarul persoanelor casatorite cu varsta sub 20 ani";
             // 
-            // gridPplUnder18
+            // gridPplMarriedUnder20
             // 
-            this.gridPplUnder18.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
-            this.gridPplUnder18.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gridPplUnder18.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.gridPplUnder18.Location = new System.Drawing.Point(0, 77);
-            this.gridPplUnder18.Name = "gridPplUnder18";
-            this.gridPplUnder18.ReadOnly = true;
-            this.gridPplUnder18.Size = new System.Drawing.Size(1259, 524);
-            this.gridPplUnder18.TabIndex = 51;
+            this.gridPplMarriedUnder20.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
+            this.gridPplMarriedUnder20.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gridPplMarriedUnder20.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.gridPplMarriedUnder20.Location = new System.Drawing.Point(0, 77);
+            this.gridPplMarriedUnder20.Name = "gridPplMarriedUnder20";
+            this.gridPplMarriedUnder20.ReadOnly = true;
+            this.gridPplMarriedUnder20.Size = new System.Drawing.Size(1259, 524);
+            this.gridPplMarriedUnder20.TabIndex = 51;
             // 
-            // repPplMarriedOver20
+            // repPplMarriedUnder20
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -77,12 +77,12 @@
             this.ClientSize = new System.Drawing.Size(1259, 601);
             this.Controls.Add(this.txtNotTakenPart);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.gridPplUnder18);
+            this.Controls.Add(this.gridPplMarriedUnder20);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "repPplMarriedOver20";
+            this.Name = "repPplMarriedUnder20";
             this.Text = "repPplMarriedOver20";
             this.Load += new System.EventHandler(this.repPplMarriedOver20_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.gridPplUnder18)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridPplMarriedUnder20)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -92,6 +92,6 @@
 
         public System.Windows.Forms.TextBox txtNotTakenPart;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridView gridPplUnder18;
+        private System.Windows.Forms.DataGridView gridPplMarriedUnder20;
     }
 }

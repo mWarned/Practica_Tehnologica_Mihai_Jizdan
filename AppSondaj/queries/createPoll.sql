@@ -23,7 +23,7 @@ create table Persoana(
 	persoanaID int identity(1, 1) primary key,
 	Nume varchar(50),
 	Prenume varchar(50),
-	sex varchar(1),
+	Sex char(1) NOT NULL CHECK (Sex IN ('M', 'F')),
 	studii varchar(50),
 	email varchar(50),
 	DataNasterii varchar(50),
@@ -37,18 +37,18 @@ create table Persoana(
 
 create table Tematica(
 	tematicaID int primary key identity(1, 1),
-	Tematica varchar(50)
+	Tematica varchar(50) unique
 )
 
 create table Intrebare(
 	intrebareID int primary key identity(1, 1),
-	Intrebare varchar(200),
+	Intrebare varchar(200) unique,
 	tematicaID int foreign key references Tematica(tematicaID)
 )
 
 create table Limba(
 	limbaID int primary key identity(1, 1),
-	Limba varchar(50)
+	Limba varchar(50) unique
 )
 
 create table Raspuns(
@@ -61,6 +61,7 @@ create table Raspuns(
 
 create table Accounts(
 	accountID int primary key identity(1, 1),
-	login varchar(99),
-	pass varchar(99)
+	login varchar(99) unique,
+	pass varchar(99) unique,
+	isAdmin bit
 )

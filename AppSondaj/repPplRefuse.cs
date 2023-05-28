@@ -44,13 +44,9 @@ namespace AppSondaj
                     gridPplNotTakenPart.Columns["municipiuID"].Visible = false;
                     gridPplNotTakenPart.Columns["orasID"].Visible = false;
 
-                    SqlCommand notTakePart = new SqlCommand("select count(*) from Persoana where Participant = 0", (SqlConnection)connection);
+                    int nrPeople = gridPplNotTakenPart.Rows.Count;
 
-                    connection.Open();
-                    int ntp = (int)notTakePart.ExecuteScalar();
-                    connection.Close();
-
-                    txtNotTakenPart.Text = ntp.ToString();
+                    txtNotTakenPart.Text = (nrPeople - 1).ToString();
 
                     // Adapt columns width to the largest string
                     foreach (DataGridViewColumn column in gridPplNotTakenPart.Columns)

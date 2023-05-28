@@ -8,6 +8,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Controls;
 using System.Windows.Forms;
 
 namespace AppSondaj
@@ -31,9 +32,20 @@ namespace AppSondaj
             {
                 using (IDbConnection connection = new SqlConnection(Helper.dbConn("dbSondaj")))
                 {
+                    char sex;
+
+                    if (usrFemale.Checked == true)
+                    {
+                        sex = 'F';
+                    }
+                    else
+                    {
+                        sex = 'M';
+                    }
+
                     dataAD = new SqlDataAdapter("select persoanaID, Nume, Prenume, sex, studii, email, DataNasterii, Persoana.judetID, numeJudet, Persoana.municipiuID, numeMunicipiu, Persoana.orasID, numeOras, Casatorit, Divortat, Participant" +
                         " from Persoana inner join Judet on Persoana.judetID = Judet.judetID inner join Municipiu on Persoana.municipiuID = Municipiu.municipiuID" +
-                        " inner join Oras on Persoana.orasID = Oras.orasID where DATEDIFF(YEAR, DataNasterii, GETDATE()) < 18", (SqlConnection)connection);
+                        $" inner join Oras on Persoana.orasID = Oras.orasID where sex = '{sex}' AND DATEDIFF(YEAR, CONVERT(date, DataNasterii, 104), GETDATE()) < 18", (SqlConnection)connection);
 
                     dt = new System.Data.DataTable();
                     dataAD.Fill(dt);
@@ -45,13 +57,9 @@ namespace AppSondaj
                     gridPplUnder18.Columns["municipiuID"].Visible = false;
                     gridPplUnder18.Columns["orasID"].Visible = false;
 
-                    SqlCommand nrPers = new SqlCommand("select count(*) from Persoana", (SqlConnection)connection);
+                    int nrPeople = gridPplUnder18.Rows.Count;
 
-                    connection.Open();
-                    int pers18 = (int)nrPers.ExecuteScalar();
-                    connection.Close();
-
-                    txtNotTakenPart.Text = pers18.ToString();
+                    txtNotTakenPart.Text = (nrPeople - 1).ToString();
 
                     // Adapt columns width to the largest string
                     foreach (DataGridViewColumn column in gridPplUnder18.Columns)
@@ -67,6 +75,16 @@ namespace AppSondaj
         }
 
         private void repPplUnder18_Load(object sender, EventArgs e)
+        {
+            refreshGrid();
+        }
+
+        private void usrMale_CheckedChanged(object sender, EventArgs e)
+        {
+            refreshGrid();
+        }
+
+        private void usrFemale_CheckedChanged(object sender, EventArgs e)
         {
             refreshGrid();
         }

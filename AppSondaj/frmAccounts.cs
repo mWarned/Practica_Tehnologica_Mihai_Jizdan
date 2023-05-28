@@ -64,6 +64,7 @@ namespace AppSondaj
             {
                 // Get the selected record's identifier
                 int selectedID = Convert.ToInt32(gridAccounts.SelectedRows[0].Cells["accountID"].Value);
+                bool isAdmin = Convert.ToBoolean(gridAccounts.SelectedRows[0].Cells["isAdmin"].Value);
 
                 frmUser user = new frmUser();
 
@@ -74,7 +75,14 @@ namespace AppSondaj
 
                     user.usrLogin.Text = Convert.ToString(gridAccounts.SelectedRows[0].Cells["login"].Value);
                     user.usrPass.Text = Convert.ToString(gridAccounts.SelectedRows[0].Cells["pass"].Value);
-
+                    if (isAdmin == true)
+                    {
+                        user.usrAdmin.Checked = true;
+                    }
+                    else
+                    {
+                        user.usrAdmin.Checked = false;
+                    }
 
                     // Hide save button and show the update button
                     user.btnSave.Visible = false;

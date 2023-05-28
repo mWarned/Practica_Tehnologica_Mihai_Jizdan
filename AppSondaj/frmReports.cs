@@ -37,11 +37,6 @@ namespace AppSondaj
             childForm.Show();
         }
 
-        private void frmReports_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void divorcedPercentageToolStripMenuItem_Click(object sender, EventArgs e)
         {
             OpenChildForm(new repDivorcePercentage());
@@ -64,7 +59,7 @@ namespace AppSondaj
 
         private void marriedAndOlderThan20YoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new repPplMarriedOver20());
+            OpenChildForm(new repPplMarriedUnder20());
         }
 
         private void peopleThatRefusedToParticipateToolStripMenuItem_Click(object sender, EventArgs e)
@@ -73,6 +68,11 @@ namespace AppSondaj
         }
 
         private void pnlReport_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void frmReports_Load(object sender, EventArgs e)
         {
 
         }

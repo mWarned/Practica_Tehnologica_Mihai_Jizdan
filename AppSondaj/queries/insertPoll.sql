@@ -96,7 +96,7 @@ VALUES
 	('Popa', 'George', 'M', 'Doctorat', 'george.popa@gmail.com', '20.06.1975', 3, 3, 3, 1, 0, 1),
 	('Andrei', 'Alexandra', 'F', 'Facultate', 'alexandra.andrei@gmail.com', '05.09.2000', 4, 4, 4, 0, 0, 1),
 	('Gheorghe', 'Marius', 'M', 'Master', 'marius.gheorghe@yahoo.com', '31.12.1985', 5, 5, 5, 1, 1, 1)
-
+	
 INSERT INTO Tematica (Tematica)
 VALUES
 	('Arta'),
@@ -206,7 +206,7 @@ VALUES
 	('Nu am o opinie', 12, 4, 4),
 	('Este extrem de important sa atragem atentia aspura acestei probleme', 12, 5, 7)
 	
-INSERT INTO Accounts (login, pass)
+INSERT INTO Accounts (login, pass, isAdmin)
 VALUES
-	('admin', 'admin'),
-	('MihaiJ', 'password')
+	('admin', 'admin', 1),
+	('MihaiJ', 'password', 0)

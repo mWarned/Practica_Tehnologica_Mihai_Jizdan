@@ -73,31 +73,34 @@ namespace AppSondaj
                         // if account exists open new main form
                         if (count > 0)
                         {
-                            Main app = new Main();
-
-                            app.lblUser.Text = usrLogin.Text;
-                            app.Show();
-
-                            this.Close();
-                        }
-                        else
-                        {
-                            // Else check if the login or the password is wrong
-                            using (SqlCommand checkLogin = new SqlCommand("SELECT COUNT(*) FROM Accounts WHERE login = @Login", (SqlConnection)connection))
+                            using (SqlCommand checkAdmin = new SqlCommand("SELECT COUNT(*) FROM Accounts WHERE login = @Login AND pass = @Pass AND isAdmin = 1", (SqlConnection)connection))
                             {
-                                checkLogin.Parameters.AddWithValue("@Login", usrLogin.Text);
+                                checkAdmin.Parameters.AddWithValue("@Login", usrLogin.Text);
+                                checkAdmin.Parameters.AddWithValue("@Pass", usrPass.Text);
 
-                                int loginCount = (int) checkLogin.ExecuteScalar();
+                                int admin = (int)checkAdmin.ExecuteScalar();
 
-                                if (loginCount > 0)
+                                Main app = new Main();
+
+                                app.lblUser.Text = usrLogin.Text;
+
+                                if (admin > 0)
                                 {
-                                    MessageBox.Show("Wrong password!");
+                                    app.isAdmin = true;
                                 }
                                 else
                                 {
-                                    MessageBox.Show("Login failed!");
+                                    app.isAdmin = false;
                                 }
+
+                                app.Show();
+
+                                this.Close();
                             }
+                        }
+                        else
+                        {
+                            MessageBox.Show("Username or password is wrong!");
                         }
 
                         connection.Close();

@@ -32,7 +32,7 @@ namespace AppSondaj
                 {
                     dataAD = new SqlDataAdapter("select persoanaID, Nume, Prenume, sex, studii, email, DataNasterii, Persoana.judetID, numeJudet, Persoana.municipiuID, numeMunicipiu, Persoana.orasID, numeOras, Casatorit, Divortat, Participant" +
                         " from Persoana inner join Judet on Persoana.judetID = Judet.judetID inner join Municipiu on Persoana.municipiuID = Municipiu.municipiuID" +
-                        " inner join Oras on Persoana.orasID = Oras.orasID where studii = 'Masterat' OR studii = 'Doctorat' OR studii = 'Diploma de absolvire'", (SqlConnection)connection);
+                        " inner join Oras on Persoana.orasID = Oras.orasID where sex = 'M' AND Casatorit = 0 AND (studii = 'Masterat' OR studii = 'Doctorat' OR studii = 'Diploma de absolvire')", (SqlConnection)connection);
 
                     dt = new System.Data.DataTable();
                     dataAD.Fill(dt);
@@ -82,7 +82,26 @@ namespace AppSondaj
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            refreshGrid();
+            if (usrAge1.Text != "" && usrAge2.Text != "")
+            {
+                int age1, age2;
+
+                int.TryParse(usrAge1.Text, out age1);
+                int.TryParse(usrAge2.Text, out age2);
+
+                if (age1 < age2)
+                {
+                    refreshGrid();
+                }
+                else
+                {
+                    MessageBox.Show("Enter a range!");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please fill the all the fields!");
+            }
         }
 
         private void usrAge1_KeyPress(object sender, KeyPressEventArgs e)

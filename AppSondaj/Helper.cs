@@ -14,5 +14,10 @@ namespace AppSondaj
         {
             return ConfigurationManager.ConnectionStrings[name].ConnectionString;
         }
+
+        public static string themeSettings()
+        {
+            return ConfigurationManager.AppSettings["Theme"];
+        }
     }
 }

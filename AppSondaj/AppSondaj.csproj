@@ -120,7 +120,6 @@
     <Compile Include="frmTheme.Designer.cs">
       <DependentUpon>frmTheme.cs</DependentUpon>
     </Compile>
-    <Compile Include="dbActions.cs" />
     <Compile Include="frmUser.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -167,11 +166,11 @@
     <Compile Include="repPplGivenMonth.Designer.cs">
       <DependentUpon>repPplGivenMonth.cs</DependentUpon>
     </Compile>
-    <Compile Include="repPplMarriedOver20.cs">
+    <Compile Include="repPplMarriedUnder20.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="repPplMarriedOver20.Designer.cs">
-      <DependentUpon>repPplMarriedOver20.cs</DependentUpon>
+    <Compile Include="repPplMarriedUnder20.Designer.cs">
+      <DependentUpon>repPplMarriedUnder20.cs</DependentUpon>
     </Compile>
     <Compile Include="repPplRefuse.cs">
       <SubType>Form</SubType>
@@ -267,8 +266,8 @@
     <EmbeddedResource Include="repPplGivenMonth.resx">
       <DependentUpon>repPplGivenMonth.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="repPplMarriedOver20.resx">
-      <DependentUpon>repPplMarriedOver20.cs</DependentUpon>
+    <EmbeddedResource Include="repPplMarriedUnder20.resx">
+      <DependentUpon>repPplMarriedUnder20.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="repPplRefuse.resx">
       <DependentUpon>repPplRefuse.cs</DependentUpon>

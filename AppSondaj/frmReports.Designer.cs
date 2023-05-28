@@ -78,7 +78,7 @@
             this.divorcedPercentageToolStripMenuItem.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.divorcedPercentageToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(246)))));
             this.divorcedPercentageToolStripMenuItem.Name = "divorcedPercentageToolStripMenuItem";
-            this.divorcedPercentageToolStripMenuItem.Size = new System.Drawing.Size(406, 24);
+            this.divorcedPercentageToolStripMenuItem.Size = new System.Drawing.Size(490, 24);
             this.divorcedPercentageToolStripMenuItem.Text = "Divorced percentage";
             this.divorcedPercentageToolStripMenuItem.Click += new System.EventHandler(this.divorcedPercentageToolStripMenuItem_Click);
             // 
@@ -88,8 +88,8 @@
             this.menWithHigherEducationToolStripMenuItem.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.menWithHigherEducationToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(246)))));
             this.menWithHigherEducationToolStripMenuItem.Name = "menWithHigherEducationToolStripMenuItem";
-            this.menWithHigherEducationToolStripMenuItem.Size = new System.Drawing.Size(406, 24);
-            this.menWithHigherEducationToolStripMenuItem.Text = "Men with higher education in given age range";
+            this.menWithHigherEducationToolStripMenuItem.Size = new System.Drawing.Size(490, 24);
+            this.menWithHigherEducationToolStripMenuItem.Text = "Unmarried men with higher education in given age range";
             this.menWithHigherEducationToolStripMenuItem.Click += new System.EventHandler(this.menWithHigherEducationToolStripMenuItem_Click);
             // 
             // peopleBornInGivenMonthToolStripMenuItem
@@ -98,7 +98,7 @@
             this.peopleBornInGivenMonthToolStripMenuItem.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.peopleBornInGivenMonthToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(246)))));
             this.peopleBornInGivenMonthToolStripMenuItem.Name = "peopleBornInGivenMonthToolStripMenuItem";
-            this.peopleBornInGivenMonthToolStripMenuItem.Size = new System.Drawing.Size(406, 24);
+            this.peopleBornInGivenMonthToolStripMenuItem.Size = new System.Drawing.Size(490, 24);
             this.peopleBornInGivenMonthToolStripMenuItem.Text = "People born in given month";
             this.peopleBornInGivenMonthToolStripMenuItem.Click += new System.EventHandler(this.peopleBornInGivenMonthToolStripMenuItem_Click);
             // 
@@ -108,7 +108,7 @@
             this.malesFemalesToolStripMenuItem.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.malesFemalesToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(246)))));
             this.malesFemalesToolStripMenuItem.Name = "malesFemalesToolStripMenuItem";
-            this.malesFemalesToolStripMenuItem.Size = new System.Drawing.Size(406, 24);
+            this.malesFemalesToolStripMenuItem.Size = new System.Drawing.Size(490, 24);
             this.malesFemalesToolStripMenuItem.Text = "Males / Females with age under 18";
             this.malesFemalesToolStripMenuItem.Click += new System.EventHandler(this.malesFemalesToolStripMenuItem_Click);
             // 
@@ -118,7 +118,7 @@
             this.marriedAndOlderThan20YoToolStripMenuItem.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.marriedAndOlderThan20YoToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(246)))));
             this.marriedAndOlderThan20YoToolStripMenuItem.Name = "marriedAndOlderThan20YoToolStripMenuItem";
-            this.marriedAndOlderThan20YoToolStripMenuItem.Size = new System.Drawing.Size(406, 24);
+            this.marriedAndOlderThan20YoToolStripMenuItem.Size = new System.Drawing.Size(490, 24);
             this.marriedAndOlderThan20YoToolStripMenuItem.Text = "Married and age over 20";
             this.marriedAndOlderThan20YoToolStripMenuItem.Click += new System.EventHandler(this.marriedAndOlderThan20YoToolStripMenuItem_Click);
             // 
@@ -128,7 +128,7 @@
             this.peopleThatRefusedToParticipateToolStripMenuItem.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.peopleThatRefusedToParticipateToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(246)))));
             this.peopleThatRefusedToParticipateToolStripMenuItem.Name = "peopleThatRefusedToParticipateToolStripMenuItem";
-            this.peopleThatRefusedToParticipateToolStripMenuItem.Size = new System.Drawing.Size(406, 24);
+            this.peopleThatRefusedToParticipateToolStripMenuItem.Size = new System.Drawing.Size(490, 24);
             this.peopleThatRefusedToParticipateToolStripMenuItem.Text = "People that refused to participate";
             this.peopleThatRefusedToParticipateToolStripMenuItem.Click += new System.EventHandler(this.peopleThatRefusedToParticipateToolStripMenuItem_Click);
             // 

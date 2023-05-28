@@ -200,8 +200,6 @@
 
         #endregion
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button btnAdd;
-        private System.Windows.Forms.Button btnAccList;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox2;
@@ -210,5 +208,7 @@
         private System.Windows.Forms.RadioButton btnThLight;
         private System.Windows.Forms.RadioButton btnThDark;
         private System.Windows.Forms.Label label1;
+        public System.Windows.Forms.Button btnAdd;
+        public System.Windows.Forms.Button btnAccList;
     }
 }

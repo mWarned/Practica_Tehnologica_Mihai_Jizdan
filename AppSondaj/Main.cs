@@ -14,6 +14,7 @@ namespace AppSondaj
     {
         private Button currentBtn;
         private Form currentFormChild;
+        public bool isAdmin;
 
         public Main()
         {
@@ -111,7 +112,18 @@ namespace AppSondaj
         private void btnSettings_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, colorList.lightBlue);
-            OpenChildForm(new frmSettigns());
+            frmSettigns settings = new frmSettigns();
+            if(isAdmin == true)
+            {
+                settings.btnAdd.Enabled = true;
+                settings.btnAccList.Enabled = true;
+            }
+            else
+            {
+                settings.btnAdd.Enabled = false;
+                settings.btnAccList.Enabled = false;
+            }
+            OpenChildForm(settings);
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
@@ -136,6 +148,22 @@ namespace AppSondaj
         private void btnExit_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void Main_Load(object sender, EventArgs e)
+        {
+            if (Helper.themeSettings().Equals("Dark"))
+            {
+
+            }
+            else if (Helper.themeSettings().Equals("Light"))
+            {
+
+            }
+            else if (Helper.themeSettings().Equals("Blue"))
+            {
+
+            }
         }
     }
 }

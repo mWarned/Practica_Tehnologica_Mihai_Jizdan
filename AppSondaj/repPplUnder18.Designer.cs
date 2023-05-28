@@ -31,6 +31,8 @@
             this.gridPplUnder18 = new System.Windows.Forms.DataGridView();
             this.txtNotTakenPart = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.usrFemale = new System.Windows.Forms.RadioButton();
+            this.usrMale = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.gridPplUnder18)).BeginInit();
             this.SuspendLayout();
             // 
@@ -69,12 +71,42 @@
             this.label1.TabIndex = 49;
             this.label1.Text = "Numarul persoanelor cu varsta mai mica de 18 ani";
             // 
+            // usrFemale
+            // 
+            this.usrFemale.AutoSize = true;
+            this.usrFemale.Checked = true;
+            this.usrFemale.Font = new System.Drawing.Font("Bahnschrift", 20.25F, System.Drawing.FontStyle.Bold);
+            this.usrFemale.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(246)))));
+            this.usrFemale.Location = new System.Drawing.Point(1132, 18);
+            this.usrFemale.Name = "usrFemale";
+            this.usrFemale.Size = new System.Drawing.Size(106, 37);
+            this.usrFemale.TabIndex = 51;
+            this.usrFemale.TabStop = true;
+            this.usrFemale.Text = "Femei";
+            this.usrFemale.UseVisualStyleBackColor = true;
+            this.usrFemale.CheckedChanged += new System.EventHandler(this.usrFemale_CheckedChanged);
+            // 
+            // usrMale
+            // 
+            this.usrMale.AutoSize = true;
+            this.usrMale.Font = new System.Drawing.Font("Bahnschrift", 20.25F, System.Drawing.FontStyle.Bold);
+            this.usrMale.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(246)))));
+            this.usrMale.Location = new System.Drawing.Point(992, 18);
+            this.usrMale.Name = "usrMale";
+            this.usrMale.Size = new System.Drawing.Size(121, 37);
+            this.usrMale.TabIndex = 52;
+            this.usrMale.Text = "Barbati";
+            this.usrMale.UseVisualStyleBackColor = true;
+            this.usrMale.CheckedChanged += new System.EventHandler(this.usrMale_CheckedChanged);
+            // 
             // repPplUnder18
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
             this.ClientSize = new System.Drawing.Size(1259, 601);
+            this.Controls.Add(this.usrMale);
+            this.Controls.Add(this.usrFemale);
             this.Controls.Add(this.txtNotTakenPart);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.gridPplUnder18);
@@ -93,5 +125,7 @@
         private System.Windows.Forms.DataGridView gridPplUnder18;
         public System.Windows.Forms.TextBox txtNotTakenPart;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.RadioButton usrFemale;
+        private System.Windows.Forms.RadioButton usrMale;
     }
 }

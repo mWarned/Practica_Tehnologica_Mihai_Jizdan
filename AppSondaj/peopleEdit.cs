@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -87,11 +88,26 @@ namespace AppSondaj
 
                     foreach (DataRow row in dt.Rows)
                     {
-                        DateTime d0 = new DateTime(1, 1, 1);
                         DateTime now = DateTime.Now;
-                        TimeSpan ts = now - Convert.ToDateTime(row["DataNasterii"]);
+                        DateTime birthDate;
 
-                        row["Age"] = ((d0 + ts).Year - 1);
+                        // Parse the date and calculate age
+                        if (DateTime.TryParseExact(row["DataNasterii"].ToString(), "dd.MM.yyyy", CultureInfo.InvariantCulture, DateTimeStyles.None, out birthDate))
+                        {
+                            int age = now.Year - birthDate.Year;
+
+                            // If the person haven't had this year's birthday, substract 1
+                            if (now.Month < birthDate.Month || (now.Month == birthDate.Month && now.Day < birthDate.Day))
+                            {
+                                age--;
+                            }
+
+                            row["Age"] = age;
+                        }
+                        else
+                        {
+                            MessageBox.Show("There's an error with the date format");
+                        }
                     }
 
                     gridPeople.Columns["persoanaID"].Visible = false;
